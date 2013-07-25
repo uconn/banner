@@ -10,9 +10,7 @@
   <!-- Le styles -->
   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-  <link href="http://uconn.edu/shared/fonts/uconn/uconn.css" rel="stylesheet"> 
-  <link href="http://uconn.edu/shared/fonts/proximanova_semibold_macroman/stylesheet.css" rel="stylesheet">
-  <link href="banner.css">
+  <link href="banner.css" rel="stylesheet">
 
   <!-- REPLACE THIS WITH YOUR CUSTOM BUILD OF MODERNIZR -->
   <script src="//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js"></script>
@@ -25,19 +23,33 @@
     <div class="container">
       <div class="row-fluid">
         <div id="home-link-container" class="span8">
-          <a id="home-link" class="header-flex-container justify-left" href="http://uconn.edu/">
+          <a id="home-link" href="http://uconn.edu/">
             <span id="wordmark">UCONN</span>
             <span id="university-of-connecticut">University of Connecticut</span>
           </a>
         </div>
-        <div id="button-container" class="span4">
-          <div class="header-flex-container justify-right">
+        <div class="span4">
+          <div id="button-container">
             <a class="btn btn-primary btn-medium" href="http://uconn.edu/search.php"><i class="icon-search"></i></a>
             <a class="btn btn-primary btn-medium" href="http://uconn.edu/azindex.php">A-Z</a>
           </div>
         </div>
       </div>  
     </div>  
+  </div>
+  <div class="container" id="site-header">
+    <div class="row-fluid">
+      <div class="span9">
+        <p id="super-title"><a href="http://communications.uconn.edu/">University Communications</a></p>
+        <h1 id="site-title"><a href="/">Brand Standards</a></h1>        
+      </div>
+      <div class="span3 search-container">
+        <form class="form-search" id="site-search">
+          <input type="text" class="input-medium" placeholder="Search this site">
+        </form>        
+
+      </div>
+    </div>
   </div>
 </body>
 </html>

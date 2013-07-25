@@ -1,0 +1,59 @@
+
+
+#uconn-header-container {
+  background-color: $bg-color;
+  color:#fff;
+  .btn {
+    color: #c1e8f8;
+    margin-left:5px;      
+  }
+} 
+
+#wordmark{
+  color: #fff;
+  font-family: $uconn-font;
+  font-size: 32px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding:0px 5px 0 0;
+
+}
+
+#university-of-connecticut {
+  font-family: $secondary-font;
+  color: #9faab2;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: .055em;
+  word-spacing: .02em;
+  border-left: 2px solid #3f4760;
+  padding: 0px 0 0 5px;
+  font-weight: bold;
+}
+
+#button-container{
+  display:table-cell;
+  height: 55px;
+  vertical-align: middle; 
+  a {
+    text-align:right;
+  }
+
+}
+
+#home-link{
+  display:table-cell;
+  height: 55px;
+  vertical-align: middle;  
+
+  &:hover {
+    text-decoration: none;
+    color:#eee;
+  }
+
+  span {
+    margin:auto 0;
+    float:left;
+  }
+}
+

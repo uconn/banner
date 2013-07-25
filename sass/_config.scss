@@ -1,0 +1,19 @@
+$bg-color: #0f1938;
+$uconn-font: "UConn";
+$secondary-font: "Proxima Nova";
+$font-base-url: "http://uconn.edu/shared/fonts";
+
+/* Begin defaults for flexbox */
+$default-justify-content: 'flex-start';
+$default-align-items: 'flex-start';
+$default-align-self: 'flex-start';
+$default-align-content: 'flex-start'; 
+$default-order: '1';
+$default-flex: '1';
+$default-flex-grow: $default-flex;
+$default-flex-shrink: $default-flex;
+$default-flex-basis: $default-flex;
+$default-flex-direction: 'row';
+$default-flex-wrap: 'nowrap';
+$default-flex-flow: $default-flex-direction $default-flex-wrap;
+/* End defaults for flexbox */
