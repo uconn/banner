@@ -9,18 +9,19 @@
   }
 } 
 
+
+
 #wordmark{
   color: #fff;
-  font-family: $uconn-font;
+  font-family: $uconn-font,$fallback-fonts;
   font-size: 32px;
   letter-spacing: 3px;
   text-transform: uppercase;
   padding:0px 5px 0 0;
-
 }
 
 #university-of-connecticut {
-  font-family: $secondary-font;
+  font-family: $secondary-font,$fallback-fonts;
   color: #9faab2;
   text-transform: uppercase;
   font-size: 18px;
@@ -31,14 +32,24 @@
   font-weight: bold;
 }
 
-#button-container{
-  display:table-cell;
-  height: 55px;
-  vertical-align: middle; 
-  a {
-    text-align:right;
-  }
+.button-cell {
+  text-align:right;
+  line-height: 55px; 
 
+
+  .btn-primary, .btn-primary:hover, .btn-primary:visited, .btn-primary:focus {
+    background-color: #1c3173;
+    @include background-image(linear-gradient(color-stops(#304994, #1c3173)) )  ;
+    @include box-shadow(inset 1px 1px 0 #3957b0);
+    border: 1px solid #1e2b51;
+    @include transition(none);
+    background-position: top;
+    overflow:hidden;
+    max-width:30px !important;
+  }
+  .btn-primary:hover {
+    color: #fff !important;
+  }
 }
 
 #home-link{

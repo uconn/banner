@@ -40,7 +40,7 @@
 
     &:link, &:visited{
       color: #868695;
-      font-family: $secondary-font;
+      font-family: $secondary-font, $fallback-fonts;
       text-transform:uppercase;
       letter-spacing: 1px;
       margin-bottom: 5px;     
