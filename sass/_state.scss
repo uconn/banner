@@ -1,0 +1,55 @@
+
+/**
+ * Breakpoint definitions
+ */
+$bootstrap-break: 767px;
+$medium: 500px;
+
+
+
+/**
+ * Fix the stupid padding on the body at this breakpoint
+ */
+body {
+    @media (max-width: $bootstrap-break) { padding:0px;}
+}
+
+/**
+ * At 767px the .span* classes display as a blocks. This positions the 
+ * icons absolutely on the page.
+ */
+#uconn-header-container {
+    .span4 {
+        @media (max-width: $bootstrap-break) {
+            position:absolute;
+            top:0px;
+            right:0px;
+        }        
+    }
+}
+
+#university-of-connecticut {
+    @media (max-width: $medium){
+        display:none;
+    }
+}
+
+#site-header{
+    div.row-fluid {
+        @media (max-width: $medium){
+            display:block; /* Break the flex-box layout */
+        }
+    }
+}
+
+#site-search  {
+    input {
+        @media (max-width:$medium) { 
+            float:none; 
+            display:block;
+            width:95%;
+            margin: 5% auto;
+
+        }    
+    }
+}
