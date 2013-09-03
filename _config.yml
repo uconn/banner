@@ -1,0 +1,6 @@
+name: UConn Banner
+department: University Communications
+department_url: http://communications.uconn.edu/
+markdown: rdiscount
+
+exclude: [README.md, config.rb, .gitignore]
