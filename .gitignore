@@ -7,3 +7,6 @@
 
 # Stupid effin mac
 .DS_Store
+
+# Vagrant
+.vagrant
