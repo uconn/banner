@@ -34,7 +34,7 @@
 
 .button-cell {
   text-align:right;
-  line-height: 55px;  
+  line-height: $banner-height;  
 
 
   .btn-primary, .btn-primary:hover, .btn-primary:visited, .btn-primary:focus {
@@ -54,7 +54,7 @@
 
 #home-link{
   display:table-cell;
-  height: 55px;
+  height: $banner-height;
   vertical-align: middle;  
 
   &:hover {
