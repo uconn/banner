@@ -3,4 +3,10 @@ department: University Communications
 department_url: http://communications.uconn.edu/
 markdown: rdiscount
 
-exclude: [README.md, config.rb, .gitignore]
+exclude: [README.md, config.rb, .gitignore, sass]
+
+# Display Site Search
+search: 1
+
+# Search Type: google|drupal|wordpress
+search_type: drupal
