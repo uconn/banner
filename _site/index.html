@@ -47,10 +47,14 @@
         <h1 id="site-title"><a href="/">UConn Banner</a></h1>        
       </div>
       <div class="span3 search-container">
-        <form class="form-search" id="site-search">
-          <input type="text" class="input-medium" placeholder="Search this site">
-        </form>        
+        
 
+    
+
+    <?php print render( module_invoke('search', 'block_view', 'search') ); ?>     
+
+    
+      
       </div>
     </div>
   </div>

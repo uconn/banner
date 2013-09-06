@@ -1,0 +1,16 @@
+{% if site.search == 1 %}
+
+    {% if site.search_type == 'wordpress' %}
+
+    <?php get_search_form( $echo ); ?>
+
+    {% elsif site.search_type == 'google' %}
+
+    Google
+
+    {% else %}
+
+    <?php print render( module_invoke('search', 'block_view', 'search') ); ?>     
+
+    {% endif %}
+{% endif %}
