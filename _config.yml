@@ -6,7 +6,4 @@ markdown: rdiscount
 exclude: [README.md, config.rb, .gitignore, sass]
 
 # Display Site Search
-search: 1
-
-# Search Type: google|drupal|wordpress
-search_type: drupal
+search: false
