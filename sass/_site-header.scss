@@ -3,8 +3,14 @@
 #site-header{
   padding:30px 0 15px 0;
 
-  div.row-fluid{
-    @include display-flex;
+  .row-fluid{
+    display: table;
+    [class*='span'] {
+      float:none;
+      display: table-cell;
+      vertical-align: middle;
+      margin:auto;
+    }
   }
 }
 #site-title{
@@ -56,13 +62,12 @@
 
 
 .search-container {
-  @include align-self('center');
-  @include justify-content('flex-end')
+  text-align:right;
 }
 
 #site-search {
   margin:0px;
   input{
-    float:right;
+  //  float:right;
   }
 }

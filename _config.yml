@@ -6,4 +6,5 @@ markdown: rdiscount
 exclude: [README.md, config.rb, .gitignore, sass]
 
 # Display Site Search
-search: false
+search: |
+        <input></input><button></button>
