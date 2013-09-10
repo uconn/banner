@@ -36,6 +36,12 @@
   text-align:right;
   line-height: $banner-height;  
 
+  div {
+    width: 35px;
+    height:35px;
+    display: inline-block;
+  }
+
 
   .btn-primary, .btn-primary:hover, .btn-primary:visited, .btn-primary:focus {
     background-color: #1c3173;
@@ -45,10 +51,13 @@
     @include transition(none);
     background-position: top;
     overflow:hidden;
-    max-width:30px !important;
   }
   .btn-primary:hover {
     color: #fff !important;
+  }
+
+  .letter, .dash {
+    font-size: 11px;
   }
 }
 
