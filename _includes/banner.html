@@ -7,24 +7,23 @@
             <span id="university-of-connecticut" class="smoothing">University of Connecticut</span>
           </a>
         </div>
-        <div class="span4">
-          <div id="button-container">
-            <div class="button-row">
-              <div class="button-cell">
-                <div><a class="btn btn-primary btn-block" href="http://uconn.edu/search.php"><i class="icon-search"></i></a></div>
-                <div><a class="btn btn-primary btn-block" href="http://uconn.edu/azindex.php"><span class="letter">A</span><span class="dash">-</span><span class="letter">Z</span></a></div>
-              </div>
-            </div>
+          <div id="button-container" class="span4">
+            <span>
+              <a class="btn btn-primary btn-block" href="http://uconn.edu/search.php"><i class="icon-search"></i>
+              </a>
+            </span>
+            <span>
+              <a class="btn btn-primary btn-block letters" href="http://uconn.edu/azindex.php"><span class="letter">A</span><span class="dash">-</span><span class="letter">Z</span></a>
+            </span>
           </div>
-        </div>
       </div>  
     </div>  
   </div>
   <div class="container" id="site-header">
     <div class="row-fluid">
       <div class="span9">
-        <p id="super-title"><a href="{{ site.department_url }}">{{ site.department }}</a></p>
-        <h1 id="site-title"><a href="/">{{ site.name }}</a></h1>        
+        <p id="super-title"><a href="{{ site.department_url }}" class="smoothing">{{ site.department }}</a></p>
+        <h1 id="site-title" class="smoothing"><a href="/">{{ site.name }}</a></h1>        
       </div>
       <div class="span3 search-container">
         {% if site.search != false %}

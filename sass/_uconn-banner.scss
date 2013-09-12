@@ -6,6 +6,15 @@
   .btn {
     color: #c1e8f8;
   }
+
+  .row-fluid {
+    display: table;
+    & > div {
+      display: table-cell;
+      vertical-align: middle;
+      float:none;
+    }
+  }
 } 
 
 
@@ -31,18 +40,22 @@
   font-weight: bold;
 }
 
-.button-cell {
+#button-container {
   text-align:right;
-  line-height: $banner-height;  
 
-  div {
+  & > span {
     width: 35px;
     height:35px;
     display: inline-block;
     margin:0px 2px;
+    padding:0px;
+    vertical-align: middle;
   }
 
-
+  .btn-block {
+    height:100%;
+    padding:6px 11px;
+  }
   .btn-primary, .btn-primary:hover, .btn-primary:visited, .btn-primary:focus {
     background-color: #1c3173;
     @include background-image(linear-gradient(color-stops(#304994, #1c3173)) )  ;
@@ -56,8 +69,14 @@
     color: #fff !important;
   }
 
-  .letter, .dash {
+  /**
+   * Styles specific to A-Z "icon"
+   */
+  .letters {
     font-size: 11px;
+    display:inline-block;
+    word-wrap: nowrap;
+    padding: 7px 3px;
   }
 }
 
