@@ -2,8 +2,9 @@
 /**
  * Breakpoint definitions
  */
-$bootstrap-break: 767px;
-$medium: 500px;
+$first: 980px;
+$second: 767px;
+$third: 500px;
 
 
 
@@ -11,7 +12,7 @@ $medium: 500px;
  * Fix the stupid padding on the body at this breakpoint
  */
 body {
-    @media (max-width: $bootstrap-break) { padding:0px;}
+    @media (max-width: $second) { padding:0px;}
 }
 
 /**
@@ -19,37 +20,58 @@ body {
  * icons absolutely on the page.
  */
 #uconn-header-container {
-    .span4 {
-        @media (max-width: $bootstrap-break) {
-            position:absolute;
-            top:0px;
-            right:0px;
-        }        
+    .row-fluid {
+        .span4{
+            @media (max-width: $second) {
+                position: absolute;
+                top: 12.5px;
+                right: 12.5px;
+            }             
+        }
+      
     }
 }
 
 #university-of-connecticut {
-    @media (max-width: $medium){
+    @media (max-width: $third){
         display:none;
     }
 }
 
 #site-header{
     div.row-fluid {
-        @media (max-width: $medium){
+        @media (max-width: $third){
             display:block; /* Break the flex-box layout */
         }
     }
 }
 
-#site-search  {
-    input {
-        @media (max-width:$medium) { 
-            float:none; 
-            display:block;
-            width:95%;
-            margin: 5% auto;
+#site-header #search-container  {
+    @media (max-width:$third) { 
+        display: block;
+        float: none;
+        margin: 1.5em 0;
+        width: 100%;
+        text-align: center;
+        @include box-sizing(border-box);
 
-        }    
+        form {
+            margin: 0px;
+        }
+
+
+        input {
+            float:none; 
+            display:inline-block;
+            width:75%;
+            margin:0px;
+        }   
+
+        button {
+            margin:0px;
+            display: inline-block;
+            width: 20%;
+        } 
+
     }
 }

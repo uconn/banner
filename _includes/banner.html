@@ -21,11 +21,11 @@
   </div>
   <div class="container" id="site-header">
     <div class="row-fluid">
-      <div class="span9">
+      <div class="span8">
         <p id="super-title"><a href="{{ site.department_url }}" class="smoothing">{{ site.department }}</a></p>
         <h1 id="site-title" class="smoothing"><a href="/">{{ site.name }}</a></h1>        
       </div>
-      <div class="span3 search-container">
+      <div id="search-container" class="span4">
         {% if site.search != false %}
           {{ site.search }}
         {% endif %}      

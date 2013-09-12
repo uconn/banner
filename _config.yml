@@ -7,4 +7,7 @@ exclude: [README.md, config.rb, .gitignore, sass]
 
 # Display Site Search
 search: |
-        <input type="text" class="input-medium"><button class="btn">Search</button>
+        <form class="form-search">
+            <input type="text" class="input-medium" placeholder="Search this site...">
+            <button type="submit" class="btn">Search</button>
+        </form>
