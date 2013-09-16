@@ -1,4 +1,3 @@
-
 ![Screenshot](http://brand.uconn.edu/sites/default/files/web-page-content-align.png)
 
 
@@ -24,7 +23,7 @@ How to use it:
 
 There are a number of ways to use this code. Here are two:
 
-1. *Basic* - You can [download the latest zip file](https://github.com/uconn/banner/archive/master.zip) and use the assets in the "_sites" directory to start building your website.
+1. *Basic* - You can [download the latest zip file](https://github.com/uconn/banner/archive/master.zip) and use the assets in the "_site" directory to start building your website.
 2. *Advanced* - Clone/download this repo and use [Jekyll](http://jekyllrb.com/) and [Compass](http://compass-style.org/) to build your entire website.
 
 ```bash
