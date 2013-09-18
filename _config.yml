@@ -11,3 +11,8 @@ search: |
             <input type="text" class="input-medium" placeholder="Search this site...">
             <button type="submit" class="btn">Search</button>
         </form>
+
+
+# Server settings
+port:        4000
+baseurl:     /
