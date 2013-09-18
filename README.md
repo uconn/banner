@@ -32,5 +32,5 @@ There are a number of ways to use this code. Here are two:
 	compass watch &
 	jekyll serve --watch
 ```
-
+Open up http://localhost:4000/ in your web browser to view your changes.
 
