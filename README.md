@@ -30,7 +30,7 @@ There are a number of ways to use this code. Here are just a few:
 
 1. *HTML* - You can [download the latest zip file](https://github.com/uconn/banner/archive/master.zip) and use the assets in the "_site" directory to start building your website.
 2. *PHP* - [Use php-liquid to embed the banner in your page](https://github.com/uconn/banner/wiki/Banner-rendering-with-PHP).
-3. *Jekyll* - Clone/download this repo and use [Jekyll](http://jekyllrb.com/) and [Compass](http://compass-style.org/) to build your entire website.
+3. *Jekyll* - Clone/download this repo and use [Jekyll](http://jekyllrb.com/) and [Compass](http://compass-style.org/) to customize your build.
 
 ```bash
 	git clone https://github.com/uconn/banner.git
