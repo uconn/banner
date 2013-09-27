@@ -13,6 +13,14 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  #site-header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
 #site-title{
     margin:0px;
     padding:0px;
