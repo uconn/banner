@@ -17,7 +17,13 @@
   }
 } 
 
-
+@media (max-width: 767px) {
+  #uconn-header-container {
+    #home-link-container {
+      padding-left: 10px;
+    }
+  }
+}
 
 #wordmark{
   color: #fff;
