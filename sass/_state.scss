@@ -28,7 +28,12 @@ body {
                 right: 12.5px;
             }             
         }
-      
+    }
+
+    @media (max-width:$second) {
+        #home-link-container {
+            padding-left: 10px;
+        }
     }
 }
 
@@ -38,40 +43,45 @@ body {
     }
 }
 
-#site-header{
+#site-header {
+    @media (max-width:$second) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
     div.row-fluid {
         @media (max-width: $third){
             display:block; /* Break the flex-box layout */
         }
     }
-}
 
-#site-header #search-container  {
-    @media (max-width:$third) { 
-        display: block;
-        float: none;
-        margin: 1.5em 0;
-        width: 100%;
-        text-align: center;
-        @include box-sizing(border-box);
+    #search-container  {
+        @media (max-width:$third) { 
+            display: block;
+            float: none;
+            margin: 1.5em 0;
+            width: 100%;
+            text-align: center;
+            @include box-sizing(border-box);
 
-        form {
-            margin: 0px;
+            form {
+                margin: 0px;
+            }
+
+
+            input {
+                float:none; 
+                display:inline-block;
+                width:75%;
+                margin:0px;
+            }   
+
+            button {
+                margin:0px;
+                display: inline-block;
+                width: 20%;
+            } 
+
         }
-
-
-        input {
-            float:none; 
-            display:inline-block;
-            width:75%;
-            margin:0px;
-        }   
-
-        button {
-            margin:0px;
-            display: inline-block;
-            width: 20%;
-        } 
-
     }
 }
