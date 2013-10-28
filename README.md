@@ -1,4 +1,5 @@
-uconn-banner-wp
+UConn Banner
 ===============
 
-UConn site banner for Wordpress
+Download zip
+
