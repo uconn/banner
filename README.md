@@ -9,12 +9,11 @@ Inserts the UConn header branding at the top of your Wordpress site.
 
 ## Installation
 
-1. Copy the `plugin-name` directory into your `wp-content/plugins` directory
+1. Copy the `uconn-banner-wp` directory into your `wp-content/plugins` directory
 2. Navigate to the *Plugins* dashboard page
 3. Locate the menu item that reads *TODO*
 4. Click on *Activate*
-
-This will activate the WordPress Plugin Boilerplate. Because the Boilerplate has no real functionality, nothing will be added to WordPress; however, this demonstrates exactly how your plugin should behave while you're working with it.
+5. Place the action `<?php do_action('uconn_banner'); ?>` into your theme's header.php file after the opening body tag.
 
 ## Recommended Tools
 
@@ -29,28 +28,9 @@ there are tools that are recommended for providing correct, translatable files:
 
 Any of the above tools should provide you with the proper tooling to localize the plugin.
 
-### GitHub Updater
-
-The WordPress Plugin Boilerplate includes native support for the [GitHub Updater](https://github.com/afragen/github-updater) which allows you to provide updates to your WordPress plugin from GitHub.
-
-This uses a new tag in the plugin header:
-
->  `* GitHub Plugin URI: https://github.com/<owner>/<repo>`
-
-Here's how to take advantage of this feature:
-
-1. Install the [GitHub Updater](https://github.com/afragen/github-updater)
-2. Replace `<owner>` with your username and `<repo>` with the repository of your plugin
-3. Push commits to the master branch
-4. Enjoy your plugin being updated in the WordPress dashboard
-
-The current version of the GitHub Updater supports tags/branches - whichever has the highest number. It also supports different branches using the `GitHub Branch:` header. All that info is in [the project](https://github.com/afragen/github-updater)
-
-In future versions, there will be steps to specify branches or tags rather than the `master` branch.
-
 ## License
 
-The WordPress Plugin Boilerplate is licensed under the GPL v2 or later.
+The UConn Banner Plugin is licensed under the GPL v2 or later.
 
 > This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as
@@ -66,6 +46,13 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 ## Important Notes
+
+This plugin requires submodules:
+
+1. [PHP-Liquid](https://github.com/harrydeluxe/php-liquid.git)
+2. [UConn-Banner](https://github.com/uconn/banner.git)
+
+Use the command `git clone --recursive git://github.com/uconn/uconn-banner-wp.git` to clone the repo and its submodules.
 
 ### Licensing
 

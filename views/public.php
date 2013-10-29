@@ -11,6 +11,26 @@
  * @link      http://uconn.edu
  * @copyright 2013 University of Connecticut
  */
-?>
 
-<!-- This file is used to markup the public facing aspect of the plugin. -->
+if(!class_exists('Liquid')) {
+
+	define('BASE_PATH', dirname(__FILE__).'/../');
+
+	require_once( BASE_PATH . 'php-liquid/Liquid.class.php' );
+
+	$merge = array(
+	    'site' => array(
+	        'name' => 'Office of Awesome',
+	        'department' => 'Department of Amazing',
+	        'department_url' => 'http://awesome.uconn.edu/',
+	        'show_header' => true
+	    )
+	);
+
+	$liquid = new LiquidTemplate();
+
+	echo $liquid->parse(file_get_contents(BASE_PATH.'banner/_includes/banner.html'))->render($merge);
+
+}
+
+?>

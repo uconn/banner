@@ -75,11 +75,10 @@ class UConn_Banner {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
-		/* Define custom functionality.
-		 * Refer To http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
-		 */
-		add_action( 'TODO', array( $this, 'action_method_name' ) );
-		add_filter( 'TODO', array( $this, 'filter_method_name' ) );
+		add_action( 'wp_head' , array( $this, 'uconn_banner_head' ) );
+		add_action( 'uconn_banner', array( $this, 'uconn_banner_html' ) );
+
+		//add_filter( 'TODO', array( $this, 'filter_method_name' ) );
 
 	}
 
@@ -267,7 +266,17 @@ class UConn_Banner {
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
-		wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'css/public.css', __FILE__ ), array(), self::VERSION );
+
+	  	wp_enqueue_style( $this->plugin_slug . '-bootstrap-styles', '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css', array(), self::VERSION );
+  		wp_enqueue_style( $this->plugin_slug . '-fontawesome-styles', '//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css', array(), self::VERSION );
+		
+		// add IE7 conditional
+  		wp_register_style( 'fontawesome-ie7', '//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css' );
+	    $GLOBALS['wp_styles']->add_data( 'fontawesome-ie7', 'conditional', 'IE 7' );
+	    wp_enqueue_style( 'fontawesome-ie7' );
+
+		wp_enqueue_style( $this->plugin_slug . '-banner-styles', '//brand.universityofconn.netdna-cdn.com/banner/banner.css', array(), self::VERSION );
+		
 	}
 
 	/**
@@ -276,7 +285,9 @@ class UConn_Banner {
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
-		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/public.js', __FILE__ ), array( 'jquery' ), self::VERSION );
+
+		//wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/public.js', __FILE__ ), array( 'jquery' ), self::VERSION );
+	
 	}
 
 	/**
@@ -288,21 +299,21 @@ class UConn_Banner {
 	 *
 	 * @since    1.0.0
 	 */
-	public function action_method_name() {
-		// TODO: Define your action hook callback here
+	public function uconn_banner_html() {
+
+		include('views/public.php');
+	
 	}
 
 	/**
-	 * NOTE:  Filters are points of execution in which WordPress modifies data
-	 *        before saving it or sending it to the browser.
-	 *
-	 *        Filters: http://codex.wordpress.org/Plugin_API#Filters
-	 *        Reference:  http://codex.wordpress.org/Plugin_API/Filter_Reference
+	 * Adds extra html to the header of the page
 	 *
 	 * @since    1.0.0
 	 */
-	public function filter_method_name() {
-		// TODO: Define your filter hook callback here
+	public function uconn_banner_head() {
+
+		include('views/public_husky-logo.php');
+
 	}
 
 }
