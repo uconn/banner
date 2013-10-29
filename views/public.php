@@ -20,9 +20,9 @@ if(!class_exists('Liquid')) {
 
 	$merge = array(
 	    'site' => array(
-	        'name' => 'Office of Awesome',
-	        'department' => 'Department of Amazing',
-	        'department_url' => 'http://awesome.uconn.edu/',
+	        'name' => get_bloginfo('name'),
+	        'department' => get_bloginfo('description'),
+	        'department_url' => get_bloginfo('url'),
 	        'show_header' => true
 	    )
 	);
