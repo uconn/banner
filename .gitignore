@@ -10,3 +10,6 @@
 
 # Vagrant
 .vagrant
+
+# Node Modules
+node_modules

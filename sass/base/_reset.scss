@@ -1,0 +1,6 @@
+/**
+ * Import normalize.scss, but namespaced.
+ */
+#{$namespace} {
+    @import "normalize";
+}

@@ -1,24 +1,36 @@
 /* Compass extensions */
 @import "compass/css3";
 
-/* Global Configuration/variables */
-@import "config";
 
-/* Better flexbox support via https://github.com/timhettler/compass-flexbox */
-//@import "flexbox"; 
+/* Base */
+@import "base/config";
+@import "base/utility";
+@import "base/reset";
+@import "base/links"; 
+
 
 /* Import the webfonts */
-@import "fonts";
+@import "fonts/uconn";
+@import "fonts/proxima-nova";
+@import "fonts/icons";
 
-/* The blue banner and right-justified icons */
-@import "uconn-banner";
-
-/* Title of site and local search box */
-@import "site-header";
-
-/* State - Starting to implement SMACSS */
-@import "state";
+/* Layout */
+@import "layout/layout";
+@import "layout/banner";
+@import "layout/header";
 
 
-/* IE7 Styles */
-@import "ie7";
+/* Module */
+@import "module/wordmark";
+@import "module/buttons";
+@import "module/title";
+@import "module/search";
+
+
+/* State */
+@import "state/ie7";
+
+
+/* Theme? */
+/* ... */
+

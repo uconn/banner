@@ -12,7 +12,7 @@ department_url: http://communications.uconn.edu/
 show_header: true
 
 # Files/folders to exclude from the Jekyll build
-exclude: [README.md, config.rb, .gitignore, sass]
+exclude: [README.md, config.rb, .gitignore, sass, node_modules]
 
 # Edit <form> markup to match your site search code.
 # Or, set to 'search: false' to disable the search form altogether. 
