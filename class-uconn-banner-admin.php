@@ -52,17 +52,13 @@ class UConn_Banner_Admin {
 		/*
 		 * Call $plugin_slug from public plugin class.
 		 *
-		 * TODO:
-		 *
-		 * - Rename "UConn_Banner" to the name of your initial plugin class
-		 *
 		 */
 		$plugin = UConn_Banner::get_instance();
 		$this->plugin_slug = $plugin->get_plugin_slug();
 
 		// Load admin style sheet and JavaScript.
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
+		//add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
+		//add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
 
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
@@ -71,15 +67,27 @@ class UConn_Banner_Admin {
 		$plugin_basename = plugin_basename( plugin_dir_path( __FILE__ ) . $this->plugin_slug . '.php' );
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
 
+		add_action( 'admin_init', array( $this, 'register_settings' ) );
+
 		/*
 		 * Define custom functionality.
 		 *
 		 * Read more about actions and filters:
 		 * http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
 		 */
-		add_action( 'TODO', array( $this, 'action_method_name' ) );
-		add_filter( 'TODO', array( $this, 'filter_method_name' ) );
+		//add_action( 'TODO', array( $this, 'action_method_name' ) );
+		//add_filter( 'TODO', array( $this, 'filter_method_name' ) );
 
+	}
+
+	public function register_settings() {
+		register_setting( 'uconnbanner-group', 'uconnbanner_options', array( $this, 'uconnbanner_options_validate') ); 
+	}
+
+	public function uconnbanner_options_validate($input) {
+		$input['display_page_header'] = ($input['display_page_header'] == 1) ? true : false;
+
+		return $input;
 	}
 
 	/**
@@ -162,15 +170,12 @@ class UConn_Banner_Admin {
 		 *        Administration Menus: http://codex.wordpress.org/Administration_Menus
 		 *
 		 * TODO:
-		 *
-		 * - Change 'Page Title' to the title of your plugin admin page
-		 * - Change 'Menu Text' to the text for menu item for the plugin settings page
 		 * - Change 'manage_options' to the capability you see fit
 		 *   For reference: http://codex.wordpress.org/Roles_and_Capabilities
 		 */
 		$this->plugin_screen_hook_suffix = add_options_page(
-			__( 'Page Title', $this->plugin_slug ),
-			__( 'Menu Text', $this->plugin_slug ),
+			__( 'UConn Banner Settings', $this->plugin_slug ),
+			__( 'UConn Banner', $this->plugin_slug ),
 			'manage_options',
 			$this->plugin_slug,
 			array( $this, 'display_plugin_admin_page' )

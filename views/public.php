@@ -18,12 +18,14 @@ if(!class_exists('Liquid')) {
 
 	require_once( BASE_PATH . 'php-liquid/Liquid.class.php' );
 
+	$options = get_option('uconnbanner_options');
+
 	$merge = array(
 	    'site' => array(
 	        'name' => get_bloginfo('name'),
 	        'department' => get_bloginfo('description'),
 	        'department_url' => get_bloginfo('url'),
-	        'show_header' => true
+	        'show_header' => $options['display_page_header']
 	    )
 	);
 
