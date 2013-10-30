@@ -30,8 +30,8 @@
 				<li>
 					<h3>Display Page Header</h3>
 					<select id="display_page_header" name="uconnbanner_options[display_page_header]">
-						<option value="0" <?php selected(false, $options['display_page_header']); ?>>No</option>
 						<option value="1" <?php selected(true, $options['display_page_header']); ?>>Yes</option>
+						<option value="0" <?php selected(false, $options['display_page_header']); ?>>No</option>
 					</select>
 				</li>
 			</ul>
