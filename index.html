@@ -9,14 +9,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
-
-  <!-- Le styles -->
-  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-  <!--[if IE 7]>
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css">
-  <![endif]-->  
+ 
   <link href="banner.css" rel="stylesheet">
+
+  <style>
+  /**
+   * The banner assumes a margin of 0px, but is not included
+   * in banner.css to avoid collisions with other themes and 
+   * admin bars.
+   */
+  body {
+    margin:0px;
+  }
+  </style>
 
   <!-- REPLACE THIS WITH YOUR CUSTOM BUILD OF MODERNIZR -->
   <script src="//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js"></script>
@@ -24,22 +29,23 @@
 </head>
 
 <body>
+<div id="uconn-banner">
   <div id="uconn-header-container">
     <div class="container">
       <div class="row-fluid">
         <div id="home-link-container" class="span8">
           <a id="home-link" href="http://uconn.edu/">
-            <span id="wordmark" class="smoothing">UCONN</span>
-            <span id="university-of-connecticut" class="smoothing">University of Connecticut</span>
+            <span id="wordmark">UCONN</span>
+            <span id="university-of-connecticut">UNIVERSITY OF CONNECTICUT</span>
           </a>
         </div>
           <div id="button-container" class="span4">
             <span>
-              <a class="btn btn-primary btn-block" href="http://uconn.edu/search.php"><i class="icon-search"></i>
+              <a class="btn" href="http://uconn.edu/search.php"><i class="icon-search"></i>
               </a>
             </span>
             <span>
-              <a class="btn btn-primary btn-block letters" href="http://uconn.edu/azindex.php"><span class="letter">A</span><span class="dash">-</span><span class="letter">Z</span></a>
+              <a class="btn" href="http://uconn.edu/azindex.php"><i class="icon-a-z"></i></a>
             </span>
           </div>
       </div>  
@@ -49,8 +55,8 @@
   <div class="container" id="site-header">
     <div class="row-fluid">
       <div class="span8">
-        <p id="super-title"><a href="http://communications.uconn.edu/" class="smoothing">University Communications</a></p>
-        <h1 id="site-title" class="smoothing"><a href="/">UConn Banner</a></h1>        
+        <p id="super-title"><a href="http://communications.uconn.edu/">University Communications</a></p>
+        <h1 id="site-title"><a href="/">UConn Banner</a></h1>        
       </div>
       <div id="search-container" class="span4">
         
@@ -64,5 +70,6 @@
     </div>
   </div>
 
+</div>
 </body>
 </html>
