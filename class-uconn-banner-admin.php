@@ -56,10 +56,6 @@ class UConn_Banner_Admin {
 		$plugin = UConn_Banner::get_instance();
 		$this->plugin_slug = $plugin->get_plugin_slug();
 
-		// Load admin style sheet and JavaScript.
-		//add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
-		//add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
-
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
 
@@ -69,22 +65,28 @@ class UConn_Banner_Admin {
 
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 
-		/*
-		 * Define custom functionality.
-		 *
-		 * Read more about actions and filters:
-		 * http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
-		 */
-		//add_action( 'TODO', array( $this, 'action_method_name' ) );
-		//add_filter( 'TODO', array( $this, 'filter_method_name' ) );
-
 	}
 
+	/**
+	 * Register the plugin's settings with the Wordpress core
+	 *
+	 * @since     1.0.0
+	 *
+	 * @return    void    No return value.
+	 */
 	public function register_settings() {
-		register_setting( 'uconnbanner-group', 'uconnbanner_options', array( $this, 'uconnbanner_options_validate') ); 
+		register_setting( 'uconnbanner-group', 'uconnbanner_options', array( $this, 'uconnbanner_options_validate') );
 	}
 
+	/**
+	 * Validate the options inputs.
+	 *
+	 * @since     1.0.0
+	 *
+	 * @return    array    An array of validated options.
+	 */
 	public function uconnbanner_options_validate($input) {
+
 		$input['display_page_header'] = ($input['display_page_header'] == 1) ? true : false;
 
 		return $input;
@@ -109,10 +111,6 @@ class UConn_Banner_Admin {
 
 	/**
 	 * Register and enqueue admin-specific style sheet.
-	 * 
-	 * TODO:
-	 *
-	 * - Rename "UConn_Banner" to the name your plugin
 	 *
 	 * @since     1.0.0
 	 *
@@ -133,10 +131,6 @@ class UConn_Banner_Admin {
 
 	/**
 	 * Register and enqueue admin-specific JavaScript.
-	 * 
-	 * TODO:
-	 *
-	 * - Rename "UConn_Banner" to the name your plugin
 	 *
 	 * @since     1.0.0
 	 *
@@ -169,8 +163,6 @@ class UConn_Banner_Admin {
 		 *
 		 *        Administration Menus: http://codex.wordpress.org/Administration_Menus
 		 *
-		 * TODO:
-		 * - Change 'manage_options' to the capability you see fit
 		 *   For reference: http://codex.wordpress.org/Roles_and_Capabilities
 		 */
 		$this->plugin_screen_hook_suffix = add_options_page(
@@ -206,32 +198,6 @@ class UConn_Banner_Admin {
 			$links
 		);
 
-	}
-
-	/**
-	 * NOTE:     Actions are points in the execution of a page or process
-	 *           lifecycle that WordPress fires.
-	 *
-	 *           Actions:    http://codex.wordpress.org/Plugin_API#Actions
-	 *           Reference:  http://codex.wordpress.org/Plugin_API/Action_Reference
-	 *
-	 * @since    1.0.0
-	 */
-	public function action_method_name() {
-		// TODO: Define your action hook callback here
-	}
-
-	/**
-	 * NOTE:     Filters are points of execution in which WordPress modifies data
-	 *           before saving it or sending it to the browser.
-	 *
-	 *           Filters: http://codex.wordpress.org/Plugin_API#Filters
-	 *           Reference:  http://codex.wordpress.org/Plugin_API/Filter_Reference
-	 *
-	 * @since    1.0.0
-	 */
-	public function filter_method_name() {
-		// TODO: Define your filter hook callback here
 	}
 
 }

@@ -10,14 +10,6 @@
  */
 
 /**
- * Plugin class. This class should ideally be used to work with the
- * public-facing side of the WordPress site.
- *
- * If you're interested in introducing administrative or dashboard
- * functionality, then refer to `class-uconn-banner-admin.php`
- *
- * TODO: Rename this class to a proper name for your plugin.
- *
  * @package UConn_Banner
  * @author  Joseph Thibeault <joseph.thibeault@uconn.edu>
  */
@@ -33,7 +25,6 @@ class UConn_Banner {
 	const VERSION = '1.0.0';
 
 	/**
-	 * TODO - Rename "uconn-banner" to the name your your plugin
 	 *
 	 * Unique identifier for your plugin.
 	 *
@@ -75,10 +66,11 @@ class UConn_Banner {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
+		// Add comments to header
 		add_action( 'wp_head' , array( $this, 'uconn_banner_head' ) );
-		add_action( 'uconn_banner', array( $this, 'uconn_banner_html' ) );
 
-		//add_filter( 'TODO', array( $this, 'filter_method_name' ) );
+		// Add action for adding HTML to header
+		add_action( 'uconn_banner', array( $this, 'uconn_banner_html' ) );
 
 	}
 
