@@ -1,6 +1,6 @@
-[submodule "vendor/uconn-banner-wp"]
-	path = vendor/uconn-banner-wp
-	url = https://github.com/uconn/uconn-banner-wp.git
 [submodule "vendor/php-liquid"]
 	path = vendor/php-liquid
 	url = https://github.com/harrydeluxe/php-liquid.git
+[submodule "vendor/banner"]
+	path = vendor/banner
+	url = https://github.com/uconn/banner.git
