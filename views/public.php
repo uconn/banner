@@ -14,7 +14,7 @@
 
 if(!class_exists('Liquid')) {
 
-	define('BASE_PATH', dirname(__FILE__).'/../');
+	define('BASE_PATH', dirname(__FILE__).'/../vendor/');
 
 	require_once( BASE_PATH . 'php-liquid/Liquid.class.php' );
 
@@ -31,7 +31,7 @@ if(!class_exists('Liquid')) {
 
 	$liquid = new LiquidTemplate();
 
-	echo $liquid->parse(file_get_contents(BASE_PATH.'banner/_includes/banner.html'))->render($merge);
+	echo $liquid->parse(file_get_contents(BASE_PATH.'vendor/banner/_includes/banner.html'))->render($merge);
 
 }
 
