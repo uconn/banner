@@ -16,9 +16,9 @@
  * Plugin URI:        http://brand.uconn.edu
  * Description:       Adds the UConn Banner to the header of your Wordpress site
  * Version:           1.0.0
- * Author:            Joseph Thibeault
+ * Author:            University of Connecticut
  * Author URI:        http://uconn.edu
- * Text Domain:       plugin-name-locale
+ * Text Domain:       US-EN
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages
