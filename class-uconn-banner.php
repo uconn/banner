@@ -268,7 +268,7 @@ class UConn_Banner {
 	    //wp_enqueue_style( 'fontawesome-ie7' );
 
 		//wp_enqueue_style( $this->plugin_slug . '-banner-styles', '//brand.universityofconn.netdna-cdn.com/banner/banner.css', array(), self::VERSION );
-		wp_enqueue_style( $this->plugin_slug . '-banner-styles', '//raw.github.com/uconn/banner/without-bootstrap/_site/banner.css', array(), self::VERSION );
+		wp_enqueue_style( $this->plugin_slug . '-banner-styles', '/wp-content/plugins/uconn-banner-wp/vendor/banner/_site/banner.css', array(), self::VERSION );
 
 	}
 
