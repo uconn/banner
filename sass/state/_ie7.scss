@@ -1,91 +1,31 @@
 /**
- * Simple mixin to restore the divs to bootstrap defaults
+ * In general, our strategy for IE7 is to utilize floats... ugh.
  */
-@mixin float-restore {
-    display: block;
-    float: left;    
-}
-
-
-
-
 
 .ie7, .lt-ie8 {
 
-    #uconn-header-container {
-        min-height: 60px;
-        line-height: 60px;
+    #{$namespace} {
 
-        /**
-         * Couldn't figure out how to display the border properly in IE. Just removed it.
-         * Maybe we can come back to this at some point.
-         */
-        #university-of-connecticut {
-            border: none;
-        }
-        
-        /**
-         * I got happy with display: table-cell in previous CSS, so we 
-         * need to restore the original layout here.
-         */
         .row-fluid {
             & > div {
-                @include float-restore;
+                display: block;
+                float:left;
             }
-        }  
-
-
-        /**
-         * The buttons look awful in IE7. The following adjustments fix (sort-of) the layout and display
-         * of the buttons.
-         */
-        #button-container  {
-
-            /**
-             * (Banner height - button height) / 2
-             * or (60px - 35px) / 2
-             */
-            margin-top: 12.5px;
-
-
-            /**
-             * Faux inline-block for IE
-             */
-            span {
-                zoom: 1;
-                *display: inline;
-            }
-
-            /**
-             * We're hardcoding the height and width at 35px. Padding isn't necessary.
-             */
-            .btn-block {
-                padding:0px;
-            }
-
-            /**
-             * Center the icon and text within the confines of the button
-             */
-            .btn, .btn i {
-                line-height: 35px;
-                margin:0px;
-            }
-
         }
+    }
 
+    #button-container {
+        height: ($banner-height)-($button-padding) !important;
     }
 
     /**
-     * The white area below the blue UConn banner
+     * Polyfill for icons on IE7 and below
      */
-    #site-header {
-
-        .row-fluid {
-            display: block;
-            & > div {
-                @include float-restore;
-            }
-        }
-    }    
+    .icon-a-z {
+        *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe600;');
+    }
+    .icon-search {
+        *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe601;');
+    }
 
 } 

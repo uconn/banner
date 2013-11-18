@@ -2,19 +2,19 @@
   <div id="uconn-header-container">
     <div class="container">
       <div class="row-fluid">
-        <div id="home-link-container" class="span8">
+        <div id="home-link-container">
           <a id="home-link" href="http://uconn.edu/">
             <span id="wordmark">UCONN</span>
             <span id="university-of-connecticut">UNIVERSITY OF CONNECTICUT</span>
           </a>
         </div>
-          <div id="button-container" class="span4">
+          <div id="button-container">
             <span>
-              <a class="btn" href="http://uconn.edu/search.php"><i class="icon-search"></i>
+              <a class="btn" href="http://uconn.edu/search.php" title="Search"><i class="icon-search"></i>
               </a>
             </span>
             <span>
-              <a class="btn" href="http://uconn.edu/azindex.php"><i class="icon-a-z"></i></a>
+              <a class="btn" href="http://uconn.edu/azindex.php" title="AZ Index"><i class="icon-a-z"></i></a>
             </span>
           </div>
       </div>  
@@ -23,11 +23,11 @@
 {% if site.show_header != false %}
   <div class="container" id="site-header">
     <div class="row-fluid">
-      <div class="span8">
+      <div>
         <p id="super-title"><a href="{{ site.department_url }}">{{ site.department }}</a></p>
         <h1 id="site-title"><a href="/">{{ site.name }}</a></h1>        
       </div>
-      <div id="search-container" class="span4">
+      <div id="search-container">
         {% if site.search != false %}
           {{ site.search }}
         {% endif %}      

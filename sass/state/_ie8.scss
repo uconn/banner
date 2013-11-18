@@ -1,0 +1,36 @@
+.lt-ie9 {
+
+    #{$namespace} {
+
+        .row-fluid {
+            white-space: nowrap;
+
+            /**
+             * IE doesn't support a table layout. Switch to faux inline-block
+             */
+            & > div {
+                @include box-sizing(border-box);
+                display:inline-block;
+            }
+        } 
+    }
+
+    /**
+     * Since we aren't doing a table display, we need to explicitly
+     * set the widths for IE
+     */
+     #button-container{
+        width: 40%;
+
+        /**
+         * (Banner height - button height) / 2
+         * or (60px - 35px) / 2
+         */
+        padding-top: $button-padding
+     }
+
+    #home-link-container{
+        line-height: $banner-height;
+    }
+
+}
