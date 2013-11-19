@@ -41,3 +41,7 @@ There are a number of ways to use this code. Here are just a few:
 ```
 Open up [http://localhost:4000/](http://localhost:4000/) in your web browser to view your changes.
 
+
+___
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/uconn/banner/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
