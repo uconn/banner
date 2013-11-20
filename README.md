@@ -17,7 +17,6 @@ Anyone building a new *.uconn.edu website that won't be hosting on the Aurora pl
 * **Retina/HiDPI-ready** - Crisp/clean display on HiDPI devices, including Apple's Retina products.
 
 ## Requirements
-Although the banner strives to be modular, it currently relies on grid classes from Bootstrap (2.3.x) and icons from FontAwesome. Please be sure to include Bootstrap and FontAwesome in your site before using this banner. We recommend using BootstrapCDN to meet both of these requirements. 
 
 * [Conditional HTML Classes for Internet Explorer](http://www.paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/)
 * ~~[BootstrapCDN](http://www.bootstrapcdn.com/#legacy_tab) (2.3.x - legacy)~~\*
@@ -26,7 +25,7 @@ Although the banner strives to be modular, it currently relies on grid classes f
 \* **NOTE:** The latest version of the UConn Banner no longer requires Bootstrap or FontAwesome.
 
 
-## How to use it:
+## Usage:
 There are a number of ways to use this code. Here are just a few:
 
 1. *HTML* - You can [download the latest zip file](https://github.com/uconn/banner/archive/master.zip) and use the assets in the "_site" directory to start building your website.
