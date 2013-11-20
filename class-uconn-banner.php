@@ -259,15 +259,6 @@ class UConn_Banner {
 	 */
 	public function enqueue_styles() {
 
-	  	//wp_enqueue_style( $this->plugin_slug . '-bootstrap-styles', '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css', array(), self::VERSION );
-  		//wp_enqueue_style( $this->plugin_slug . '-fontawesome-styles', '//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css', array(), self::VERSION );
-		
-		// add IE7 conditional
-  		//wp_register_style( 'fontawesome-ie7', '//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css' );
-	    //$GLOBALS['wp_styles']->add_data( 'fontawesome-ie7', 'conditional', 'IE 7' );
-	    //wp_enqueue_style( 'fontawesome-ie7' );
-
-		//wp_enqueue_style( $this->plugin_slug . '-banner-styles', '//brand.universityofconn.netdna-cdn.com/banner/banner.css', array(), self::VERSION );
 		wp_enqueue_style( $this->plugin_slug . '-banner-styles', '/wp-content/plugins/uconn-banner-wp/vendor/banner/_site/banner.css', array(), self::VERSION );
 
 	}
@@ -279,8 +270,6 @@ class UConn_Banner {
 	 */
 	public function enqueue_scripts() {
 
-		//wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/public.js', __FILE__ ), array( 'jquery' ), self::VERSION );
-	
 	}
 
 	/**
