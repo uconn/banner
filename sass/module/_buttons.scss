@@ -18,6 +18,10 @@
       width:100%;
       font-size: $icon-size;
       text-align: center;
+      padding: inherit;
+      text-shadow: none;
+      line-height: normal;
+      vertical-align: auto;
 
       [class*="icon-"] {
         line-height: $btn-size; 
@@ -31,6 +35,7 @@
       @include box-shadow(inset 1px 1px 0 #3957b0);
       border: 1px solid #1e2b51;
       @include transition(none);
+      background-position: 0% 0%;
     }
     .btn:hover {
       color: #fff;
