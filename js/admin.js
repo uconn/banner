@@ -11,7 +11,7 @@
 		$('#uconn-banner-settings').on('submit', function() {
 
 			var url = $("#department_url").val();
-			var title = $("#department").val();
+			var title = $("#department_title").val();
 
 		    if (!validateURL(url)) {
 		        alert("Please enter a valid URL, remember including http://");

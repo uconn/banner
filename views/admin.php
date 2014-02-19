@@ -42,10 +42,10 @@
 
 				<tr valign="top">
 					<th scope="row">
-						<label for="department">Department</label>
+						<label for="department_title">Department</label>
 					</th>
 					<td>
-						<input id="department" value="<?php if(isset($options['department_title'])) echo $options['department_title']; ?>" name="uconnbanner_options[department_title]"/>
+						<input id="department_title" value="<?php if(isset($options['department_title'])) echo $options['department_title']; ?>" name="uconnbanner_options[department_title]"/>
 					</td>
 				</tr>
 
