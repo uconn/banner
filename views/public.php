@@ -23,8 +23,8 @@ if(!class_exists('Liquid')) {
 	$merge = array(
 	    'site' => array(
 	        'name' => get_bloginfo('name'),
-	        'department' => get_bloginfo('description'),
-	        'department_url' => get_bloginfo('url'),
+	        'department' => $options['department_title'],
+	        'department_url' => $options['department_url'],
 	        'show_header' => $options['display_page_header']
 	    )
 	);

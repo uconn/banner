@@ -59,6 +59,9 @@ class UConn_Banner_Admin {
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
 
+		//add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
+
 		// Add an action link pointing to the options page.
 		$plugin_basename = plugin_basename( plugin_dir_path( __FILE__ ) . $this->plugin_slug . '.php' );
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
@@ -88,6 +91,8 @@ class UConn_Banner_Admin {
 	public function uconnbanner_options_validate($input) {
 
 		$input['display_page_header'] = ($input['display_page_header'] == 1) ? true : false;
+		$input['department_title'] = ($input['department_title'] == "") ? "" : $input['department_title'];
+		$input['department_url'] = ($input['department_url'] == "") ? "" : $input['department_url'];
 
 		return $input;
 	}
