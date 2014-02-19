@@ -1,8 +1,6 @@
 (function ( $ ) {
 	"use strict";
 
-	//test
-
 	$(function () {
 
 		// Place your administration-specific JavaScript here
