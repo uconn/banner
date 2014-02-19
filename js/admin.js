@@ -1,6 +1,8 @@
 (function ( $ ) {
 	"use strict";
 
+	// test build
+
 	$(function () {
 
 		// Place your administration-specific JavaScript here
