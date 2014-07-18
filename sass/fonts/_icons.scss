@@ -9,23 +9,26 @@
     font-style: normal;
 }
 
-[class*="icon-"] {
-    font-family: 'icons';
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
+#{$namespace} {
 
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+    [class*="icon-"] {
+        font-family: 'icons';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
 
-.icon-a-z:before {
-    content: "\e600";
-}
-.icon-search:before {
-    content: "\e601";
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .icon-a-z:before {
+        content: "\e600";
+    }
+    .icon-search:before {
+        content: "\e601";
+    }
 }
