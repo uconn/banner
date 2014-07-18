@@ -258,8 +258,8 @@ class UConn_Banner {
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
-
-		wp_enqueue_style( $this->plugin_slug . '-banner-styles', '/wp-content/plugins/uconn-banner-wp/vendor/banner/_site/banner.css', array(), self::VERSION );
+		$css_url = plugins_url( 'vendor/banner/_site/banner.css', __FILE__ );
+		wp_enqueue_style( $this->plugin_slug . '-banner-styles', $css_url, array(), self::VERSION );
 
 	}
 
@@ -284,7 +284,7 @@ class UConn_Banner {
 	public function uconn_banner_html() {
 
 		include('views/public.php');
-	
+
 	}
 
 	/**
