@@ -2,6 +2,8 @@
 
 
 # UConn Banner
+
+[![Join the chat at https://gitter.im/uconn/banner](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/uconn/banner?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 A (UConn brand) standards-compliant implementation of the University's web banner. 
 
 
