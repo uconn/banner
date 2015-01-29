@@ -44,3 +44,4 @@ Open up [http://localhost:4000/](http://localhost:4000/) in your web browser to 
 ___
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/uconn/banner/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Join the chat at https://gitter.im/uconn/banner](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/uconn/banner?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
