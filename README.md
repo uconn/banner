@@ -1,4 +1,4 @@
-![Screenshot](http://brand.uconn.edu/sites/default/files/web-page-content-align.png)
+![Screenshot](http://brand.uconn.edu/wp-content/uploads/sites/1060/2015/01/web-page-content-align.jpg)
 
 
 # UConn Banner
@@ -19,10 +19,6 @@ Anyone building a new *.uconn.edu website that won't be hosting on the Aurora pl
 ## Requirements
 
 * [Conditional HTML Classes for Internet Explorer](http://www.paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/)
-* ~~[BootstrapCDN](http://www.bootstrapcdn.com/#legacy_tab) (2.3.x - legacy)~~\*
-* ~~[FontAwesome](http://www.bootstrapcdn.com/#fontawesome_tab)~~\*
-
-\* **NOTE:** The latest version of the UConn Banner no longer requires Bootstrap or FontAwesome.
 
 
 ## Usage:
@@ -33,9 +29,18 @@ There are a number of ways to use this code. Here are just a few:
 3. *Jekyll* - Clone/download this repo and use [Jekyll](http://jekyllrb.com/) and [Compass](http://compass-style.org/) to customize your build.
 
 ```bash
+	
+	# Clone and open
 	git clone https://github.com/uconn/banner.git
 	cd banner
+
+	# Install ruby gems
+	bundle
+
+	# Fire up Compass/SASS
 	compass watch &
+
+	# Jekyll templates w/ built-in web server
 	jekyll serve --watch
 ```
 Open up [http://localhost:4000/](http://localhost:4000/) in your web browser to view your changes.
