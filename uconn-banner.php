@@ -15,7 +15,7 @@
  * Plugin Name:       UConn Banner
  * Plugin URI:        http://brand.uconn.edu
  * Description:       Adds the UConn Banner to the header of your Wordpress site
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            University of Connecticut
  * Author URI:        http://uconn.edu
  * Text Domain:       US-EN
