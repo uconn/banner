@@ -1,0 +1,14 @@
+/* Utility class for webfonts in old browsers */
+%smoothing {
+
+    text-rendering: geometricPrecision;    
+   
+    //text-shadow: 0px 0px 1px rgba(0,0,0,0);
+    //-webkit-transform: rotate(-0.0000000001deg);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=99)";
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=99);  
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+}

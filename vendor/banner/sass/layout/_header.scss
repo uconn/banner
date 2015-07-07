@@ -1,0 +1,19 @@
+#site-header{
+  padding:30px 0 15px 0;
+
+
+    .row-fluid {
+      & > div {
+        width:50%;
+
+        @media (max-width: $small){
+            display:block;
+            width: auto;
+            padding: 0 $edge-padding;
+        }
+      }    
+    }
+}
+
+
+

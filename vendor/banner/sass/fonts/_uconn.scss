@@ -1,0 +1,10 @@
+@font-face {
+    font-family: $uconn-font;
+    src: url($font-base-url+'/uconn/uconn.eot');
+    src: url($font-base-url+'/uconn/uconn.eot?#iefix') format('embedded-opentype'),
+         url($font-base-url+'/uconn/uconn.svg#uconnregular') format('svg'),
+         url($font-base-url+'/uconn/uconn.woff') format('woff'),
+         url($font-base-url+'/uconn/uconn.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

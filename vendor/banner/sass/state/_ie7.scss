@@ -1,0 +1,31 @@
+/**
+ * In general, our strategy for IE7 is to utilize floats... ugh.
+ */
+
+.ie7, .lt-ie8 {
+
+    #{$namespace} {
+
+        .row-fluid {
+            & > div {
+                display: block;
+                float:left;
+            }
+        }
+    }
+
+    #button-container {
+        height: ($banner-height)-($button-padding) !important;
+    }
+
+    /**
+     * Polyfill for icons on IE7 and below
+     */
+    .icon-a-z {
+        *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe600;');
+    }
+    .icon-search {
+        *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe601;');
+    }
+
+} 

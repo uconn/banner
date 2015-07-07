@@ -1,0 +1,52 @@
+@font-face {
+  font-family: $secondary-font;
+  src: url($font-base-url+'/proximanova_bold_macroman/ProximaNova-Bold-webfont.eot');
+  src: url($font-base-url+'/proximanova_bold_macroman/ProximaNova-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+     url($font-base-url+'/proximanova_bold_macroman/ProximaNova-Bold-webfont.svg#proxima_nova_ltsemibold') format('svg'),
+     url($font-base-url+'/proximanova_bold_macroman/ProximaNova-Bold-webfont.woff') format('woff'),
+     url($font-base-url+'/proximanova_bold_macroman/ProximaNova-Bold-webfont.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+    font-family: $secondary-font;
+    src: url($font-base-url+'/proximanova_bolditalic_macroman/ProximaNova-BoldIt-webfont.eot');
+    src: url($font-base-url+'/proximanova_bolditalic_macroman/ProximaNova-BoldIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url($font-base-url+'/proximanova_bolditalic_macroman/ProximaNova-BoldIt-webfont.svg#proxima_novabold_italic') format('svg'),
+         url($font-base-url+'/proximanova_bolditalic_macroman/ProximaNova-BoldIt-webfont.woff') format('woff'),
+         url($font-base-url+'/proximanova_bolditalic_macroman/ProximaNova-BoldIt-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+  font-family: $secondary-font;
+  src: url($font-base-url+'/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.eot');
+  src: url($font-base-url+'/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.eot?#iefix') format('embedded-opentype'),
+     url($font-base-url+'/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.svg#proxima_nova_ltsemibold') format('svg'),
+     url($font-base-url+'/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.woff') format('woff'),
+     url($font-base-url+'/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: $secondary-font;
+  src: url($font-base-url+'/proximanova_regular_macroman/ProximaNova-Reg-webfont.eot');
+  src: url($font-base-url+'/proximanova_regular_macroman/ProximaNova-Reg-webfont.eot?#iefix') format('embedded-opentype'),
+     url($font-base-url+'/proximanova_regular_macroman/ProximaNova-Reg-webfont.svg#proxima_nova_rgregular') format('svg'),
+     url($font-base-url+'/proximanova_regular_macroman/ProximaNova-Reg-webfont.woff') format('woff'),
+     url($font-base-url+'/proximanova_regular_macroman/ProximaNova-Reg-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: $secondary-font;
+    src: url($font-base-url+'/proximanova_italic_macroman/ProximaNova-RegIt-webfont.eot');
+    src: url($font-base-url+'/proximanova_italic_macroman/ProximaNova-RegIt-webfont.eot?#iefix') format('embedded-opentype'),
+       url($font-base-url+'/proximanova_italic_macroman/ProximaNova-RegIt-webfont.svg#proxima_novaregular_italic') format('svg'),
+         url($font-base-url+'/proximanova_italic_macroman/ProximaNova-RegIt-webfont.woff') format('woff'),
+         url($font-base-url+'/proximanova_italic_macroman/ProximaNova-RegIt-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+
+}

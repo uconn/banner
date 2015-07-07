@@ -1,0 +1,40 @@
+#home-link-container {
+  width: 60%;
+
+  @media (max-width:$small){
+    width: 50%;
+  }
+}
+
+
+#uconn-header-container {
+  background-color: $bg-color;
+  color:#fff;
+  .btn {
+    color: #c1e8f8;
+  }
+
+  .row-fluid {
+      & > div {
+        height: $banner-height;
+      }    
+  }
+}
+
+
+
+#home-link{ 
+  height: 20px;
+  overflow:hidden;
+
+  &:hover {
+    text-decoration: none;
+    color:#eee;
+  }
+
+  span {
+    margin:auto 0;
+    vertical-align: middle;
+
+  }
+}
