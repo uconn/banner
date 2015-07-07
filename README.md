@@ -11,7 +11,7 @@ Inserts the UConn header branding at the top of your Wordpress site.
 
 Download the latest build of the [Wordpress UConn Banner Plugin](#) from [UConn's brand website](#), or follow the instructions below to install the plugin from GitHub.
 
-1. In an empty folder, run the command `git clone --recursive git://github.com/uconn/uconn-banner-wp.git`
+1. In an empty folder, run the command `git clone git://github.com/uconn/uconn-banner-wp.git`
 2. Copy the `uconn-banner-wp` directory into your `wp-content/plugins` directory
 3. In Wordpress, navigate to the *Plugins* dashboard page
 4. Locate the plugin named *UConn Banner* and click on *Activate*
@@ -19,16 +19,7 @@ Download the latest build of the [Wordpress UConn Banner Plugin](#) from [UConn'
 
 ## Upgrading
 
-There are two ways of upgrading the plugin. You may follow the installation instructions and upload `uconn-banner-wp`, replacing the old version in your `wp-content/plugins` directory or if you still have the original cloned repository in a folder, you can run the command `git pull --recursive` to pull in the most recent changes from GitHub.
-
-## Important Notes
-
-This plugin requires submodules:
-
-1. [PHP-Liquid](https://github.com/harrydeluxe/php-liquid.git)
-2. [UConn-Banner](https://github.com/uconn/banner.git)
-
-Use the command `git clone --recursive git://github.com/uconn/uconn-banner-wp.git` to clone the repo and its submodules.
+There are two ways of upgrading the plugin. You may follow the installation instructions and upload `uconn-banner-wp`, replacing the old version in your `wp-content/plugins` directory or if you still have the original cloned repository in a folder, you can run the command `git pull` to pull in the most recent changes from GitHub.
 
 ## License
 
