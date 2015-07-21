@@ -1,0 +1,27 @@
+{
+    "name": "uconn-banner",
+    "version": "1.0.2",
+    "description": "uconn-banner is the official UConn Banner module packaged for quick implementation.",
+    "license": "UNLICENSED",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/uconn/banner.git"
+    },
+    "keywords": [
+        "uconn",
+        "banner"
+    ],
+    "bugs": {
+        "url": "https://github.com/uconn/banner/issues"
+    },
+    "scripts": {},
+    "contributors": [
+        {
+            "name": "Brian Daley"
+        },
+        {
+            "name": "Brian Kelleher"
+        }
+    ],
+    "directories": {}
+}
