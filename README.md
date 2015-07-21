@@ -26,7 +26,8 @@ There are a number of ways to use this code. Here are just a few:
 
 1. *HTML* - You can [download the latest zip file](https://github.com/uconn/banner/archive/master.zip) and use the assets in the "_site" directory to start building your website.
 2. *PHP* - [Use php-liquid to embed the banner in your page](https://github.com/uconn/banner/wiki/Banner-rendering-with-PHP).
-3. *Jekyll* - Clone/download this repo and use [Jekyll](http://jekyllrb.com/) and [Compass](http://compass-style.org/) to customize your build.
+3. *NPM* - Include as a [node_module](https://www.npmjs.com/package/uconn-banner) with `npm install uconn-banner --save-dev`, use the HTML/CSS from the "_site" directory.
+4. *Jekyll* - Clone/download this repo and use [Jekyll](http://jekyllrb.com/) and [Compass](http://compass-style.org/) to customize your build.
 
 ```bash
 	
