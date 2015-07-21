@@ -1,6 +1,6 @@
 {
     "name": "uconn-banner",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "uconn-banner is the official UConn Banner module packaged for quick implementation.",
     "license": "UNLICENSED",
     "repository": {
