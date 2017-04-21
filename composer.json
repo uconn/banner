@@ -1,0 +1,49 @@
+{
+    "name": "uconn/banner",
+    "description": "The UConn Banner - Branding for the top of your web pages.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brian Daley",
+            "email": "brian.daley@uconn.edu"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "harrydeluxe/php-liquid",
+                "version": "master",
+                "dist":{
+                    "type": "zip",
+                    "url": "https://github.com/harrydeluxe/php-liquid/archive/master.zip",
+                    "reference": "master"
+                }
+            }
+        }
+    ],
+    "require": {
+        "symfony/yaml": "^3.2",
+        "harrydeluxe/php-liquid": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "UConn\\": ["src/"]
+        },
+        "files":[
+            "vendor/harrydeluxe/php-liquid/Liquid.class.php"
+        ],
+        "classmap":[
+            "vendor/harrydeluxe/php-liquid/lib/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "UConn\\Tests\\": ["tests/"]
+        }
+    }
+}
