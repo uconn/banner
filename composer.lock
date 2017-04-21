@@ -4,18 +4,58 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc419d154b22f0d5167ab157cbaf521b",
+    "content-hash": "e4f485fcce0d383a94f5be22b06425de",
     "packages": [
         {
-            "name": "harrydeluxe/php-liquid",
-            "version": "master",
+            "name": "liquid/liquid",
+            "version": "1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kalimatas/php-liquid.git",
+                "reference": "97e224ac30a4756d30a639ec9fa133cd56a8bf7b"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/harrydeluxe/php-liquid/archive/master.zip",
-                "reference": "master",
-                "shasum": null
+                "url": "https://api.github.com/repos/kalimatas/php-liquid/zipball/97e224ac30a4756d30a639ec9fa133cd56a8bf7b",
+                "reference": "97e224ac30a4756d30a639ec9fa133cd56a8bf7b",
+                "shasum": ""
             },
-            "type": "library"
+            "require": {
+                "php": ">= 5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Liquid\\": "src/Liquid"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Guz Alexander",
+                    "email": "kalimatas@gmail.com",
+                    "homepage": "http://guzalexander.com"
+                },
+                {
+                    "name": "Harald Hanek"
+                },
+                {
+                    "name": "Mateo Murphy"
+                }
+            ],
+            "description": "Liquid template engine for PHP",
+            "homepage": "https://github.com/kalimatas/php-liquid",
+            "keywords": [
+                "liquid",
+                "template"
+            ],
+            "time": "2017-02-08T15:42:32+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -1526,9 +1566,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "harrydeluxe/php-liquid": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

@@ -51,9 +51,7 @@ class Banner {
 
     public function __toString(){
 
-        $liquid = new \LiquidTemplate();
-
-        // echo file_get_contents(dirname(__FILE__) . '/../../_includes/banner.html');
+        $liquid = new \Liquid\Template();
 
         return $liquid->parse(file_get_contents(dirname(__FILE__) . '/../../_includes/banner.html'))->render($this->buildVars());
 
