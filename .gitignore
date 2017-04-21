@@ -11,5 +11,10 @@
 # Vagrant
 .vagrant
 
+Gemfile.lock
+
 # Node Modules
 node_modules
+
+# Composer Files
+/vendor
