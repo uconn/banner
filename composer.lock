@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e4f485fcce0d383a94f5be22b06425de",
+    "content-hash": "6f6b6b775424e3bc165d841a56fe3b54",
     "packages": [
         {
             "name": "liquid/liquid",
@@ -58,40 +58,34 @@
             "time": "2017-02-08T15:42:32+00:00"
         },
         {
-            "name": "symfony/yaml",
-            "version": "v3.2.7",
+            "name": "mustangostang/spyc",
+            "version": "0.6.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/yaml.git",
-                "reference": "62b4cdb99d52cb1ff253c465eb1532a80cebb621"
+                "url": "https://github.com/mustangostang/spyc.git",
+                "reference": "23c35ae854d835f2d7bcc3e3ad743d7e57a8c14d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/62b4cdb99d52cb1ff253c465eb1532a80cebb621",
-                "reference": "62b4cdb99d52cb1ff253c465eb1532a80cebb621",
+                "url": "https://api.github.com/repos/mustangostang/spyc/zipball/23c35ae854d835f2d7bcc3e3ad743d7e57a8c14d",
+                "reference": "23c35ae854d835f2d7bcc3e3ad743d7e57a8c14d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9"
+                "php": ">=5.3.1"
             },
             "require-dev": {
-                "symfony/console": "~2.8|~3.0"
-            },
-            "suggest": {
-                "symfony/console": "For validating YAML files using the lint command"
+                "phpunit/phpunit": "4.3.*@dev"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2-dev"
+                    "dev-master": "0.5.x-dev"
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Yaml\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
+                "files": [
+                    "Spyc.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -100,17 +94,18 @@
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
+                    "name": "mustangostang",
+                    "email": "vlad.andersen@gmail.com"
                 }
             ],
-            "description": "Symfony Yaml Component",
-            "homepage": "https://symfony.com",
-            "time": "2017-03-20T09:45:15+00:00"
+            "description": "A simple YAML loader/dumper class for PHP",
+            "homepage": "https://github.com/mustangostang/spyc/",
+            "keywords": [
+                "spyc",
+                "yaml",
+                "yml"
+            ],
+            "time": "2017-02-24T16:06:33+00:00"
         }
     ],
     "packages-dev": [
@@ -773,16 +768,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "6.1.1",
+            "version": "6.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "9fbc261d90eda9e7ef9f7441d32997270f8e2019"
+                "reference": "fbf2e46d5c563ee78c9b559bcbeb1c97cad6af0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9fbc261d90eda9e7ef9f7441d32997270f8e2019",
-                "reference": "9fbc261d90eda9e7ef9f7441d32997270f8e2019",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fbf2e46d5c563ee78c9b559bcbeb1c97cad6af0f",
+                "reference": "fbf2e46d5c563ee78c9b559bcbeb1c97cad6af0f",
                 "shasum": ""
             },
             "require": {
@@ -803,7 +798,7 @@
                 "phpunit/phpunit-mock-objects": "^4.0",
                 "sebastian/comparator": "^2.0",
                 "sebastian/diff": "^1.2",
-                "sebastian/environment": "^3.0",
+                "sebastian/environment": "^3.0.1",
                 "sebastian/exporter": "^3.1",
                 "sebastian/global-state": "^1.1 || ^2.0",
                 "sebastian/object-enumerator": "^3.0.2",
@@ -853,7 +848,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-04-21T08:02:24+00:00"
+            "time": "2017-04-25T21:30:13+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
