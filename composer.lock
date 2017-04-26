@@ -1,0 +1,806 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "661931767b5f6339cf812d55eebfea5f",
+    "packages": [
+        {
+            "name": "liquid/liquid",
+            "version": "1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kalimatas/php-liquid.git",
+                "reference": "97e224ac30a4756d30a639ec9fa133cd56a8bf7b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kalimatas/php-liquid/zipball/97e224ac30a4756d30a639ec9fa133cd56a8bf7b",
+                "reference": "97e224ac30a4756d30a639ec9fa133cd56a8bf7b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">= 5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Liquid\\": "src/Liquid"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Guz Alexander",
+                    "email": "kalimatas@gmail.com",
+                    "homepage": "http://guzalexander.com"
+                },
+                {
+                    "name": "Harald Hanek"
+                },
+                {
+                    "name": "Mateo Murphy"
+                }
+            ],
+            "description": "Liquid template engine for PHP",
+            "homepage": "https://github.com/kalimatas/php-liquid",
+            "keywords": [
+                "liquid",
+                "template"
+            ],
+            "time": "2017-02-08T15:42:32+00:00"
+        },
+        {
+            "name": "mustangostang/spyc",
+            "version": "0.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mustangostang/spyc.git",
+                "reference": "23c35ae854d835f2d7bcc3e3ad743d7e57a8c14d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mustangostang/spyc/zipball/23c35ae854d835f2d7bcc3e3ad743d7e57a8c14d",
+                "reference": "23c35ae854d835f2d7bcc3e3ad743d7e57a8c14d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.3.*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.5.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "Spyc.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "mustangostang",
+                    "email": "vlad.andersen@gmail.com"
+                }
+            ],
+            "description": "A simple YAML loader/dumper class for PHP",
+            "homepage": "https://github.com/mustangostang/spyc/",
+            "keywords": [
+                "spyc",
+                "yaml",
+                "yml"
+            ],
+            "time": "2017-02-24T16:06:33+00:00"
+        },
+        {
+            "name": "uconn/banner",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/uconn/banner.git",
+                "reference": "a7e5db92ded3c38d01bb11ed42c31f002bf49598"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/uconn/banner/zipball/a7e5db92ded3c38d01bb11ed42c31f002bf49598",
+                "reference": "a7e5db92ded3c38d01bb11ed42c31f002bf49598",
+                "shasum": ""
+            },
+            "require": {
+                "liquid/liquid": "^1.2",
+                "mustangostang/spyc": "^0.6.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "UConn\\": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Daley",
+                    "email": "brian.daley@uconn.edu"
+                }
+            ],
+            "description": "The UConn Banner - Branding for the top of your web pages.",
+            "time": "2017-04-26T20:16:37+00:00"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "composer/installers",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "79ad876c7498c0bbfe7eed065b8651c93bfd6045"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/79ad876c7498c0bbfe7eed065b8651c93bfd6045",
+                "reference": "79ad876c7498c0bbfe7eed065b8651c93bfd6045",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "replace": {
+                "roundcube/plugin-installer": "*",
+                "shama/baton": "*"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev",
+                "phpunit/phpunit": "4.1.*"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Composer\\Installers\\Plugin",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Installers\\": "src/Composer/Installers"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "https://composer.github.io/installers/",
+            "keywords": [
+                "Craft",
+                "Dolibarr",
+                "Eliasis",
+                "Hurad",
+                "ImageCMS",
+                "Kanboard",
+                "MODX Evo",
+                "Mautic",
+                "Maya",
+                "OXID",
+                "Plentymarkets",
+                "Porto",
+                "RadPHP",
+                "SMF",
+                "Thelia",
+                "WolfCMS",
+                "agl",
+                "aimeos",
+                "annotatecms",
+                "attogram",
+                "bitrix",
+                "cakephp",
+                "chef",
+                "cockpit",
+                "codeigniter",
+                "concrete5",
+                "croogo",
+                "dokuwiki",
+                "drupal",
+                "elgg",
+                "expressionengine",
+                "fuelphp",
+                "grav",
+                "installer",
+                "itop",
+                "joomla",
+                "kohana",
+                "laravel",
+                "lavalite",
+                "lithium",
+                "magento",
+                "mako",
+                "mediawiki",
+                "modulework",
+                "moodle",
+                "phpbb",
+                "piwik",
+                "ppi",
+                "puppet",
+                "reindex",
+                "roundcube",
+                "shopware",
+                "silverstripe",
+                "sydes",
+                "symfony",
+                "typo3",
+                "wordpress",
+                "yawik",
+                "zend",
+                "zikula"
+            ],
+            "time": "2017-04-24T06:37:16+00:00"
+        },
+        {
+            "name": "johnpbloch/wordpress",
+            "version": "4.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johnpbloch/wordpress.git",
+                "reference": "db59b62af6f69b585e74e59d670d7d9ad04e0e88"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/db59b62af6f69b585e74e59d670d7d9ad04e0e88",
+                "reference": "db59b62af6f69b585e74e59d670d7d9ad04e0e88",
+                "shasum": ""
+            },
+            "require": {
+                "johnpbloch/wordpress-core": "4.7.2",
+                "johnpbloch/wordpress-core-installer": "~0.2",
+                "php": ">=5.3.2"
+            },
+            "type": "package",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "WordPress Community",
+                    "homepage": "http://wordpress.org/about/"
+                }
+            ],
+            "description": "WordPress is web software you can use to create a beautiful website or blog.",
+            "homepage": "http://wordpress.org/",
+            "keywords": [
+                "blog",
+                "cms",
+                "wordpress"
+            ],
+            "time": "2017-03-18T04:47:24+00:00"
+        },
+        {
+            "name": "johnpbloch/wordpress-core",
+            "version": "4.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johnpbloch/wordpress-core.git",
+                "reference": "adc498caffb06200f971f87dca9ef9eabacde654"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/adc498caffb06200f971f87dca9ef9eabacde654",
+                "reference": "adc498caffb06200f971f87dca9ef9eabacde654",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "type": "wordpress-core",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "WordPress Community",
+                    "homepage": "http://wordpress.org/about/"
+                }
+            ],
+            "description": "WordPress is web software you can use to create a beautiful website or blog.",
+            "homepage": "http://wordpress.org/",
+            "keywords": [
+                "blog",
+                "cms",
+                "wordpress"
+            ],
+            "time": "2017-02-10T22:30:04+00:00"
+        },
+        {
+            "name": "johnpbloch/wordpress-core-installer",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johnpbloch/wordpress-core-installer.git",
+                "reference": "a04c2c383ef13aae077f36799ed2eafdebd618d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/a04c2c383ef13aae077f36799ed2eafdebd618d2",
+                "reference": "a04c2c383ef13aae077f36799ed2eafdebd618d2",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "conflict": {
+                "composer/installers": "<1.0.6"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "johnpbloch\\Composer\\WordPressCorePlugin"
+            },
+            "autoload": {
+                "psr-0": {
+                    "johnpbloch\\Composer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "John P. Bloch",
+                    "email": "me@johnpbloch.com"
+                }
+            ],
+            "description": "A custom installer to handle deploying WordPress with composer",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2015-06-11T15:15:30+00:00"
+        },
+        {
+            "name": "leafo/scssphp",
+            "version": "v0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/leafo/scssphp.git",
+                "reference": "78a6f27aa4eaf70bb3ff4d13b639bab71fdaf47a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/leafo/scssphp/zipball/78a6f27aa4eaf70bb3ff4d13b639bab71fdaf47a",
+                "reference": "78a6f27aa4eaf70bb3ff4d13b639bab71fdaf47a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "kherge/box": "~2.5",
+                "phpunit/phpunit": "~3.7",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "bin": [
+                "bin/pscss"
+            ],
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "classmap.php"
+                ],
+                "psr-4": {
+                    "Leafo\\ScssPhp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Leaf Corcoran",
+                    "email": "leafot@gmail.com",
+                    "homepage": "http://leafo.net"
+                }
+            ],
+            "description": "scssphp is a compiler for SCSS written in PHP.",
+            "homepage": "http://leafo.github.io/scssphp/",
+            "keywords": [
+                "css",
+                "less",
+                "sass",
+                "scss",
+                "stylesheet"
+            ],
+            "time": "2015-11-09T14:44:09+00:00"
+        },
+        {
+            "name": "ucomm/bb-theme",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "git@bitbucket.org:ucomm/bb-theme.git",
+                "reference": "c41c712c7681106c42a6d9558b3de611e77c6572"
+            },
+            "require-dev": {
+                "composer/installers": "~1.0",
+                "johnpbloch/wordpress": "dev-master",
+                "ucomm/napier": "*",
+                "ucomm/uconn-today-plugin": "~1.0",
+                "wpackagist-plugin/advanced-custom-fields": "*",
+                "wpackagist-plugin/wordpress-seo": "*",
+                "wpackagist-theme/twentyseventeen": "1"
+            },
+            "type": "wordpress-theme",
+            "extra": {
+                "installer-paths": {
+                    "./www/content/plugins/{$name}": [
+                        "type:wordpress-plugin"
+                    ],
+                    "./www/content/themes/{$name}": [
+                        "type:wordpress-theme"
+                    ]
+                },
+                "wordpress-install-dir": "./www/wordpress"
+            },
+            "scripts": {
+                "run-builds": [
+                    "find . -maxdepth 1 -type d \\( ! -name . \\) -exec bash -c \"cd '{}' && pwd\" \\;"
+                ],
+                "post-install-cmd": [
+                    "cd www/content/plugins && find . -maxdepth 1 -type d \\( ! -name . \\) -exec bash -c \"cd '{}' && composer run-script build\" \\;",
+                    "cd www/content/themes  && find . -maxdepth 1 -type d \\( ! -name . \\) -exec bash -c \"cd '{}' && composer run-script build\" \\;"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Brian Kelleher",
+                    "email": "bk@uconn.edu"
+                }
+            ],
+            "description": "The beaver builder theme, intended to make child-themes from.",
+            "time": "2017-03-21T19:09:42+00:00"
+        },
+        {
+            "name": "ucomm/napier",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://bitbucket.org/ucomm/napier.git",
+                "reference": "031d77d092417629a5fe14d33e4d061db895a24a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/ucomm/napier/get/031d77d092417629a5fe14d33e4d061db895a24a.zip",
+                "reference": "031d77d092417629a5fe14d33e4d061db895a24a",
+                "shasum": ""
+            },
+            "type": "wordpress-theme",
+            "scripts": {
+                "post-package-install": [
+                    "yarn install; bower install; gulp build;"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Daley",
+                    "email": "brian.daley@uconn.edu"
+                }
+            ],
+            "description": "A WordPress theme for UConn sites that aren't hosted on Aurora",
+            "homepage": "https://bitbucket.org/ucomm/napier",
+            "support": {
+                "source": "https://bitbucket.org/ucomm/napier/src/031d77d092417629a5fe14d33e4d061db895a24a/?at=1.0.1",
+                "issues": "https://bitbucket.org/ucomm/napier/issues"
+            },
+            "time": "2017-03-19T02:46:56+00:00"
+        },
+        {
+            "name": "ucomm/uc-dailydigest-widget",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "git@bitbucket.org:ucomm/uc-dailydigest-widget.git",
+                "reference": "86c1df6eb03ce1b1c9f906119f9736072ab6b7c8"
+            },
+            "require-dev": {
+                "composer/installers": "~1.0",
+                "johnpbloch/wordpress": "4.7.2",
+                "ucomm/bb-theme": "*",
+                "wpackagist-theme/twentyseventeen": "1"
+            },
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-paths": {
+                    "./www/content/plugins/{$name}": [
+                        "type:wordpress-plugin"
+                    ],
+                    "./www/content/themes/{$name}": [
+                        "type:wordpress-theme"
+                    ]
+                },
+                "wordpress-install-dir": "./www/wordpress"
+            },
+            "scripts": {
+                "run-builds": [
+                    "find . -maxdepth 1 -type d \\( ! -name . \\) -exec bash -c \"cd '{}' && pwd\" \\;"
+                ],
+                "post-install-cmd": [
+                    "cd www/content/plugins && find . -maxdepth 1 -type d \\( ! -name . \\) -exec bash -c \"cd '{}' && composer run-script build\" \\;",
+                    "cd www/content/themes  && find . -maxdepth 1 -type d \\( ! -name . \\) -exec bash -c \"cd '{}' && composer run-script build\" \\;"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Brian Daley",
+                    "email": "brian@uconn.edu"
+                },
+                {
+                    "name": "Brian Kelleher",
+                    "email": "bk@uconn.edu"
+                }
+            ],
+            "description": "The daily digest WordPress widget.",
+            "time": "2017-03-29T15:02:57+00:00"
+        },
+        {
+            "name": "ucomm/uc-foi-database",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "git@bitbucket.org:ucomm/uc-foi-database.git",
+                "reference": "23e2f242ae8523a80ede726241715a6966360657"
+            },
+            "require-dev": {
+                "composer/installers": "~1.0",
+                "johnpbloch/wordpress": "4.7.2",
+                "ucomm/napier": "*",
+                "ucomm/uconn-today-plugin": "~1.0",
+                "wpackagist-plugin/advanced-custom-fields": "*",
+                "wpackagist-plugin/wordpress-seo": "*",
+                "wpackagist-theme/twentytwelve": "1"
+            },
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-paths": {
+                    "./www/content/plugins/{$name}": [
+                        "type:wordpress-plugin"
+                    ],
+                    "./www/content/themes/{$name}": [
+                        "type:wordpress-theme"
+                    ]
+                },
+                "wordpress-install-dir": "./www/wordpress"
+            },
+            "scripts": {
+                "run-builds": [
+                    "find . -maxdepth 1 -type d \\( ! -name . \\) -exec bash -c \"cd '{}' && pwd\" \\;"
+                ],
+                "post-install-cmd": [
+                    "cd www/content/plugins && find . -maxdepth 1 -type d \\( ! -name . \\) -exec bash -c \"cd '{}' && composer run-script build\" \\;",
+                    "cd www/content/themes  && find . -maxdepth 1 -type d \\( ! -name . \\) -exec bash -c \"cd '{}' && composer run-script build\" \\;"
+                ],
+                "build": [
+                    "yarn install",
+                    "npm run build"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Adam Berkowitz",
+                    "email": "adam.berkowitz@uconn.edu"
+                },
+                {
+                    "name": "Brian Daley",
+                    "email": "brian@uconn.edu"
+                }
+            ],
+            "description": "FOI Database for ",
+            "time": "2017-04-25T13:43:13+00:00"
+        },
+        {
+            "name": "ucomm/uconn-health-clinical",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "git@bitbucket.org:ucomm/uconn-health-clinical.git",
+                "reference": "bdbcfb3cff9c74af2688d6bd620007b6af6135a3"
+            },
+            "require": {
+                "leafo/scssphp": "0.4.0"
+            },
+            "require-dev": {
+                "composer/installers": "~1.0",
+                "johnpbloch/wordpress": "4.7.2",
+                "ucomm/bb-plugin": "^0.0.2",
+                "ucomm/bb-theme": "*",
+                "ucomm/castor": "*",
+                "ucomm/shiftnav-responsive-mobile-menu": "1.5.1.1",
+                "ucomm/uc-dailydigest-widget": "*",
+                "ucomm/uconn-today-plugin": "~1.0",
+                "ucomm/uh-directory-plugin": "^1.1",
+                "wpackagist-plugin/advanced-custom-fields": "*",
+                "wpackagist-plugin/wordpress-seo": "*",
+                "wpackagist-theme/twentyseventeen": "1"
+            },
+            "type": "wordpress-theme",
+            "extra": {
+                "installer-paths": {
+                    "./www/content/plugins/{$name}": [
+                        "type:wordpress-plugin"
+                    ],
+                    "./www/content/themes/{$name}": [
+                        "type:wordpress-theme"
+                    ]
+                },
+                "wordpress-install-dir": "./www/wordpress"
+            },
+            "scripts": {
+                "run-builds": [
+                    "find . -maxdepth 1 -type d \\( ! -name . \\) -exec bash -c \"cd '{}' && pwd\" \\;"
+                ],
+                "build": [
+                    "yarn install",
+                    "gulp build",
+                    "composer update --no-dev"
+                ],
+                "post-install-cmd": [
+                    "cd www/content/plugins && find . -maxdepth 1 -type d \\( ! -name . \\) -exec bash -c \"cd '{}' && composer run-script build\" \\;",
+                    "cd www/content/themes  && find . -maxdepth 1 -type d \\( ! -name . \\) -exec bash -c \"cd '{}' && composer run-script build\" \\;"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Brian Daley",
+                    "email": "brian@uconn.edu"
+                },
+                {
+                    "name": "Brian Kelleher",
+                    "email": "bk@uconn.edu"
+                },
+                {
+                    "name": "Adam Berkowitz",
+                    "email": "adam.berkowitz@uconn.edu"
+                }
+            ],
+            "description": "A beaver builder child theme for uconn health and the clinical websites",
+            "time": "2017-04-18T19:01:48+00:00"
+        },
+        {
+            "name": "ucomm/uconn-today-plugin",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://bitbucket.org/ucomm/uconn-today-plugin.git",
+                "reference": "ed46ef9cd2a4e0ccaed878a7388a29d85c2d4fdc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/ucomm/uconn-today-plugin/get/ed46ef9cd2a4e0ccaed878a7388a29d85c2d4fdc.zip",
+                "reference": "ed46ef9cd2a4e0ccaed878a7388a29d85c2d4fdc",
+                "shasum": ""
+            },
+            "type": "wordpress-plugin",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shaun Cayabyab",
+                    "email": "shaun.cayabyab@uconn.edu"
+                },
+                {
+                    "name": "Brian Daley",
+                    "email": "brian@uconn.edu"
+                }
+            ],
+            "description": "Displays posts from the UConn Today website",
+            "homepage": "https://bitbucket.org/ucomm/uconn-today-plugin",
+            "support": {
+                "source": "https://bitbucket.org/ucomm/uconn-today-plugin/src/ed46ef9cd2a4e0ccaed878a7388a29d85c2d4fdc/?at=1.0.2"
+            },
+            "time": "2017-03-16T20:42:26+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/advanced-custom-fields",
+            "version": "4.4.11",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/advanced-custom-fields/",
+                "reference": "tags/4.4.11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.4.4.11.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/advanced-custom-fields/"
+        },
+        {
+            "name": "wpackagist-plugin/wordpress-seo",
+            "version": "4.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
+                "reference": "tags/4.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.6.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordpress-seo/"
+        },
+        {
+            "name": "wpackagist-theme/twentyseventeen",
+            "version": "1.0",
+            "source": {
+                "type": "svn",
+                "url": "https://themes.svn.wordpress.org/twentyseventeen/",
+                "reference": "1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/twentyseventeen.1.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-theme",
+            "homepage": "https://wordpress.org/themes/twentyseventeen/"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

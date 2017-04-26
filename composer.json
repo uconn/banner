@@ -1,0 +1,64 @@
+{
+    "name": "uconn/uconn-banner-wp",
+    "description": "Inserts the UConn header branding at the top of your Wordpress site. http://brand.uconn.edu",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brian Daley",
+            "email": "brian@uconn.edu"
+        },
+        {
+            "name": "Brian Kelleher",
+            "email": "bk@uconn.edu"
+        },
+        {
+            "name": "Adam Berkowitz",
+            "email": "adam.berkowitz@uconn.edu"
+        }
+    ],
+    "repositories":[
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"
+        },
+        {
+            "type": "composer",
+            "url": "http://apps.packages.staging.ucdev.net/"
+        }
+
+    ],
+    "require": {
+        "uconn/banner": "^1.0"
+    },
+    "require-dev": {
+        "composer/installers": "~1.0",
+        "johnpbloch/wordpress":"4.7.2",
+        "wpackagist-plugin/wordpress-seo":"*",
+        "wpackagist-plugin/advanced-custom-fields":"*",
+        "ucomm/uconn-today-plugin": "~1.0",
+        "wpackagist-theme/twentyseventeen": "1",
+        "ucomm/napier": "*",
+        "ucomm/bb-theme": "*",
+        "ucomm/uc-foi-database": "*",
+        "ucomm/uc-dailydigest-widget": "*",
+        "ucomm/uconn-health-clinical": "*"
+    },
+    "extra": {
+        "installer-paths": {
+             "./www/content/plugins/{$name}": ["type:wordpress-plugin"],
+             "./www/content/themes/{$name}": ["type:wordpress-theme"]
+        },
+        "wordpress-install-dir":"./www/wordpress"
+    },
+    "config":{
+        "secure-http": false
+    },
+    "scripts":{
+        "run-builds": "find . -maxdepth 1 -type d \\( ! -name . \\) -exec bash -c \"cd '{}' && pwd\" \\;",
+        "post-install-cmd": [
+            "cd www/content/plugins && find . -maxdepth 1 -type d \\( ! -name . \\) -exec bash -c \"cd '{}' && composer run-script build\" \\;",
+            "cd www/content/themes  && find . -maxdepth 1 -type d \\( ! -name . \\) -exec bash -c \"cd '{}' && composer run-script build\" \\;"
+        ]
+    }
+}
