@@ -13,9 +13,8 @@ class Banner {
 
     public function __construct() {
 
-        // Load the defaults
-        $data = file_get_contents(dirname(__FILE__) . '/../../_config.yml');
-        $settings = \Symfony\Component\Yaml\Yaml::parse($data);
+        // Load the defaults. See https://packagist.org/packages/mustangostang/spyc
+        $settings = spyc_load_file(dirname(__FILE__) . '/../../_config.yml');
 
         $this->name =       $settings['name'];
         $this->department = $settings['department'];
@@ -39,10 +38,11 @@ class Banner {
     private function buildVars(){
         return array(
             'site' => array(
-                'name' => $this->name,
-                'department' => $this->department,
-                'department_url' => $this->url,
-                'show_header' => $this->header
+                'name'              => $this->name,
+                'department'        => $this->department,
+                'department_url'    => $this->url,
+                'show_header'       => $this->header,
+                'search'            => $this->search
             )
         );
     }
