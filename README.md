@@ -22,6 +22,24 @@ Download the latest build of the [Wordpress UConn Banner Plugin](#) from [UConn'
 
 There are two ways of upgrading the plugin. You may follow the installation instructions and upload `uconn-banner-wp`, replacing the old version in your `wp-content/plugins` directory or if you still have the original cloned repository in a folder, you can run the command `git pull` to pull in the most recent changes from GitHub.
 
+
+## Development
+```bash
+# Clone the repo
+$ git clone git://github.com/uconn/uconn-banner-wp.git && cd uconn-banner-wp
+
+# Install Composer dependencies (including WordPress)
+$ composer install
+
+# Boot the docker instance
+$ docker-compose up
+
+# Open WordPress in your browser
+$ open http://localhost/
+
+# Then follow steps 4 and 5 from the Installation instructions above.
+```
+
 ## License
 
 > The MIT License (MIT)
