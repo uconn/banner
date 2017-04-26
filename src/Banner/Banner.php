@@ -39,10 +39,11 @@ class Banner {
     private function buildVars(){
         return array(
             'site' => array(
-                'name' => $this->name,
-                'department' => $this->department,
-                'department_url' => $this->url,
-                'show_header' => $this->header
+                'name'              => $this->name,
+                'department'        => $this->department,
+                'department_url'    => $this->url,
+                'show_header'       => $this->header,
+                'search'            => $this->search
             )
         );
     }
