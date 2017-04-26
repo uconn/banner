@@ -1,0 +1,15 @@
+{
+    "name": "uconn/uconn-banner-wp",
+    "description": "Inserts the UConn header branding at the top of your Wordpress site. http://brand.uconn.edu",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brian Daley",
+            "email": "brian.daley@uconn.edu"
+        }
+    ],
+    "require": {
+        "uconn/banner": "^1.0"
+    }
+}

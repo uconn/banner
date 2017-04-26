@@ -12,6 +12,7 @@ Inserts the UConn header branding at the top of your Wordpress site.
 Download the latest build of the [Wordpress UConn Banner Plugin](#) from [UConn's brand website](#), or follow the instructions below to install the plugin from GitHub.
 
 1. In an empty folder, run the command `git clone git://github.com/uconn/uconn-banner-wp.git`
+2. `cd uconn-banner-wp` and run `composer install`
 2. Copy the `uconn-banner-wp` directory into your `wp-content/plugins` directory
 3. In Wordpress, navigate to the *Plugins* dashboard page
 4. Locate the plugin named *UConn Banner* and click on *Activate*
@@ -24,19 +25,19 @@ There are two ways of upgrading the plugin. You may follow the installation inst
 ## License
 
 > The MIT License (MIT)
-> 
+>
 > Copyright (c) 2014 University Communications at UConn
-> 
+>
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 > of this software and associated documentation files (the "Software"), to deal
 > in the Software without restriction, including without limitation the rights
 > to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 > copies of the Software, and to permit persons to whom the Software is
 > furnished to do so, subject to the following conditions:
-> 
+>
 > The above copyright notice and this permission notice shall be included in all
 > copies or substantial portions of the Software.
-> 
+>
 > THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 > IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 > FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
