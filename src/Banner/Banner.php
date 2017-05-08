@@ -57,5 +57,17 @@ class Banner {
 
     }
 
+    /**
+     * Outputs the CSS for the banner.
+     * Sometimes it's necessary to retrieve the CSS
+     * instead of including it, depending on where the
+     * /vendor directory resides and whether it's
+     * publicly accessible.
+     * @return string CSS rules for the banner
+     */
+    public function css(){
+        return file_get_contents(dirname(__FILE__) . '/../../_site/banner.css');
+    }
+
 
 }
