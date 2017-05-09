@@ -18,3 +18,8 @@ node_modules
 
 # Composer Files
 /vendor
+
+# Build Files
+/_site
+!/_site/index.html
+!/_site/banner.css
