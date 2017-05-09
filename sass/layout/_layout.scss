@@ -1,16 +1,11 @@
 #{$namespace} {
 
     .container {
-        
-        width: $extra-large;
+
         margin: 0px auto;
 
-        @media (max-width:$extra-large) {
-          width: $large;
-        }
-
-        @media (max-width:$large) {
-          width: 100%;
+        @media (min-width: $extra-large){
+            max-width: $extra-large;
         }
     }
 
@@ -26,19 +21,12 @@
         display: table-cell;
         vertical-align: middle;
         float:none;
-
-        /**
-         * At smaller screen widths we need to pad the "table" cells so that they're
-         * not up against the edge of the page.
-         */
-        @media (max-width: $large){
-          &:first-child {
+        &:first-child {
             padding-left: $edge-padding;
-          }
-          &:last-child {
+        }
+        &:last-child {
             padding-right: $edge-padding;
-          }
-        }    
+        }
       }
 
     }
