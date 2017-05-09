@@ -2,9 +2,11 @@
 
     .container {
 
+        width:100%;
         margin: 0px auto;
 
         @media (min-width: $extra-large){
+            width: $extra-large;
             max-width: $extra-large;
         }
     }
