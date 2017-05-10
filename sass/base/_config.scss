@@ -1,5 +1,5 @@
 /* Base blue color */
-$bg-color: #000E2F; 
+$bg-color: #000E2F;
 
 /* Name for the UConn font */
 $uconn-font: "UConn";
@@ -8,7 +8,7 @@ $uconn-font: "UConn";
 $secondary-font: "Proxima Nova";
 
 /* Fonts to fallback on if webfonts don't load */
-$fallback-fonts: Verdana, Arial, Helvetica, sans-serif;
+$fallback-fonts: Arial, Helvetica, sans-serif;
 
 /* Base URL for the webfonts */
 $font-base-url: "//uconn.edu/shared/fonts";
@@ -27,7 +27,7 @@ $icon-size: 21px;
 
 /**
  * Responsive Breakpoints
- * 
+ *
  * We're defaulting to the breakpoints in Bootstrap 2.3.x, since it's fairly common
  * on campus. These may change depending on the base CSS framework that you're using.
  * You'll want to adjust these so that the banner "responds" in concert with the rest
@@ -40,7 +40,7 @@ $small: 500px;
 
 /**
  * Edge padding.
- * 
+ *
  * When the banner goes responsive, we add padding to the page edge so that the logo, buttons,
  * header and search box don't butt up against the edge of the browser. Customize the amount of
  * added padding here
@@ -52,5 +52,3 @@ $edge-padding: 1em;
  * Neede for IE
  */
 $button-padding: ($banner-height - $btn-size) / 2;
-
-

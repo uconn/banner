@@ -1,48 +1,40 @@
 #{$namespace} {
-
     .container {
-        
         width: $extra-large;
-        margin: 0px auto;
-
+        margin: 0 auto;
         @media (max-width:$extra-large) {
-          width: $large;
+            width: $large;
         }
-
         @media (max-width:$large) {
-          width: 100%;
+            width: 100%;
         }
     }
 
     .row-fluid {
-      width: 100%;
-      display: table;
-
-
-      /**
-       * Child divs are displayed as table cells and aligned middle.
-       */
-      & > div {
-        display: table-cell;
-        vertical-align: middle;
-        float:none;
+        width: 100%;
+        display: table;
 
         /**
-         * At smaller screen widths we need to pad the "table" cells so that they're
-         * not up against the edge of the page.
-         */
-        @media (max-width: $large){
-          &:first-child {
-            padding-left: $edge-padding;
-          }
-          &:last-child {
-            padding-right: $edge-padding;
-          }
-        }    
-      }
+        * Child divs are displayed as table cells and aligned middle.
+        */
+        & > div {
+            display: table-cell;
+            vertical-align: middle;
+            float: none;
 
+            /**
+            * At smaller screen widths we need to pad the "table" cells so that they're
+            * not up against the edge of the page.
+            */
+            @media (max-width: $large) {
+                &:first-child {
+                    padding-left: $edge-padding;
+                }
+
+                &:last-child {
+                    padding-right: $edge-padding;
+                }
+            }
+        }
     }
-
-
-
 }

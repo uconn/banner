@@ -1,3 +1,12 @@
+<?php
+
+require "vendor/autoload.php";
+
+$banner = new UConn\Banner\Banner();
+
+$banner->name = "University Communications";
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,21 +18,13 @@
                 margin:0;
             }
         </style>
+        <style media="screen">
+            /* Example of outputting the CSS */
+            <?php echo $banner->css(); ?>
+        </style>
+
     </head>
     <body>
-
-        <?php
-
-        require "vendor/autoload.php";
-
-        $banner = new UConn\Banner\Banner();
-
-        $banner->name = "University Communications";
-
-        echo $banner;
-
-        ?>
-
-
+        <?php echo $banner; ?>
     </body>
 </html>

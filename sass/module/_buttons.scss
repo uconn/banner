@@ -24,15 +24,13 @@
       vertical-align: auto;
 
       [class*="icon-"] {
-        line-height: $btn-size; 
+        line-height: $btn-size;
       }
 
     }
     .btn, .btn:hover, .btn:visited, .btn:focus {
       @include border-radius(3px);
       background-color: #1c3173;
-      @include background-image(linear-gradient(color-stops(#304994, #1c3173)) )  ;
-      @include box-shadow(inset 1px 1px 0 #3957b0);
       border: 1px solid #1e2b51;
       @include transition(none);
       background-position: 0% 0%;

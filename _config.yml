@@ -11,11 +11,8 @@ department_url: http://communications.uconn.edu/
 # This should almost always be set to true.
 show_header: true
 
-# Files/folders to exclude from the Jekyll build
-exclude: [README.md, config.rb, .gitignore, sass, Gemfile, Gemfile.lock]
-
 # Edit <form> markup to match your site search code.
-# Or, set to 'search: false' to disable the search form altogether. 
+# Or, set to 'search: false' to disable the search form altogether.
 search: |
         <form class="form-search">
             <input type="text" class="input-medium" placeholder="Search this site...">
