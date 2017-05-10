@@ -26,19 +26,6 @@ $btn-size: 32px;
 $icon-size: 21px;
 
 /**
- * Responsive Breakpoints
- *
- * We're defaulting to the breakpoints in Bootstrap 2.3.x, since it's fairly common
- * on campus. These may change depending on the base CSS framework that you're using.
- * You'll want to adjust these so that the banner "responds" in concert with the rest
- * of your site.
- */
-$extra-large: 1200px;
-$large: 992px;
-$medium: 768px;
-$small: 480px;
-
-/**
  * Edge padding.
  *
  * When the banner goes responsive, we add padding to the page edge so that the logo, buttons,

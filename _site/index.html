@@ -5,21 +5,35 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Banner, from UConn</title>
+  <title>UConn Banner</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
- 
+
+  <!-- Bootrap is not required. It's only here for testing and alignment purposes. -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
   <link href="banner.css" rel="stylesheet">
 
   <style>
   /**
    * The banner assumes a margin of 0px, but is not included
-   * in banner.css to avoid collisions with other themes and 
+   * in banner.css to avoid collisions with other themes and
    * admin bars.
    */
   body {
     margin:0px;
+  }
+
+  /**
+   * The following rules are for demo purposes only.
+   */
+  :root {
+      --container-width: 100%;
+  }
+  #uconn-banner .container {
+      max-width: var(--container-width);
   }
   </style>
 
@@ -28,6 +42,8 @@
 
   <!-- Use if you need responsive layouts for IE -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+
+
 
 </head>
 
@@ -74,5 +90,67 @@
   </div>
 
 </div>
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container">
+    <h1>Hello, world!</h1>
+    <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Heading</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+      <h2>Media Query Tester</h2>
+      <p>This form will help you to build custom breakpoints for your banner.</p>
+      <form id="container-width-form" class="form-inline">
+        <div class="form-group">
+          <label for="container-width" style="display:block">Enter a breakpoint in pixels</label>
+          <input type="number" class="form-control" id="container-width" placeholder="1200">
+          <input type="submit" name="Test" value="Test it!" class="btn btn-primary">
+        </div>
+      </form>
+   </div>
+    <div class="col-md-4">
+      <h2>Code</h2>
+      <figure class="highlight"><pre><code class="language-html">
+@media(min-width: <span class="data-width"></span>){
+  #uconn-banner .container {
+      max-width: <span class="data-width"></span>
+  }
+}</code></pre></figure>
+
+
+    </div>
+  </div>
+
+  <hr>
+
+  <footer>
+    <p>&copy; 2016 Company, Inc.</p>
+  </footer>
+</div> <!-- /container -->
+
+    <!-- Bootstrap and jQuery are not required. Again, they're here for testing purposes. -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#container-width-form').bind('submit', function(event){
+                var width = $('#container-width').val();
+                document.documentElement.style.setProperty('--container-width', width + 'px');
+                $('.data-width').html(width + 'px')
+                event.preventDefault();
+            });
+        });
+    </script>
 </body>
 </html>

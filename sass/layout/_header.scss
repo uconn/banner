@@ -6,10 +6,10 @@
       & > div {
         width:50%;
 
-        @media (max-width: $small){
-            display:block;
-            width: auto;
-        }
+        // @media (max-width: $small){
+        //     display:block;
+        //     width: auto;
+        // }
       }
     }
 }
