@@ -1,13 +1,11 @@
 #{$namespace} {
     .container {
-        width: $extra-large;
-        margin: 0 auto;
-        @media (max-width:$extra-large) {
-            width: $large;
-        }
-        @media (max-width:$large) {
-            width: 100%;
-        }
+        width:100%;
+        margin: 0px auto;
+
+        box-sizing:border-box;
+        padding-left: $edge-padding;
+        padding-right: $edge-padding;
     }
 
     .row-fluid {
@@ -21,20 +19,6 @@
             display: table-cell;
             vertical-align: middle;
             float: none;
-
-            /**
-            * At smaller screen widths we need to pad the "table" cells so that they're
-            * not up against the edge of the page.
-            */
-            @media (max-width: $large) {
-                &:first-child {
-                    padding-left: $edge-padding;
-                }
-
-                &:last-child {
-                    padding-right: $edge-padding;
-                }
-            }
         }
     }
 }

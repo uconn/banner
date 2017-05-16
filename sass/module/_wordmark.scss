@@ -22,11 +22,11 @@
   font-style: normal;
   border-left: 2px solid #3f4760;
   line-height: normal;
+  display:none;
 
   @extend %smoothing;
 
-  @media (max-width: $medium){
-      display:none;
+  @media (min-width: 50em){
+      display:initial;
   }
 }
-
