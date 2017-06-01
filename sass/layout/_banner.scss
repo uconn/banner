@@ -1,9 +1,5 @@
 #home-link-container {
   width: 60%;
-
-  @media (max-width:$small){
-    width: 50%;
-  }
 }
 
 
@@ -17,13 +13,13 @@
   .row-fluid {
       & > div {
         height: $banner-height;
-      }    
+      }
   }
 }
 
 
 
-#home-link{ 
+#home-link{
   height: 20px;
   overflow:hidden;
 

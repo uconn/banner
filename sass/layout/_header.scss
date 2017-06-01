@@ -5,12 +5,6 @@
     .row-fluid {
       & > div {
         width:50%;
-
-        @media (max-width: $small){
-            display:block;
-            width: auto;
-            padding: 0 $edge-padding;
-        }
       }
     }
 }
