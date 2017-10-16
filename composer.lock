@@ -4,27 +4,27 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6f6b6b775424e3bc165d841a56fe3b54",
+    "content-hash": "c3816c527e9fd2b6968060cfd8582a36",
     "packages": [
         {
             "name": "liquid/liquid",
-            "version": "1.2.2",
+            "version": "1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kalimatas/php-liquid.git",
-                "reference": "97e224ac30a4756d30a639ec9fa133cd56a8bf7b"
+                "reference": "336b816ccaaacedf7347cbfe3889f146d8f67dae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kalimatas/php-liquid/zipball/97e224ac30a4756d30a639ec9fa133cd56a8bf7b",
-                "reference": "97e224ac30a4756d30a639ec9fa133cd56a8bf7b",
+                "url": "https://api.github.com/repos/kalimatas/php-liquid/zipball/336b816ccaaacedf7347cbfe3889f146d8f67dae",
+                "reference": "336b816ccaaacedf7347cbfe3889f146d8f67dae",
                 "shasum": ""
             },
             "require": {
                 "php": ">= 5.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.8"
+                "phpunit/phpunit": "*"
             },
             "type": "library",
             "autoload": {
@@ -55,7 +55,7 @@
                 "liquid",
                 "template"
             ],
-            "time": "2017-02-08T15:42:32+00:00"
+            "time": "2016-06-11T12:51:15+00:00"
         },
         {
             "name": "mustangostang/spyc",
