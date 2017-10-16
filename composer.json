@@ -10,8 +10,8 @@
         }
     ],
     "require": {
-        "liquid/liquid": "1.2",
-        "mustangostang/spyc": "^0.6.2"
+        "mustangostang/spyc": "^0.6.2",
+        "liquid/liquid": "1.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.1"
