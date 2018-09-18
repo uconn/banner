@@ -5,7 +5,7 @@ name: UConn Banner
 department: University Communications
 
 # The URL for your department
-department_url: http://communications.uconn.edu/
+department_url: https://communications.uconn.edu/
 
 # Show the site header below the blue banner?
 # This should almost always be set to true.
@@ -23,3 +23,4 @@ search: |
 # Server settings for `jekyll serve`
 port:        4000
 baseurl:     /
+alternative: true

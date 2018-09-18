@@ -1,4 +1,8 @@
+{% if site.alternative != true %}
 <div id="uconn-banner">
+{% else %}
+<div id="uconn-banner" class="alternative">
+{% endif %}
     <div id="uconn-header-container">
         <div class="row-container">
             <div class="row-fluid">
@@ -10,11 +14,11 @@
                 </div>
                 <div id="button-container">
                     <span>
-              <a class="btn" id="uconn-search" href="https://uconn.edu/search" title="Search"><i class="icon-search"></i>
+              <a class="btn" id="uconn-search" href="https://uconn.edu/search" title="Search University of Connecticut"><i class="icon-search" aria-hidden="true"></i>
               </a>
             </span>
                     <span>
-              <a class="btn" id="uconn-az" href="https://uconn.edu/az" title="AZ Index"><i class="icon-a-z"></i></a>
+              <a class="btn" id="uconn-az" href="https://uconn.edu/az" title="A to Z Index"><i class="icon-a-z" aria-hidden="true"></i></a>
             </span>
                 </div>
             </div>

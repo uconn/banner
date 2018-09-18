@@ -1,3 +1,20 @@
+#{$namespace}.alternative {
+  #button-container {
+    .btn, .btn:hover, .btn:visited, .btn:focus {
+      border-radius: 0;
+      @include transition(none);
+      background-position: 0% 0%;
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      transition: border 0.08s linear;
+    }
+    .btn:hover {
+      border-bottom: 2px solid #fff;
+    }
+  }
+}
+
 #{$namespace} {
   #button-container {
     text-align:right;

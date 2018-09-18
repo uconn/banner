@@ -10,6 +10,7 @@ class Banner {
     private $url;
     private $header;
     private $search;
+    private $alternative;
 
     public function __construct() {
 
@@ -21,6 +22,7 @@ class Banner {
         $this->url =        $settings['department_url'];
         $this->header =     $settings['show_header'];
         $this->search =     $settings['search'];
+        $this->alternative = $settings['alternative'];
     }
 
     public function __set($index, $val){
@@ -42,7 +44,8 @@ class Banner {
                 'department'        => $this->department,
                 'department_url'    => $this->url,
                 'show_header'       => $this->header,
-                'search'            => $this->search
+                'search'            => $this->search,
+                'alternative'       => $this->alternative
             )
         );
     }
