@@ -5,13 +5,17 @@
   position: absolute;
   top: 4.3em;
   p {
+    color: #333;
+    font-family: $secondary-font;
+    font-weight: bold;
     margin: 0;
+    margin-top: 0.6em;
   }
   &:after {
     border-color: transparent white transparent transparent;
     border-style: solid;
     border-width: 10px 8px 10px 0px;
-    bottom: 1.3em;
+    bottom: 1.4em;
     content: '';
     position: absolute;
     right: 1.8em;
@@ -30,9 +34,9 @@
       color: #fff;
       transition: border 0.08s linear;
     }
-    .btn:hover {
-      border-bottom: 2px solid #fff;
-    }
+    // .btn:hover {
+    //   border-bottom: 2px solid #fff;
+    // }
   }
 }
 
@@ -49,11 +53,13 @@
       vertical-align: middle;
       white-space: nowrap;
     }
-    .icon-container + div {
+    .icon-container > div {
       display: none;
     }
 
-    .icon-container:hover + div {
+    .icon-container:hover > div,
+    #uconn-search:focus + div,
+    #uconn-az:focus + div {
       @extend %tooltip-container;
       display: inline-block;
     }
