@@ -9,16 +9,15 @@
     font-family: $secondary-font;
     font-weight: bold;
     margin: 0;
-    margin-top: 0.6em;
+    margin-top: 0.7em;
   }
   &:after {
     border-color: transparent white transparent transparent;
     border-style: solid;
     border-width: 10px 8px 10px 0px;
-    bottom: 1.4em;
+    bottom: 1.5em;
     content: '';
     position: absolute;
-    right: 1.8em;
     transform: rotate(90deg);
   }
 }
@@ -34,9 +33,6 @@
       color: #fff;
       transition: border 0.08s linear;
     }
-    // .btn:hover {
-    //   border-bottom: 2px solid #fff;
-    // }
   }
 }
 
@@ -44,7 +40,7 @@
   #button-container {
     text-align:right;
     position: relative;
-    & > span {
+    & > .icon-container {
       width: $btn-size;
       height:$btn-size;
       display: inline-block;
@@ -64,12 +60,19 @@
       display: inline-block;
     }
 
+    // the icons are different sizes so we have to position them slightly differently.
     #uconn-search-tooltip {
       right: 2em;
+      &:after {
+        right: 1.9em;
+      }
     }
 
     #uconn-az-tooltip {
       right: -0.6em;
+      &:after {
+        right: 1.7em;
+      }
     }
 
     .btn {
