@@ -33,6 +33,10 @@
       color: #fff;
       transition: border 0.08s linear;
     }
+    .btn:hover,
+    .btn:focus {
+      border-bottom: 2px solid #fff;
+    }
   }
 }
 
