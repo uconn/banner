@@ -55,15 +55,21 @@
       visibility: hidden;
     }
 
-    .icon-container:hover > div,
-    #uconn-search:focus + div,
-    #uconn-az:focus + div {
-      @extend %tooltip-container;
-      transition: opacity 0.3s ease-in-out;
-      opacity: 1;
-      visibility: visible;
+    #uconn-search,
+    #uconn-az {
+      border-top: 2px solid transparent;
+      &:hover,
+      &:focus {
+        border-top: 2px solid #fff;
+        + div {
+          @extend %tooltip-container;
+          transition: opacity 0.3s ease-in-out;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
     }
-
+    
     // the icons are different sizes so we have to position them slightly differently.
     #uconn-search-tooltip {
       right: 2em;
