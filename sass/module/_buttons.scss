@@ -57,10 +57,24 @@
 
     #uconn-search,
     #uconn-az {
-      border-top: 2px solid transparent;
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 30px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        box-shadow: inset 0 2px 0 0 white;
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
+      }
+      &:hover:before,
+      &:focus:before {
+        opacity: 1;
+      }
       &:hover,
       &:focus {
-        border-top: 2px solid #fff;
         + div {
           @extend %tooltip-container;
           transition: opacity 0.3s ease-in-out;
