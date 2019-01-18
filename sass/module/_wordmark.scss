@@ -1,33 +1,52 @@
+#wordmark {
+    color: #fff;
+    font-family: $uconn-font, $fallback-fonts;
+    font-size: 32px;
+    overflow: hidden;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 0px 5px 0 0;
+    @extend %smoothing;
+    @media (max-width: 500px) {
+        letter-spacing: 2px;
+    }
+}
 
-#wordmark{
-  color: #fff;
-  font-family: $uconn-font,$fallback-fonts;
-  font-size: 32px;
-  overflow: hidden;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  padding:0px 5px 0 0;
-
-  @extend %smoothing;
+.health #wordmark {
+    @media (max-width: 500px) {
+        font-size: 30px;
+        letter-spacing: 1px;
+    }
 }
 
 #university-of-connecticut {
-  font-family: $secondary-font,$fallback-fonts;
-  color: #9faab2;
-  font-size: 18px;
-  letter-spacing: .055em;
-  word-spacing: .02em;
-  padding: 1px 0 0 10px;
-  font-weight: bold;
-  font-style: normal;
-  border-left: 2px solid #3f4760;
-  line-height: normal;
-  display:none;
-  text-transform: uppercase;
+    font-family: $secondary-font, $fallback-fonts;
+    color: #9faab2;
+    font-size: 18px;
+    letter-spacing: .055em;
+    word-spacing: .02em;
+    padding: 1px 0 0 10px;
+    font-weight: bold;
+    font-style: normal;
+    border-left: 2px solid #3f4760;
+    line-height: normal;
+    display: none;
+    text-transform: uppercase;
+    @extend %smoothing;
+    @media (min-width: 50em) {
+        display: initial;
+    }
+}
 
-  @extend %smoothing;
-
-  @media (min-width: 50em){
-      display:initial;
-  }
+.health #university-of-connecticut {
+    letter-spacing: 4px;
+    color: #fff;
+    border-left: none;
+    padding-left: 3px;
+    display: initial;
+    @media (max-width: 500px) {
+        font-size: 14px;
+        letter-spacing: 2px;
+        padding-left: 0px;
+    }
 }

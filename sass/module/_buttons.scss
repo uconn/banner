@@ -1,188 +1,206 @@
 %tooltip-container {
-  background-color: #ededed;
-  border-top: 1px solid #ededed;
-  color: #000e2f;
-  padding: 12px 16px;
-  position: absolute;
-  top: 60px;
-  transition: opacity 0.3s ease-in-out;
-  z-index: 1000;
-  &:before {
-    font-family: $secondary-font;
-    font-size: 14px;
-    font-weight: bold;
-  }
-  &:after {
-    border-color: transparent #ededed transparent transparent;
-    border-style: solid;
-    border-width: 10px 8px 10px 0px;
-    bottom: 34px;
-    content: '';
+    background-color: #ededed;
+    border-top: 1px solid #ededed;
+    color: #000e2f;
+    padding: 12px 16px;
     position: absolute;
-    transform: rotate(90deg);
-  }
+    top: 60px;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
+    &:before {
+        font-family: $secondary-font;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    &:after {
+        border-color: transparent #ededed transparent transparent;
+        border-style: solid;
+        border-width: 10px 8px 10px 0px;
+        bottom: 34px;
+        content: '';
+        position: absolute;
+        transform: rotate(90deg);
+    }
 }
 
 #{$namespace} {
-  .no-css {
-    height: 1px;
-    left: -99999px;
-    position: absolute;
-    width: 1px;
-  }
+    .no-css {
+        height: 1px;
+        left: -99999px;
+        position: absolute;
+        width: 1px;
+    }
 }
 
 #{$namespace}.alternative {
-  #button-container {
-    .btn, .btn:hover, .btn:visited, .btn:focus {
-      border-radius: 0;
-      @include transition(none);
-      background-position: 0% 0%;
-      background-color: transparent;
-      border: none;
-      color: #fff;
-      transition: border 0.08s linear;
+    #button-container {
+        .btn,
+        .btn:hover,
+        .btn:visited,
+        .btn:focus {
+            border-radius: 0;
+            @include transition(none);
+            background-position: 0% 0%;
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            transition: border 0.08s linear;
+        }
     }
-  }
-  #uconn-search,
-  #uconn-az {
-    position: relative;
-    &:before {
-      content: '';
-      position: absolute;
-      bottom: 30px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      box-shadow: inset 0 2px 0 0 white;
-      transition: opacity 0.3s ease-in-out;
-      opacity: 0;
+    #uconn-search,
+    #uconn-az {
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            box-shadow: inset 0 2px 0 0 white;
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0;
+        }
+        &:hover:before,
+        &:focus:before {
+            opacity: 1;
+        }
+        &:hover,
+        &:focus {
+            +div {
+                @extend %tooltip-container;
+                transition: opacity 0.3s ease-in-out;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
     }
-    &:hover:before,
-    &:focus:before {
-      opacity: 1;
-    }
-    &:hover,
-    &:focus {
-      + div {
-        @extend %tooltip-container;
-        transition: opacity 0.3s ease-in-out;
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-  }
-    
     // the icons are different sizes so we have to position them slightly differently.
     // they also need different content in case css is disabled on the client.
-  #uconn-search-tooltip {
-    right: 28px;
-    &:before {
-      content: '';
+    #uconn-search-tooltip {
+        right: 28px;
+        &:before {
+            content: '';
+        }
+        &:after {
+            right: 25px;
+        }
     }
-    &:after {
-      right: 25px;
+    #uconn-az-tooltip {
+        right: -9px;
+        &:before {
+            content: '';
+        }
+        &:after {
+            right: 22px;
+        }
     }
-  }
+    #uconn-search,
+    #uconn-az {
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            box-shadow: inset 0 2px 0 0 white;
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0;
+        }
+        &:hover:before,
+        &:focus:before {
+            opacity: 1;
+        }
+        &:hover,
+        &:focus {
+            // make the divs visible on hover or focus
+            +div {
+                @extend %tooltip-container;
+                transition: opacity 0.3s ease-in-out;
+                opacity: 1;
+                visibility: visible;
+            }
+            // set the content only on hover/focus
+            // this avoids overflowing the banner when the text isn't visible
+            +#uconn-search-tooltip {
+                &:before {
+                    content: 'Search UConn';
+                }
+            }
+            +#uconn-az-tooltip {
+                &:before {
+                    content: 'UConn A to Z Index';
+                }
+            }
+        }
+    }
+}
 
-  #uconn-az-tooltip {
-    right: -9px;
-      &:before {
-      content: '';
-    }
-    &:after {
-      right: 22px;
-    }
-  }
-    
-  #uconn-search,
-  #uconn-az {
-    position: relative;
-    &:before {
-      content: '';
-      position: absolute;
-      bottom: 30px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      box-shadow: inset 0 2px 0 0 white;
-      transition: opacity 0.3s ease-in-out;
-      opacity: 0;
-    }
-    &:hover:before,
-    &:focus:before {
-      opacity: 1;
-    }
-    &:hover,
-    &:focus {
-      // make the divs visible on hover or focus
-      + div {
-        @extend %tooltip-container;
-        transition: opacity 0.3s ease-in-out;
-        opacity: 1;
-        visibility: visible;
-      }
-      // set the content only on hover/focus
-      // this avoids overflowing the banner when the text isn't visible
-      + #uconn-search-tooltip {
-        &:before {
-          content: 'Search UConn';
+#{$namespace}.health {
+    #uconn-search,
+    #uconn-az {
+        &:hover,
+        &:focus {
+            +#uconn-search-tooltip {
+                &:before {
+                    content: 'Search UConn Health';
+                }
+            }
+            +#uconn-az-tooltip {
+                &:before {
+                    content: 'UConn Health A to Z Index';
+                }
+            }
         }
-      }
-      + #uconn-az-tooltip {
-        &:before {
-          content: 'UConn A to Z Index';
-        }
-      }
     }
-  }
 }
 
 #{$namespace} {
-  #button-container {
-    text-align:right;
-    position: relative;
-    & > .icon-container {
-      width: $btn-size;
-      height:$btn-size;
-      display: inline-block;
-      margin:0px 2px;
-      padding:0px;
-      vertical-align: middle;
-      white-space: nowrap;
+    #button-container {
+        text-align: right;
+        position: relative;
+        &>.icon-container {
+            width: $btn-size;
+            height: $btn-size;
+            display: inline-block;
+            margin: 0px 2px;
+            padding: 0px;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+        .icon-container>div {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .btn {
+            display: block;
+            height: 100%;
+            width: 100%;
+            font-size: $icon-size;
+            text-align: center;
+            padding: inherit;
+            text-shadow: none;
+            line-height: normal;
+            vertical-align: auto;
+            [class*="icon-"] {
+                line-height: $btn-size;
+            }
+        }
+        .btn,
+        .btn:hover,
+        .btn:visited,
+        .btn:focus {
+            @include border-radius(3px);
+            background-color: #1c3173;
+            border: 1px solid #1e2b51;
+            @include transition(none);
+            background-position: 0% 0%;
+        }
+        .btn:focus,
+        .btn:hover {
+            color: #fff;
+        }
     }
-    .icon-container > div {
-      opacity: 0;
-      visibility: hidden;
-    }
-    .btn {
-      display:block;
-      height:100%;
-      width:100%;
-      font-size: $icon-size;
-      text-align: center;
-      padding: inherit;
-      text-shadow: none;
-      line-height: normal;
-      vertical-align: auto;
-
-      [class*="icon-"] {
-        line-height: $btn-size;
-      }
-
-    }
-    .btn, .btn:hover, .btn:visited, .btn:focus {
-      @include border-radius(3px);
-      background-color: #1c3173;
-      border: 1px solid #1e2b51;
-      @include transition(none);
-      background-position: 0% 0%;
-    }
-    .btn:focus,
-    .btn:hover {
-      color: #fff;
-    }
-
-
-  }
 }
