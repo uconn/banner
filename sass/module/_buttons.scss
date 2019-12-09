@@ -147,17 +147,18 @@
 }
 
 #{$namespace}.alternative {
+  button {
+    background-color: $bg-color;
+  }
   #button-container {
     @extend %button-container;
-    button {
-      background-color: $bg-color;
-    }
     .icon-container {
       position: relative;
     }
     .popup-container {
       position: absolute;
-      right: 0;
+      right: -6px;
+      top: 45px;
     }
     .icon-container > div,
     .icon-container div {

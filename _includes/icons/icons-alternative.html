@@ -12,15 +12,12 @@
   <div id="search-popup" class="popup-container">
     <div class="form-wrapper">
       <form action="{{ site.data.config.department_url }}" method="GET" role="search">
-        <input type="search" name="s" id="site-search" placeholder="Search this site..."/>
-        <button type="submit">
-          <span class="no-css">Search {{ site.config.data.department }}</span>
-          {% include_relative _includes/icons/search-icon.svg %}
-        </button>
+        <input type="search" name="s" id="site-search" placeholder="Search this site..."/><button type="submit"><span class="no-css">Search {{ site.config.data.department }}</span>{% include_relative _includes/icons/search-icon.svg %}</button>
       </form>
     </div>
+    <hr />
     <div class="search-link-wrapper">
-      <a href="https://uconn.edu/search">Search Uconn <span>{% include_relative _includes/icons/search-icon.svg  %}</span></a>
+      <a href="https://uconn.edu/search"><span class="banner-search-text">Search Uconn</span> <span class="banner-search-icon">{% include_relative _includes/icons/search-icon.svg  %}</span></a>
     </div>
   </div>
 </div>
