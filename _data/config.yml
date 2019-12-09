@@ -23,6 +23,6 @@ search: |
             <button type="submit" class="btn">Search</button>
         </form>
 
-alternative: false
+alternative: true
 
 

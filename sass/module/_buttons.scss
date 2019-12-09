@@ -1,3 +1,31 @@
+%button-container {
+  text-align:right;
+  position: relative;
+  & > .icon-container {
+    width: $btn-size;
+    height:$btn-size;
+    display: inline-block;
+    margin:0px 2px;
+    padding:0px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  .btn {
+    display:block;
+    height:100%;
+    width:100%;
+    font-size: $icon-size;
+    text-align: center;
+    padding: inherit;
+    text-shadow: none;
+    line-height: normal;
+
+    [class*="icon-"] {
+      line-height: $btn-size;
+    }
+  }
+}
+
 %tooltip-container {
   background-color: #ededed;
   border-top: 1px solid #ededed;
@@ -23,6 +51,25 @@
   }
 }
 
+// base styles for the border that will be above or below the icons
+%icon-border {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    box-shadow: inset 0 2px 0 0 white;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+  }
+  &:hover:before,
+  &:focus:before {
+    opacity: 1;
+  }
+}
+
 #{$namespace} {
   .no-css {
     height: 1px;
@@ -34,64 +81,17 @@
 
 #{$namespace} {
   #button-container {
-    text-align:right;
-    position: relative;
-    & > .icon-container {
-      width: $btn-size;
-      height:$btn-size;
-      display: inline-block;
-      margin:0px 2px;
-      padding:0px;
-      vertical-align: middle;
-      white-space: nowrap;
-    }
+    @extend %button-container;
     .icon-container > div {
       opacity: 0;
       visibility: hidden;
     }
-    .btn {
-      display:block;
-      height:100%;
-      width:100%;
-      font-size: $icon-size;
-      text-align: center;
-      padding: inherit;
-      text-shadow: none;
-      line-height: normal;
-      vertical-align: auto;
-
-      [class*="icon-"] {
-        line-height: $btn-size;
-      }
-
-    }
-    .btn, .btn:hover, .btn:visited, .btn:focus {
-      border-radius: 0;
-      @include transition(none);
-      background-position: 0% 0%;
-      background-color: transparent;
-      border: none;
-      color: #fff;
-      transition: border 0.08s linear;
-    }
   }
   #uconn-search,
   #uconn-az {
-    position: relative;
+    @extend %icon-border;
     &:before {
-      content: '';
-      position: absolute;
       bottom: 30px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      box-shadow: inset 0 2px 0 0 white;
-      transition: opacity 0.3s ease-in-out;
-      opacity: 0;
-    }
-    &:hover:before,
-    &:focus:before {
-      opacity: 1;
     }
     &:hover,
     &:focus {
@@ -128,31 +128,8 @@
     
   #uconn-search,
   #uconn-az {
-    position: relative;
-    &:before {
-      content: '';
-      position: absolute;
-      bottom: 30px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      box-shadow: inset 0 2px 0 0 white;
-      transition: opacity 0.3s ease-in-out;
-      opacity: 0;
-    }
-    &:hover:before,
-    &:focus:before {
-      opacity: 1;
-    }
     &:hover,
     &:focus {
-      // make the divs visible on hover or focus
-      + div {
-        @extend %tooltip-container;
-        transition: opacity 0.3s ease-in-out;
-        opacity: 1;
-        visibility: visible;
-      }
       // set the content only on hover/focus
       // this avoids overflowing the banner when the text isn't visible
       + #uconn-search-tooltip {
@@ -164,6 +141,22 @@
         &:before {
           content: 'UConn A to Z Index';
         }
+      }
+    }
+  }
+}
+
+#{$namespace}.alternative {
+  #button-container {
+    @extend %button-container;
+    button {
+      background-color: $bg-color;
+    }
+    #uconn-search,
+    #uconn-az {
+      @extend %icon-border;
+      &:before {
+        top: 30px;
       }
     }
   }
