@@ -1,0 +1,28 @@
+# The name of your site
+name: UConn Banner
+
+# The URL for your department
+department_url: https://communications.uconn.edu/
+
+# Show the site header below the blue banner?
+# This should almost always be set to true.
+show_header: true
+
+# The secondary title for your site. Typically your department, school or college.
+department: University Communications
+department_abbreviation: ""
+
+# The URL for your department
+department_url: https://communications.uconn.edu/
+
+# Edit <form> markup to match your site search code.
+# Or, set to 'search: false' to disable the search form altogether.
+search: |
+        <form class="form-search">
+            <input type="text" class="input-medium" placeholder="Search this site...">
+            <button type="submit" class="btn">Search</button>
+        </form>
+
+alternative: false
+
+

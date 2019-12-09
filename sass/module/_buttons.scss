@@ -32,8 +32,39 @@
   }
 }
 
-#{$namespace}.alternative {
+#{$namespace} {
   #button-container {
+    text-align:right;
+    position: relative;
+    & > .icon-container {
+      width: $btn-size;
+      height:$btn-size;
+      display: inline-block;
+      margin:0px 2px;
+      padding:0px;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+    .icon-container > div {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .btn {
+      display:block;
+      height:100%;
+      width:100%;
+      font-size: $icon-size;
+      text-align: center;
+      padding: inherit;
+      text-shadow: none;
+      line-height: normal;
+      vertical-align: auto;
+
+      [class*="icon-"] {
+        line-height: $btn-size;
+      }
+
+    }
     .btn, .btn:hover, .btn:visited, .btn:focus {
       border-radius: 0;
       @include transition(none);
@@ -135,54 +166,5 @@
         }
       }
     }
-  }
-}
-
-#{$namespace} {
-  #button-container {
-    text-align:right;
-    position: relative;
-    & > .icon-container {
-      width: $btn-size;
-      height:$btn-size;
-      display: inline-block;
-      margin:0px 2px;
-      padding:0px;
-      vertical-align: middle;
-      white-space: nowrap;
-    }
-    .icon-container > div {
-      opacity: 0;
-      visibility: hidden;
-    }
-    .btn {
-      display:block;
-      height:100%;
-      width:100%;
-      font-size: $icon-size;
-      text-align: center;
-      padding: inherit;
-      text-shadow: none;
-      line-height: normal;
-      vertical-align: auto;
-
-      [class*="icon-"] {
-        line-height: $btn-size;
-      }
-
-    }
-    .btn, .btn:hover, .btn:visited, .btn:focus {
-      @include border-radius(3px);
-      background-color: #1c3173;
-      border: 1px solid #1e2b51;
-      @include transition(none);
-      background-position: 0% 0%;
-    }
-    .btn:focus,
-    .btn:hover {
-      color: #fff;
-    }
-
-
   }
 }

@@ -7,6 +7,7 @@ class Banner {
 
     private $name;
     private $department;
+    private $department_abbreviation;
     private $url;
     private $header;
     private $search;
@@ -15,10 +16,11 @@ class Banner {
     public function __construct() {
 
         // Load the defaults. See https://packagist.org/packages/mustangostang/spyc
-        $settings = spyc_load_file(dirname(__FILE__) . '/../../_config.yml');
+        $settings = spyc_load_file(dirname(__FILE__) . '/../../_data/config.yml');
 
         $this->name =       $settings['name'];
         $this->department = $settings['department'];
+        $this->department_abbreviation = $settings['department_abbreviation'];
         $this->url =        $settings['department_url'];
         $this->header =     $settings['show_header'];
         $this->search =     $settings['search'];
@@ -42,6 +44,7 @@ class Banner {
             'site' => array(
                 'name'              => $this->name,
                 'department'        => $this->department,
+                'department_abbreviation' => $this->department_abbreviation,
                 'department_url'    => $this->url,
                 'show_header'       => $this->header,
                 'search'            => $this->search,
