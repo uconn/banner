@@ -1,57 +1,9 @@
-{% if site.data.config.alternative != true %}
-<div id="uconn-banner">
+{% if site.data.config.alternative == false %}
+    {% include standard-banner.html %}
 {% else %}
-<div id="uconn-banner" class="alternative">
+    {% include alternative-banner.html %}
 {% endif %}
-    <div id="uconn-header-container">
-        <div class="row-container">
-            <div class="row-fluid">
-                <div id="home-link-container">
-                    <a id="home-link" href="https://uconn.edu/">
-                        <span id="wordmark" aria-hidden="true">UConn</span>
-                        <span id="university-of-connecticut">{{ site.data.config.department }}</span>
-                        {% if site.data.config.department_abbreviation != "" %}
-                            <span id="department-abbreviation">
-                                {{ site.data.config.department_abbreviation }}
-                            </span>
-                        {% endif %}
-                    </a>
-                </div>
-                <div id="button-container">
-                    {% if site.data.config.alternative != true %}
-                        {% include icons-standard.html %}                        
-                    {% else %}
-                    {% comment %}
-                        provide different markup for the alternative style
-                    {% endcomment %}
-                        <div class="icon-container" id="icon-container-search">
-                            <a class="btn" id="uconn-search" href="https://uconn.edu/search" title="Search University of Connecticut">
-                                <span class="no-css">Search University of Connecticut</span>
-                                <i class="icon-search" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                        <div class="icon-container" id="icon-container-az">
-                            <a class="btn" id="uconn-az" href="https://uconn.edu/az" title="A to Z Index">
-                                <span class="no-css">A to Z Index</span>
-                                <i class="icon-a-z" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    </div>
-    {% if site.data.config.show_header != false %}
-    <div class="row-container" id="site-header">
-        <div class="row-fluid">
-            <div>
-                <p id="super-title"><a href="{{ site.data.config.department_url }}">{{ site.data.config.department }}</a></p>
-                <h1 id="site-title"><a href="/">{{ site.data.config.name }}</a></h1>
-            </div>
-            <div id="search-container">
-                {% if site.data.config.search != false %} {{ site.data.config.search }} {% endif %}
-            </div>
-        </div>
-    </div>
-    {% endif %}
-</div>
+
+{% if site.data.config.show_header != false %}
+    {% include optional-header.html %}
+{% endif %}

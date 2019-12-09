@@ -1,0 +1,22 @@
+<div id="uconn-banner">
+    <div id="uconn-header-container">
+        <div class="row-container">
+            <div class="row-fluid">
+                <div id="home-link-container">
+                    <a id="home-link" href="https://uconn.edu/">
+                        <span id="wordmark" aria-hidden="true">UConn</span>
+                        {% if site.data.config.department != "" and site.data.config.department != "University of Connecticut" %}
+                            <span class="no-css">University of Connecticut - department of </span>
+                        {% endif %}
+                        <span id="university-of-connecticut">
+                            {{ site.data.config.department | default: "University of Connecticut"}}
+                        </span>
+                    </a>
+                </div>
+                <div id="button-container">
+                    {% include icons-standard.html %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
