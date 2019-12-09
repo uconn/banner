@@ -152,6 +152,18 @@
     button {
       background-color: $bg-color;
     }
+    .icon-container {
+      position: relative;
+    }
+    .popup-container {
+      position: absolute;
+      right: 0;
+    }
+    .icon-container > div,
+    .icon-container div {
+      opacity: 1;
+      visibility: visible;
+    }
     #uconn-search,
     #uconn-az {
       @extend %icon-border;
