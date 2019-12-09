@@ -12,7 +12,9 @@
 /* Import the webfonts */
 @import "fonts/uconn";
 @import "fonts/proxima-nova";
-@import "fonts/icons";
+
+/* Import icon styles */
+@import "icons/icons";
 
 /* Layout */
 @import "layout/layout";
