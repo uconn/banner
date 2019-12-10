@@ -10,17 +10,7 @@
     <span class="no-css">Search University of Connecticut</span>
     {% include_relative _includes/icons/search-icon.svg %}
   </button>
-  <div id="search-popup" class="popup-container">
-    <div class="form-wrapper">
-      <form action="{{ site.data.config.department_url }}" method="GET" role="search">
-        <input type="search" name="s" id="site-search" placeholder="Search this site..."/><button type="submit"><span class="no-css">Search {{ site.config.data.department }}</span>{% include_relative _includes/icons/search-icon.svg %}</button>
-      </form>
-    </div>
-    <hr />
-    <div class="link-wrapper search-link-wrapper">
-      <a href="https://uconn.edu/search"><span class="banner-search-text">Search Uconn</span> <span class="banner-search-icon">{% include_relative _includes/icons/search-icon.svg  %}</span></a>
-    </div>
-  </div>
+  {% include_relative _includes/popups/search-popup.html %}
 </div>
 
 <div class="icon-container" id="icon-container-az">
@@ -36,15 +26,7 @@
       <span class="no-css">A to Z Index</span>
       {% include_relative _includes/icons/a-z-icon.svg %}
     </button>
-    <div id="a-z-popup" class="popup-container">
-      <div class="link-wrapper az-link-wrapper">
-        <a href="{{ site.data.config.a_z_url | default: '/az'  }}"><span class="banner-search-text"></span>Site A-Z</span></a>
-      </div>
-      <hr />
-      <div class="link-wrapper az-link-wrapper">
-        <a href="https://uconn.edu/az"><span class="banner-search-text"></span>UConn A-Z</span></a>
-      </div>
-    </div>
+    {% include_relative _includes/popups/a-z-popup.html %}
   {% else %}
     <a class="btn" id="uconn-az" href="https://uconn.edu/az">
       <span class="no-css">A to Z Index</span>
