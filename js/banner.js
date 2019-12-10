@@ -27,7 +27,7 @@
   function closePopups(evt) {
     if (buttonContainer.contains(evt.target)) return 
 
-    var validType = evt.type === 'focus' ? true : false
+    var validType = evt.type === 'click' ? true : false
     var escapeKey = evt.which === 27 ? true : false
     
     if (validType || escapeKey) {
