@@ -1,4 +1,6 @@
 .popup-container {
+  background-color: #546688;
+  display: none;
   line-height: 0;
   hr {
     border-top: 1px solid #6f84a9;
@@ -6,8 +8,11 @@
   }
 }
 
+.popup-container.banner-popup-active {
+  display: block;
+}
+
 #search-popup {
-  background-color: #546688;
   .form-wrapper {
     form {
       color: $bg-color;
@@ -21,7 +26,9 @@
       padding: 12px 10px;
       &::placeholder {
         color: #ffffff;
+        opacity: 1;
       }
+      &:hover,
       &:focus {
         background-color: #2e3d5b;
       }

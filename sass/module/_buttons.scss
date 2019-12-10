@@ -95,7 +95,7 @@
     }
     &:hover,
     &:focus {
-      + div {
+      + div:not(.popup-container) {
         @extend %tooltip-container;
         transition: opacity 0.3s ease-in-out;
         opacity: 1;
