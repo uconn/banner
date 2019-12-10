@@ -12,6 +12,7 @@
   display: block;
 }
 
+#a-z-popup,
 #search-popup {
   .form-wrapper {
     form {
@@ -44,12 +45,11 @@
       fill: #ffffff;
     }
   }
-  .search-link-wrapper {
-    text-align: left;
+
+  .link-wrapper {
     a {
       color: white;
       display: inline-block;
-      padding: 14px 10px 8px 10px;
       position: relative;
       width: 100%;
       &:hover,
@@ -58,13 +58,27 @@
         color: #ffffff;
       }
     }
+  }
+
+  .search-link-wrapper {
+    text-align: left;
+    a {
+      padding: 18px 10px 20px 10px;
+    }
     .banner-search-text {
       display: inline-block;
-      padding: 10px 0 14px;
     }
     .banner-search-icon {
       position: absolute;
       right: 10px;
+      top: 8px;
+    }
+  }
+
+  .az-link-wrapper {
+    text-align: center;
+    a {
+      padding: 18px 26px;
     }
   }
 }

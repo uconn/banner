@@ -17,24 +17,38 @@
       </form>
     </div>
     <hr />
-    <div class="search-link-wrapper">
+    <div class="link-wrapper search-link-wrapper">
       <a href="https://uconn.edu/search"><span class="banner-search-text">Search Uconn</span> <span class="banner-search-icon">{% include_relative _includes/icons/search-icon.svg  %}</span></a>
     </div>
   </div>
 </div>
-<div class="icon-container" id="icon-container-az">
-  <button 
-    class="btn" 
-    id="uconn-az" 
-    href="https://uconn.edu/az"
-    aria-haspopup="true"
-    aria-controls="a-z-popup"
-    aria-expanded="false"
-  >
-    <span class="no-css">A to Z Index</span>
-    {% include_relative _includes/icons/a-z-icon.svg %}
-  </button>
-  <div id="a-z-popup" class="popup-container">
 
-  </div>
+<div class="icon-container" id="icon-container-az">
+  {% if site.data.config.a_z_dropdown == true %}
+    <button 
+      class="btn" 
+      id="uconn-az" 
+      href="https://uconn.edu/az"
+      aria-haspopup="true"
+      aria-controls="a-z-popup"
+      aria-expanded="false"
+    >
+      <span class="no-css">A to Z Index</span>
+      {% include_relative _includes/icons/a-z-icon.svg %}
+    </button>
+    <div id="a-z-popup" class="popup-container">
+      <div class="link-wrapper az-link-wrapper">
+        <a href="{{ site.data.config.a_z_url | default: '/az'  }}"><span class="banner-search-text"></span>Site A-Z</span></a>
+      </div>
+      <hr />
+      <div class="link-wrapper az-link-wrapper">
+        <a href="https://uconn.edu/az"><span class="banner-search-text"></span>UConn A-Z</span></a>
+      </div>
+    </div>
+  {% else %}
+    <a class="btn" id="uconn-az" href="https://uconn.edu/az">
+      <span class="no-css">A to Z Index</span>
+      {% include_relative _includes/icons/a-z-icon.svg %}
+    </a>
+  {% endif %}
 </div>

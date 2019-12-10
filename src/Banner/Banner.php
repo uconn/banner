@@ -12,6 +12,8 @@ class Banner {
     private $header;
     private $search;
     private $alternative;
+    private $a_z_dropdown;
+    private $a_z_url;
 
     public function __construct() {
 
@@ -25,6 +27,8 @@ class Banner {
         $this->header =     $settings['show_header'];
         $this->search =     $settings['search'];
         $this->alternative = $settings['alternative'];
+        $this->a_z_dropdown = $settings['a_z_dropdown'];
+        $this->a_z_url = $settings['a_z_url'];
     }
 
     public function __set($index, $val){
@@ -48,7 +52,9 @@ class Banner {
                 'department_url'    => $this->url,
                 'show_header'       => $this->header,
                 'search'            => $this->search,
-                'alternative'       => $this->alternative
+                'alternative'       => $this->alternative,
+                'a_z_dropdown'      => $this->a_z_dropdown,
+                'a_z_url'           => $this->a_z_url
             )
         );
     }
