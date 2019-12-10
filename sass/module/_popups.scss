@@ -1,3 +1,16 @@
+%popup-triangle {
+  content: '';
+  background-color: transparent;
+  border-color: transparent #546688 transparent transparent;
+  border-style: solid;
+  border-width: 10px 8px 10px 0px;
+  display: block;
+  position: absolute;
+  right: 18px;
+  top: -14px;
+  transform: rotateZ(90deg);
+}
+
 .popup-container {
   background-color: #546688;
   display: none;
@@ -5,6 +18,9 @@
   hr {
     border-top: 1px solid #6f84a9;
     margin: 0;
+  }
+  &:before {
+    @extend %popup-triangle;
   }
 }
 
