@@ -11,6 +11,9 @@
                         <span id="university-of-connecticut">
                             {{ site.data.config.department | default: "University of Connecticut"}}
                         </span>
+                        {% if site.data.config.department_abbreviation != "" %}
+                            <span id="site-abbreviation">{{ site.data.config.department_abbreviation }}</span>
+                        {% endif %}
                     </a>
                 </div>
                 <div id="button-container">

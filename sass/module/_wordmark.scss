@@ -1,3 +1,15 @@
+%university-styles {
+  font-family: $secondary-font,$fallback-fonts;
+  color: #9faab2;
+  font-size: 18px;
+  letter-spacing: .055em;
+  word-spacing: .02em;
+  font-weight: bold;
+  font-style: normal;
+  line-height: normal;
+  display:none;
+  text-transform: uppercase;
+}
 
 #wordmark{
   color: #fff;
@@ -12,22 +24,25 @@
 }
 
 #university-of-connecticut {
-  font-family: $secondary-font,$fallback-fonts;
-  color: #9faab2;
-  font-size: 18px;
-  letter-spacing: .055em;
-  word-spacing: .02em;
-  padding: 1px 0 0 10px;
-  font-weight: bold;
-  font-style: normal;
+  @extend %university-styles;
   border-left: 2px solid #3f4760;
-  line-height: normal;
-  display:none;
-  text-transform: uppercase;
-
+  color: #9faab2;
+  padding: 1px 0 0 10px;
   @extend %smoothing;
 
   @media (min-width: 50em){
       display:inline;
+  }
+
+}
+
+#site-abbreviation {
+  @extend %university-styles;
+  border: 0;
+  color: #ffffff;
+  display: block;
+  padding: 0;
+  @media screen and (min-width: 50em) {
+    display: none;
   }
 }

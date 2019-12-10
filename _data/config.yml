@@ -10,7 +10,7 @@ show_header: true
 
 # The secondary title for your site. Typically your department, school or college.
 department: "University Communications"
-department_abbreviation: ""
+department_abbreviation: "UComm"
 
 # The URL for your department
 department_url: https://communications.uconn.edu/
