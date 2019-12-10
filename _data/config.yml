@@ -1,9 +1,6 @@
 # The name of your site
 name: UConn Banner
 
-# The URL for your department
-department_url: https://communications.uconn.edu/
-
 # Show the site header below the blue banner?
 # This should almost always be set to true.
 show_header: true
