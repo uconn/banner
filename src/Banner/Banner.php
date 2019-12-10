@@ -81,5 +81,8 @@ class Banner {
         return file_get_contents(dirname(__FILE__) . '/../../_site/banner.css');
     }
 
+    public function js() {
+        return file_get_contents(dirname(__FILE__) . '/../../_site/js/banner.js');
+    }
 
 }
