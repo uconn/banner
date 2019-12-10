@@ -12,8 +12,10 @@
     popupContainers.forEach(function(container) {
       if (container === popup) {
         addClass(container)
+        expanded(container.previousElementSibling)
       } else {
         removeClass(container)
+        collapsed(container.previousElementSibling)
       }
     })
 
@@ -31,6 +33,7 @@
     if (validType || escapeKey) {
       popupContainers.forEach(function(container) {
         removeClass(container)
+        collapsed(container.previousElementSibling)
       })
       document.removeEventListener('click', closePopups)
       document.removeEventListener('keydown', closePopups)
@@ -43,5 +46,13 @@
 
   function removeClass(el) {
     el.classList.remove('banner-popup-active')
+  }
+
+  function expanded(el) {
+    el.setAttribute('aria-expanded', 'true')
+  }
+
+  function collapsed(el) {
+    el.setAttribute('aria-expanded', 'false')
   }
 })()
