@@ -36,18 +36,14 @@
       position: relative;
     }
     input {
-      background-color: transparent;
       border: 0;
-      color: #ffffff;
+      color: $bg-color;
       font-size: 14px;
-      padding: 12px 10px;
+      margin: 12px 10px;
+      padding: 6px 20px 6px 6px;
       &::placeholder {
-        color: #ffffff;
+        color: $bg-color;
         opacity: 1;
-      }
-      &:hover,
-      &:focus {
-        background-color: #2e3d5b;
       }
     }
     button {
@@ -55,10 +51,10 @@
       background-color: transparent;
       height: 100%;
       position: absolute;
-      right: 4px;
+      right: 8px;
     }
     svg {
-      fill: #ffffff;
+      fill: $bg-color;
     }
   }
 
@@ -79,7 +75,7 @@
   .search-link-wrapper {
     text-align: left;
     a {
-      padding: 18px 10px 20px 10px;
+      padding: 18px 10px 20px 16px;
     }
     .banner-search-text {
       display: inline-block;
