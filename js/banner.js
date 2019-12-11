@@ -1,28 +1,60 @@
 (function() {
-  var buttonContainer = document.getElementById('button-container')
+  var buttonContainer = document.querySelector('#button-container')
+  var menuToggle = document.querySelector('#banner-mobile-button')
   var popupContainers = document.querySelectorAll('.popup-container')
-  
-  buttonContainer.addEventListener('click', popupHandler)
 
-  function popupHandler(evt) {
+  buttonContainer.addEventListener('click', clickHandler)
+
+  function clickHandler(evt) {
     if (evt.target.localName !== 'button') return
 
+    if (evt.target === menuToggle) {
+      mobileMenuHandler(evt)
+    } else {
+      popupHandler(evt)
+    }
+
+    document.addEventListener('click', closeElementHandler)
+    document.addEventListener('keydown', closeElementHandler)
+  }
+
+  function closeElementHandler(evt) {
+    var useCloseMenu = true
+    var closeFunction = useCloseMenu === true ? closeMenu : closePopups
+    if (menuToggle.getAttribute('aria-expanded') === 'true') {
+      closeMenu(evt)
+    } else {
+      useCloseMenu = false
+      closePopups(evt)
+    }
+    document.removeEventListener('click', closeFunction)
+    document.removeEventListener('keydown', closeFunction)
+  }
+
+  function popupHandler(evt) {
     var popup = evt.target.nextElementSibling
 
     popupContainers.forEach(function(container) {
       if (container === popup) {
         addClass(container)
-        expanded(container.previousElementSibling)
+        expand(container.previousElementSibling)
       } else {
         removeClass(container)
-        collapsed(container.previousElementSibling)
+        collapse(container.previousElementSibling)
       }
     })
-
-    document.addEventListener('click', closePopups)
-    document.addEventListener('keydown', closePopups)
   }
 
+  function mobileMenuHandler(evt) {
+    var menuToggle = evt.target
+    var isExpanded = menuToggle.getAttribute('aria-expanded')
+
+    if (isExpanded === 'false') {
+      expand(menuToggle)
+    } else {
+      collapse(menuToggle)
+    }
+  }
 
   function closePopups(evt) {
     if (buttonContainer.contains(evt.target)) return 
@@ -33,11 +65,20 @@
     if (validType || escapeKey) {
       popupContainers.forEach(function(container) {
         removeClass(container)
-        collapsed(container.previousElementSibling)
+        collapse(container.previousElementSibling)
       })
       document.removeEventListener('click', closePopups)
       document.removeEventListener('keydown', closePopups)
     }
+  }
+
+  function closeMenu(evt) {
+    var toggleControls = menuToggle.getAttribute('aria-controls')
+    var mobileMenu = document.getElementById(toggleControls)
+    
+    if (buttonContainer.contains(evt.target) || mobileMenu.contains(evt.target)) return
+
+    collapse(menuToggle)
   }
 
   function addClass(el) {
@@ -48,11 +89,11 @@
     el.classList.remove('banner-popup-active')
   }
 
-  function expanded(el) {
+  function expand(el) {
     el.setAttribute('aria-expanded', 'true')
   }
 
-  function collapsed(el) {
+  function collapse(el) {
     el.setAttribute('aria-expanded', 'false')
   }
 })()

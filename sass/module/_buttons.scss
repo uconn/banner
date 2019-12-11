@@ -165,12 +165,29 @@
       opacity: 1;
       visibility: visible;
     }
+
     #uconn-search,
     #uconn-az {
       @extend %icon-border;
       &:before {
         top: 30px;
       }
+    }
+  }
+  #banner-mobile-button[aria-expanded="false"] {
+    .menu-toggle-open {
+      display: inline-block;
+    }
+    .menu-toggle-close {
+      display: none;
+    }
+  }
+  #banner-mobile-button[aria-expanded="true"] {
+    .menu-toggle-open {
+      display: none;
+    }
+    .menu-toggle-close {
+      display: inline-block;
     }
   }
 }
