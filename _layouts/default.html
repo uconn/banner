@@ -15,7 +15,7 @@
 
 
   <link href="banner.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="css/menu-demo.css">
   <style>
   /**
    * The banner assumes a margin of 0px, but is not included
@@ -50,7 +50,18 @@
 <body>
 {% include banner.html %}
 <nav id="uc-banner-mobile-menu">
-  hello nav
+  <ul>
+    <li>This menu is for demo purposes only</li>
+    <li>
+      <a href="{{ site.data.config.department_url }}">{{ site.data.config.department }}</a>
+    </li>
+    <li>
+      <a href="#">About</a>
+    </li>
+    <li>
+      <a href="#">Contact</a>
+    </li>
+  </ul>
 </nav>
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
@@ -120,5 +131,6 @@
         });
     </script>
     <script src="js/banner.js"></script>
+    <script src="js/menu-demo.js"></script>
 </body>
 </html>

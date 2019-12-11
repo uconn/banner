@@ -3,6 +3,11 @@
   var menuToggle = document.querySelector('#banner-mobile-button')
   var popupContainers = document.querySelectorAll('.popup-container')
 
+  var ucBannerMenuStateEvent = new CustomEvent('ucBannerMenuState', {
+    detail: { isOpen: false },
+    bubbles: true
+  })
+
   buttonContainer.addEventListener('click', clickHandler)
 
   function clickHandler(evt) {
@@ -47,9 +52,12 @@
 
   function mobileMenuHandler(evt) {
     var menuToggle = evt.target
-    var isExpanded = menuToggle.getAttribute('aria-expanded')
+    var isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' ? true : false
 
-    if (isExpanded === 'false') {
+    ucBannerMenuStateEvent.detail.isOpen = !isExpanded
+    menuToggle.dispatchEvent(ucBannerMenuStateEvent)
+
+    if (!isExpanded) {
       expand(menuToggle)
     } else {
       collapse(menuToggle)
@@ -57,6 +65,7 @@
   }
 
   function closePopups(evt) {
+    console.log(evt.target)
     if (buttonContainer.contains(evt.target)) return 
 
     var validType = evt.type === 'click' ? true : false
