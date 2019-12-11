@@ -34,7 +34,8 @@
     </a>
   {% endif %}
 </div>
-<div class="icon-container" id="icon-container-mobile-menu">
+{% if site.data.config.use_mobile_menu == true %}
+<div class="icon-container" id="{{ site.data.config.mobile_menu_id }}">
   <button 
     class="btn mobile-menu-btn"
     id="banner-mobile-button"
@@ -46,4 +47,5 @@
     {% include_relative _includes/icons/fa-times.svg %}
     <span class="no-css">Click to <span id="menu-toggle-text">open</span> menu</span>
   </button>
+{% endif %}
 </div>

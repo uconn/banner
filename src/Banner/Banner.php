@@ -14,6 +14,8 @@ class Banner {
     private $alternative;
     private $a_z_dropdown;
     private $a_z_url;
+    private $use_mobile_menu;
+    private $mobile_menu_id;
 
     public function __construct() {
 
@@ -29,6 +31,8 @@ class Banner {
         $this->alternative = $settings['alternative'];
         $this->a_z_dropdown = $settings['a_z_dropdown'];
         $this->a_z_url = $settings['a_z_url'];
+        $this->use_mobile_menu = $settings['use_mobile_menu'];
+        $this->mobile_menu_id = $settings['mobile_menu_id'];
     }
 
     public function __set($index, $val){
@@ -54,7 +58,9 @@ class Banner {
                 'search'            => $this->search,
                 'alternative'       => $this->alternative,
                 'a_z_dropdown'      => $this->a_z_dropdown,
-                'a_z_url'           => $this->a_z_url
+                'a_z_url'           => $this->a_z_url,
+                'use_mobile_menu'   => $this->use_mobile_menu,
+                'mobile_menu_id'    => $this->mobile_menu_id
             )
         );
     }

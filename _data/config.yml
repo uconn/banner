@@ -20,6 +20,13 @@ search: |
             <button type="submit" class="btn">Search</button>
         </form>
 
+# set this to true to show enable the mobile menu icons
+use_mobile_menu: true
+
+# set this to the id of the wrapper element for the menu.
+# see default.html as an example
+mobile_menu_id: "icon-container-mobile-menu"
+
 alternative: true
 
 a_z_dropdown: true
