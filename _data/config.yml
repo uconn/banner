@@ -25,7 +25,7 @@ use_mobile_menu: true
 
 # set this to the id of the wrapper element for the menu.
 # see default.html as an example
-mobile_menu_id: "icon-container-mobile-menu"
+mobile_menu_id: "banner-controlled-mobile-menu"
 
 alternative: true
 

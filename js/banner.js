@@ -65,26 +65,43 @@
   }
 
   function closePopups(evt) {
-    console.log(evt.target)
-    if (buttonContainer.contains(evt.target)) return 
+    if (!buttonContainer.contains(evt.target)) {
+      var validType = evt.type === 'click' ? true : false
+      var escapeKey = evt.which === 27 ? true : false
+      
+      if (validType || escapeKey) {
+        popupCloser(popupContainers)
+      }
 
-    var validType = evt.type === 'click' ? true : false
-    var escapeKey = evt.which === 27 ? true : false
-    
-    if (validType || escapeKey) {
-      popupContainers.forEach(function(container) {
-        removeClass(container)
-        collapse(container.previousElementSibling)
-      })
-      document.removeEventListener('click', closePopups)
-      document.removeEventListener('keydown', closePopups)
+    } else if (buttonContainer.contains(evt.target) && evt.which === 27) {
+      popupCloser(popupContainers)
+    } else if (evt.target === menuToggle) {
+      popupCloser(popupContainers)
+    } else {
+      return false
     }
   }
 
+  function popupCloser(popups) {
+    popups.forEach(function (container) {
+      removeClass(container)
+      collapse(container.previousElementSibling)
+    })
+    document.removeEventListener('click', closePopups)
+    document.removeEventListener('keydown', closePopups)
+  }
+
   function closeMenu(evt) {
+
+    if (evt.which === 27) {
+      ucBannerMenuStateEvent.detail.isOpen = false
+      menuToggle.dispatchEvent(ucBannerMenuStateEvent)
+      collapse(menuToggle)
+      return true;
+    }
+
     var toggleControls = menuToggle.getAttribute('aria-controls')
     var mobileMenu = document.getElementById(toggleControls)
-    
     if (buttonContainer.contains(evt.target) || mobileMenu.contains(evt.target)) return
 
     collapse(menuToggle)
