@@ -165,7 +165,9 @@
       opacity: 1;
       visibility: visible;
     }
-
+    .icon-container:focus-within div {
+      display: block;
+    }
     #uconn-search,
     #uconn-az {
       @extend %icon-border;
