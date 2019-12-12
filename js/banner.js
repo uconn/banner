@@ -2,6 +2,7 @@
   var buttonContainer = document.querySelector('#button-container')
   var menuToggle = document.querySelector('#banner-mobile-button')
   var popupContainers = document.querySelectorAll('.popup-container')
+  var popupButtons = document.querySelectorAll('.btn-popup-control')
 
   var ucBannerMenuStateEvent = new CustomEvent('ucBannerMenuState', {
     detail: { isOpen: false },
@@ -53,12 +54,13 @@
   function mobileMenuHandler(evt) {
     var menuToggle = evt.target
     var isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' ? true : false
-
+      
     ucBannerMenuStateEvent.detail.isOpen = !isExpanded
     menuToggle.dispatchEvent(ucBannerMenuStateEvent)
-
+    
     if (!isExpanded) {
       expand(menuToggle)
+      disablePopupButtons(popupButtons)
     } else {
       collapse(menuToggle)
     }
@@ -92,6 +94,11 @@
   }
 
   function closeMenu(evt) {
+    var isTargetPopupControl = buttonContainer.contains(evt.target) && evt.target !== menuToggle
+
+    if (isTargetPopupControl || evt.which === 27) {
+      enablePopupButtons(popupButtons)
+    }
 
     if (evt.which === 27) {
       ucBannerMenuStateEvent.detail.isOpen = false
@@ -105,6 +112,23 @@
     if (buttonContainer.contains(evt.target) || mobileMenu.contains(evt.target)) return
 
     collapse(menuToggle)
+  }
+
+  function disablePopupButtons(buttonNodes) {
+    buttonNodes.forEach(function (button) {
+      button.addEventListener('click', popupBlocker)
+      removeClass(button.nextElementSibling)
+    })
+  }
+
+  function enablePopupButtons(buttonNodes) {
+    buttonNodes.forEach(function (button) {
+      button.removeEventListener('click', popupBlocker)
+    })
+  }
+
+  function popupBlocker(evt) {
+    evt.stopImmediatePropagation()
   }
 
   function addClass(el) {
