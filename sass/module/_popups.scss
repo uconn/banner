@@ -39,8 +39,8 @@
       border: 0;
       color: $bg-color;
       font-size: 14px;
-      margin: 12px 10px;
-      padding: 6px 20px 6px 6px;
+      margin: 16px 20px;
+      padding: 8px 60px 6px 6px;
       &::placeholder {
         color: $bg-color;
         opacity: 1;
@@ -51,7 +51,7 @@
       background-color: transparent;
       height: 100%;
       position: absolute;
-      right: 8px;
+      right: 18px;
     }
     svg {
       fill: $bg-color;
@@ -75,7 +75,7 @@
   .search-link-wrapper {
     text-align: left;
     a {
-      padding: 18px 10px 20px 16px;
+      padding: 26px 10px 26px 26px;
     }
     .banner-search-text {
       display: inline-block;
@@ -90,7 +90,7 @@
   .az-link-wrapper {
     text-align: center;
     a {
-      padding: 18px 26px;
+      padding: 26px 46px;
     }
   }
 }
