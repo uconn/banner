@@ -1,8 +1,10 @@
 (function() {
   var buttonContainer = document.querySelector('#button-container')
-  var menuToggle = document.querySelector('#banner-mobile-button')
-  var popupContainers = document.querySelectorAll('.popup-container')
-  var popupButtons = document.querySelectorAll('.btn-popup-control')
+  var bannerButtons = document.querySelectorAll('#button-container button[aria-controls]')
+  var buttons = Array.prototype.slice.call(bannerButtons, 0)
+  var mobileToggle = document.getElementById('banner-mobile-button')
+  var mobileMenuId = mobileToggle.getAttribute('aria-controls')
+  var mobileMenu = document.getElementById(mobileMenuId)
 
   var ucBannerMenuStateEvent = new CustomEvent('ucBannerMenuState', {
     detail: { isOpen: false },
@@ -14,121 +16,81 @@
   function clickHandler(evt) {
     if (evt.target.localName !== 'button') return
 
-    if (evt.target === menuToggle) {
-      mobileMenuHandler(evt)
-    } else {
-      popupHandler(evt)
-    }
+    toggleButtons(evt, buttons)
 
-    document.addEventListener('click', closeElementHandler)
-    document.addEventListener('keydown', closeElementHandler)
+    document.addEventListener('click', closeHandler)
+    document.addEventListener('keydown', closeHandler)
   }
 
-  function closeElementHandler(evt) {
-    var useCloseMenu = true
-    var closeFunction = useCloseMenu === true ? closeMenu : closePopups
-    if (menuToggle.getAttribute('aria-expanded') === 'true') {
-      closeMenu(evt)
-    } else {
-      useCloseMenu = false
-      closePopups(evt)
-    }
-    document.removeEventListener('click', closeFunction)
-    document.removeEventListener('keydown', closeFunction)
-  }
-
-  function popupHandler(evt) {
-    var popup = evt.target.nextElementSibling
-
-    popupContainers.forEach(function(container) {
-      if (container === popup) {
-        addClass(container)
-        expand(container.previousElementSibling)
-      } else {
-        removeClass(container)
-        collapse(container.previousElementSibling)
-      }
-    })
-  }
-
-  function mobileMenuHandler(evt) {
-    var menuToggle = evt.target
-    var isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' ? true : false
-      
-    ucBannerMenuStateEvent.detail.isOpen = !isExpanded
-    menuToggle.dispatchEvent(ucBannerMenuStateEvent)
-    
-    if (!isExpanded) {
-      expand(menuToggle)
-      disablePopupButtons(popupButtons)
-    } else {
-      collapse(menuToggle)
-    }
-  }
-
-  function closePopups(evt) {
-    if (!buttonContainer.contains(evt.target)) {
-      var validType = evt.type === 'click' ? true : false
-      var escapeKey = evt.which === 27 ? true : false
-      
-      if (validType || escapeKey) {
-        popupCloser(popupContainers)
-      }
-
-    } else if (buttonContainer.contains(evt.target) && evt.which === 27) {
-      popupCloser(popupContainers)
-    } else if (evt.target === menuToggle) {
-      popupCloser(popupContainers)
-    } else {
-      return false
-    }
-  }
-
-  function popupCloser(popups) {
-    popups.forEach(function (container) {
-      removeClass(container)
-      collapse(container.previousElementSibling)
-    })
-    document.removeEventListener('click', closePopups)
-    document.removeEventListener('keydown', closePopups)
-  }
-
-  function closeMenu(evt) {
-    var isTargetPopupControl = buttonContainer.contains(evt.target) && evt.target !== menuToggle
-
-    if (isTargetPopupControl || evt.which === 27) {
-      enablePopupButtons(popupButtons)
-    }
+  function closeHandler(evt) {
+    var buttonContainerEvent = buttonContainer.contains(evt.target)
+    var mobileMenuEvent = mobileMenu.contains(evt.target)
 
     if (evt.which === 27) {
-      ucBannerMenuStateEvent.detail.isOpen = false
-      menuToggle.dispatchEvent(ucBannerMenuStateEvent)
-      collapse(menuToggle)
-      return true;
+      escapeKeyPressedToClose(evt, buttons)
     }
 
-    var toggleControls = menuToggle.getAttribute('aria-controls')
-    var mobileMenu = document.getElementById(toggleControls)
-    if (buttonContainer.contains(evt.target) || mobileMenu.contains(evt.target)) return
+    if (evt.type === 'click' && (buttonContainerEvent || mobileMenuEvent)) {
+      return
+    } else {
+      clickToClose(buttons)
+    }
 
-    collapse(menuToggle)
+    document.removeEventListener('click', closeHandler)
+    document.removeEventListener('keydown', closeHandler)
   }
 
-  function disablePopupButtons(buttonNodes) {
-    buttonNodes.forEach(function (button) {
-      button.addEventListener('click', popupBlocker)
-      removeClass(button.nextElementSibling)
+  function toggleButtons(evt, buttons) {
+    buttons.forEach(function (button) {
+      if (button === evt.target && button.nextElementSibling === null) {
+        toggleMenu(button)
+      } else if (button !== evt.target && button.nextElementSibling === null) {
+        closeMenu(button)
+      } else if (button === evt.target && button.nextElementSibling) {
+        expand(button)
+        addClass(button.nextElementSibling)
+      } else if (button !== evt.target && button.nextElementSibling) {
+        collapse(button)
+        removeClass(button.nextElementSibling)
+      }
     })
   }
 
-  function enablePopupButtons(buttonNodes) {
-    buttonNodes.forEach(function (button) {
-      button.removeEventListener('click', popupBlocker)
+  function escapeKeyPressedToClose(evt, buttons) {
+    buttons.forEach(function(button) {
+      if (evt.target === document.querySelector('body') && button.nextElementSibling === null) {
+        closeMenu(button)
+      } else if (evt.target === document.querySelector('body') && button.nextElementSibling) {
+        collapse(button)
+        removeClass(button.nextElementSibling)
+      }
     })
   }
 
-  function popupBlocker(evt) {
-    evt.stopImmediatePropagation()
+  function clickToClose(buttons) {
+    buttons.forEach(function (button) {
+      if (button.nextElementSibling === null) {
+        closeMenu(button)
+      } else {
+        collapse(button)
+        removeClass(button.nextElementSibling)
+      }
+    })
+  }
+
+  function toggleMenu(button) {
+    var isExpanded = button.getAttribute('aria-expanded') === 'true' ? true : false
+    ucBannerMenuStateEvent.detail.isOpen = !isExpanded
+    button.dispatchEvent(ucBannerMenuStateEvent)
+    !isExpanded ? expand(button) : collapse(button)
+    return true
+  }
+
+  function closeMenu(button) {
+    collapse(button)
+    ucBannerMenuStateEvent.detail.isOpen = false
+    button.dispatchEvent(ucBannerMenuStateEvent)
+    return true
   }
 
   function addClass(el) {
