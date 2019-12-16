@@ -1,1 +1,118 @@
-!function(){var l=document.querySelector("#button-container"),e=document.querySelectorAll("#button-container button[aria-controls]"),r=Array.prototype.slice.call(e,0),t=document.getElementById("banner-mobile-button").getAttribute("aria-controls"),a=document.getElementById(t),o=new CustomEvent("ucBannerMenuState",{detail:{isOpen:!1},bubbles:!0});function c(e){var t,n=l.contains(e.target),i=a.contains(e.target)&&null!==a;27===e.which&&(t=e,r.forEach(function(e){t.target===document.querySelector("body")&&null===e.nextElementSibling?u(e):t.target===document.querySelector("body")&&e.nextElementSibling&&(m(e),d(e.nextElementSibling))})),"click"===e.type&&(n||i)||(r.forEach(function(e){null===e.nextElementSibling?u(e):(m(e),d(e.nextElementSibling))}),document.removeEventListener("click",c),document.removeEventListener("keydown",c))}function u(e){return m(e),o.detail.isOpen=!1,e.dispatchEvent(o),!0}function d(e){e.classList.remove("banner-popup-active")}function b(e){e.setAttribute("aria-expanded","true")}function m(e){e.setAttribute("aria-expanded","false")}l.addEventListener("click",function(e){if("button"!==e.target.localName)return;(function(i,e){e.forEach(function(e){var t,n;e===i.target&&null===e.nextElementSibling?(n="true"===(t=e).getAttribute("aria-expanded"),o.detail.isOpen=!n,t.dispatchEvent(o),n?m(t):b(t)):e!==i.target&&null===e.nextElementSibling?u(e):e===i.target&&e.nextElementSibling?(b(e),e.nextElementSibling.classList.add("banner-popup-active")):e!==i.target&&e.nextElementSibling&&(m(e),d(e.nextElementSibling))})})(e,r),document.addEventListener("click",c),document.addEventListener("keydown",c)})}();
+(function() {
+  var buttonContainer = document.querySelector('#button-container')
+  var bannerButtons = document.querySelectorAll('#button-container button[aria-controls]')
+  var buttons = Array.prototype.slice.call(bannerButtons, 0)
+  var mobileToggle = document.getElementById('banner-mobile-button')
+  var mobileMenuId = mobileToggle.getAttribute('aria-controls')
+  var mobileMenu = document.getElementById(mobileMenuId)
+
+  var ucBannerMenuStateEvent = new CustomEvent('ucBannerMenuState', {
+    detail: { isOpen: false },
+    bubbles: true
+  })
+
+  buttonContainer.addEventListener('click', clickHandler)
+
+  function clickHandler(evt) {
+    if (evt.target.localName !== 'button') return
+
+    toggleButtons(evt, buttons)
+
+    document.addEventListener('click', closeHandler)
+    document.addEventListener('keydown', closeHandler)
+  }
+
+  function closeHandler(evt) {
+    var buttonContainerEvent = buttonContainer.contains(evt.target)
+    var mobileMenuEvent = mobileMenu.contains(evt.target) && mobileMenu !== null
+
+    if (evt.which === 27) {
+      escapeKeyPressedToClose(evt, buttons)
+    }
+
+    if (evt.type === 'click' && (buttonContainerEvent || mobileMenuEvent)) {
+      return
+    } else {
+      clickToClose(buttons)
+    }
+
+    document.removeEventListener('click', closeHandler)
+    document.removeEventListener('keydown', closeHandler)
+  }
+
+  function toggleButtons(evt, buttons) {
+    buttons.forEach(function (button) {
+      if (button === evt.target && button.nextElementSibling === null) {
+        toggleMenu(button)
+      } else if (button !== evt.target && button.nextElementSibling === null) {
+        closeMenu(button)
+      } else if (button === evt.target && button.nextElementSibling) {
+        expand(button)
+        addClass(button.nextElementSibling)
+      } else if (button !== evt.target && button.nextElementSibling) {
+        collapse(button)
+        removeClass(button.nextElementSibling)
+      }
+    })
+  }
+
+  function escapeKeyPressedToClose(evt, buttons) {
+    buttons.forEach(function(button) {
+      if (evt.target === document.querySelector('body') && button.nextElementSibling === null) {
+        closeMenu(button)
+      } else if (evt.target === document.querySelector('body') && button.nextElementSibling) {
+        collapse(button)
+        removeClass(button.nextElementSibling)
+      }
+    })
+  }
+
+  function clickToClose(buttons) {
+    buttons.forEach(function (button) {
+      if (button.nextElementSibling === null) {
+        closeMenu(button)
+      } else {
+        collapse(button)
+        removeClass(button.nextElementSibling)
+      }
+    })
+  }
+
+  function toggleMenu(button) {
+    var toggleText = document.querySelector('#menu-toggle-text')
+    var isExpanded = button.getAttribute('aria-expanded') === 'true' ? true : false
+    ucBannerMenuStateEvent.detail.isOpen = !isExpanded
+    button.dispatchEvent(ucBannerMenuStateEvent)
+    if (!isExpanded) {
+      expand(button)
+      toggleText.textContent = 'close'
+    } else {
+      collapse(button)
+      toggleText.textContent = 'open'
+    }
+    return true
+  }
+
+  function closeMenu(button) {
+    collapse(button)
+    ucBannerMenuStateEvent.detail.isOpen = false
+    button.dispatchEvent(ucBannerMenuStateEvent)
+    return true
+  }
+
+  function addClass(el) {
+    el.classList.add('banner-popup-active')
+  }
+
+  function removeClass(el) {
+    el.classList.remove('banner-popup-active')
+  }
+
+  function expand(el) {
+    el.setAttribute('aria-expanded', 'true')
+  }
+
+  function collapse(el) {
+    el.setAttribute('aria-expanded', 'false')
+  }
+})()
