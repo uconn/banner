@@ -20,7 +20,7 @@ class Banner {
     public function __construct() {
 
         // Load the defaults. See https://packagist.org/packages/mustangostang/spyc
-        $settings = spyc_load_file(dirname(__FILE__) . '/../../_data/config.yml');
+        $settings = spyc_load_file(dirname(__FILE__) . '/../../_config.yml');
 
         $this->name =       $settings['name'];
         $this->department = $settings['department'];
