@@ -79,10 +79,17 @@
   }
 
   function toggleMenu(button) {
+    var toggleText = document.querySelector('#menu-toggle-text')
     var isExpanded = button.getAttribute('aria-expanded') === 'true' ? true : false
     ucBannerMenuStateEvent.detail.isOpen = !isExpanded
     button.dispatchEvent(ucBannerMenuStateEvent)
-    !isExpanded ? expand(button) : collapse(button)
+    if (!isExpanded) {
+      expand(button)
+      toggleText.textContent = 'close'
+    } else {
+      collapse(button)
+      toggleText.textContent = 'open'
+    }
     return true
   }
 
