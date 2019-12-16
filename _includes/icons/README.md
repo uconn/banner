@@ -1,1 +1,0 @@
-The `fa-` icons come from fontawesome via [this git repo](https://github.com/encharm/Font-Awesome-SVG-PNG/tree/master/black/svg). the other icons used to be font icons.

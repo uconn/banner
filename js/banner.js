@@ -24,7 +24,7 @@
 
   function closeHandler(evt) {
     var buttonContainerEvent = buttonContainer.contains(evt.target)
-    var mobileMenuEvent = mobileMenu.contains(evt.target)
+    var mobileMenuEvent = mobileMenu.contains(evt.target) && mobileMenu !== null
 
     if (evt.which === 27) {
       escapeKeyPressedToClose(evt, buttons)
