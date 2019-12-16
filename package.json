@@ -20,7 +20,7 @@
         "jekyll:build": "bundle exec jekyll build",
         "jekyll:watch": "bundle exec jekyll serve --watch",
         "build": "npm run jekyll:build && npm run js:uglify",
-        "watch": "npm-run-all --parallel js:watch jekyll:watch"
+        "develop": "npm-run-all --parallel js:watch jekyll:watch"
     },
     "contributors": [
         {
