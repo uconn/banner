@@ -89,4 +89,19 @@ class BannerTest extends TestCase {
             'aria-controls' => 'banner-controlled-mobile-menu'
         ], $banner->__toString(), 'Did not contain the aria-controls attribute');
     }
+
+    /** @test */
+    public function a_banner_should_have_popups_with_ids(): void {
+        $banner = new Banner();
+
+        $this->assertContainsSelector('#search-popup', $banner, 'Banner did not contain the search-popup ID');
+        $this->assertContainsSelector('#a-z-popup', $banner, 'Banner did not contain the a-z-popup ID');
+    }
+
+    /** @test */
+    public function a_banner_should_not_contain_a_mobile_menu(): void {
+        $banner = new Banner();
+
+        $this->assertNotContainsSelector('banner-controlled-mobile-menu', $banner, 'The banner should not contain a mobile menu');
+    }
 }
