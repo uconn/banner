@@ -33,6 +33,8 @@ There are a number of ways to use this code. Here are just a few:
 2. **PHP** - [Use Composer to embed the banner in your page](https://github.com/uconn/banner/wiki/Banner-rendering-with-PHP).
 3. **npm** - Include as a [node_module](https://www.npmjs.com/package/uconn-banner) with `npm install uconn-banner --save-dev`, use the HTML/CSS/JS from the "_site" directory.
 
+## Tests
+This repo uses phpunit to test the attributes of the banner. Tests can be run with `./vendor/bin/phpunit tests/Banner/BannerTest.php --bootstrap vendor/autoload.php`.
 
 ## Contributing / Development
 
