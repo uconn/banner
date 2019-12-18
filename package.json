@@ -17,10 +17,14 @@
     "scripts": {
         "js:uglify": "uglifyjs js/banner.js --source-map --output _site/js/banner.js -c -m",
         "js:watch": "chokidar \"js/banner.js\" -c \"npm run js:uglify\"",
+        "sass:build": "compass clean && compass compile",
+        "sass:watch": "compass watch &",
         "jekyll:build": "bundle exec jekyll build",
         "jekyll:watch": "bundle exec jekyll serve --watch",
-        "build": "npm run jekyll:build && npm run js:uglify",
-        "develop": "npm-run-all --parallel js:watch jekyll:watch"
+        "build": "npm run jekyll:build && npm run sass:build && npm run js:uglify",
+        "develop": "npm-run-all --parallel sass:watch js:watch jekyll:watch",
+        "watch": "npm run develop",
+        "start": "npm run build"
     },
     "contributors": [
         {
