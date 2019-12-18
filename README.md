@@ -115,3 +115,6 @@ document.addEventListener('ucBannerMenuState', function(evt) {
 })
 ```
 For a complete example, consult the unminified [banner.js](js/banner.js) file and [menu-demo.js](js/menu-demo.js) files.
+
+## Static output
+To create a static html version of the banner, you can use the included [Generator.php](src/Banner/Generator.php) file. It covers the full range of options available to the Banner. You can use the generator with the command `php src/Banner/Generator.php <options>`. For help or to see a list of options - `php src/Banner/Generator.php --help`.
