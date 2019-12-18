@@ -10,11 +10,11 @@ name: UConn Banner
 show_header: true
 
 # The secondary title for your site. Typically your department, school or college.
-department: "University Communications"
-department_abbreviation: "UComm"
+school: "University Communications"
+school_abbreviation: "UComm"
 
 # The URL for your department
-department_url: https://communications.uconn.edu/
+school_url: https://communications.uconn.edu/
 
 # Edit <form> markup to match your site search code.
 # Or, set to 'search: false' to disable the search form altogether.

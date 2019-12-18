@@ -72,16 +72,16 @@
             <div class="row-container">
                 <div class="row-fluid">
                     <div id="home-link-container">
-                        <a id="home-link" href="{{ site.department_url }}">
+                        <a id="home-link" href="{{ site.school_url }}">
                             <span id="wordmark" aria-hidden="true">UConn</span>
-                            {% if site.department != "" and site.department != "University of Connecticut" %}
-                            <span class="no-css">University of Connecticut - department of </span>
+                            {% if site.school != "" and site.school != "University of Connecticut" %}
+                            <span class="no-css">University of Connecticut school of </span>
                             {% endif %}
                             <span id="university-of-connecticut">
-                                {{ site.department | default: "University of Connecticut"}}
+                                {{ site.school | default: "University of Connecticut"}}
                             </span>
-                            {% if site.department_abbreviation != "" %}
-                            <span id="site-abbreviation">{{ site.department_abbreviation }}</span>
+                            {% if site.school_abbreviation != "" %}
+                            <span id="site-abbreviation">{{ site.school_abbreviation }}</span>
                             {% endif %}
                         </a>
                     </div>
@@ -109,10 +109,10 @@
                             {% endcomment %}
                             <div id="search-popup" class="popup-container">
                                 <div class="form-wrapper">
-                                    <form action="{{ site.department_url }}" method="GET" role="search">
+                                    <form action="{{ site.school_url }}" method="GET" role="search">
                                         <input type="search" name="s" id="site-search" placeholder="Search this site..."
                                             aria-label="Search this site" /><button type="submit"><span class="no-css">Search
-                                                {{ site.data.department }}</span><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 32 32" aria-hidden="true"
+                                                {{ site.school }}</span><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 32 32" aria-hidden="true"
                                                     class="banner-icon">
                                                     <title>Search UConn</title>
                                                     <path
@@ -219,7 +219,7 @@
     <div class="row-container" id="site-header">
         <div class="row-fluid">
             <div>
-                <p id="super-title"><a href="{{ site.department_url }}">{{ site.department }}</a>
+                <p id="super-title"><a href="{{ site.school_url }}">{{ site.school }}</a>
                 </p>
                 <h1 id="site-title"><a href="/">{{ site.name }}</a></h1>
             </div>
