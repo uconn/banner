@@ -16,6 +16,7 @@ class Banner {
     private $a_z_url;
     private $use_mobile_menu;
     private $mobile_menu_id;
+    private $invert_banner_color;
 
     public function __construct() {
 
@@ -33,6 +34,7 @@ class Banner {
         $this->a_z_url = $settings['a_z_url'];
         $this->use_mobile_menu = $settings['use_mobile_menu'];
         $this->mobile_menu_id = $settings['mobile_menu_id'];
+        $this->invert_banner_color = $settings['invert_banner_color'];
     }
 
     public function __set($index, $val){
@@ -60,7 +62,8 @@ class Banner {
                 'a_z_dropdown'      => $this->a_z_dropdown,
                 'a_z_url'           => $this->a_z_url,
                 'use_mobile_menu'   => $this->use_mobile_menu,
-                'mobile_menu_id'    => $this->mobile_menu_id
+                'mobile_menu_id'    => $this->mobile_menu_id,
+                'invert_banner_color' => $this->invert_banner_color
             )
         );
     }
