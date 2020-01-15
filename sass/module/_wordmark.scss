@@ -46,3 +46,11 @@
     display: none;
   }
 }
+
+.white {
+  #wordmark,
+  #university-of-connecticut,
+  #site-abbreviation {
+    color: $bg-color;
+  }
+}

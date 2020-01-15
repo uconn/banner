@@ -23,7 +23,8 @@ class Generator {
       ->opt('a-z-url', 'Url for the site\'s a-z index page', false)
       ->opt('use-mobile:m', 'Whether to use a mobile menu icon in the banner. Default - false', false, 'bool')
       ->opt('mobile-id', 'Set an ID attribute for the mobile menu', false, 'string')
-      ->opt('header:r', 'Alternative site header', false);
+      ->opt('header:r', 'Alternative site header', false)
+      ->opt('invert-banner-color:i', 'Whether to use a white banner with blue text', false, 'bool');
 
     $this->args = $cli->parse($argv, true);
   }
@@ -39,6 +40,7 @@ class Generator {
     $banner->use_mobile_menu =  $this->args->getOpt('use-mobile', false);
     $banner->mobile_menu_id = $this->args->getOpt('mobile-id');
     $banner->header = $this->args->getOpt('header');
+    $banner->invert_banner_color = $this->args->getOpt('invert-banner-color');
     file_put_contents($this->args->getOpt('path'), $banner);
   }
 }

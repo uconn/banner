@@ -33,6 +33,8 @@ mobile_menu_id: "banner-controlled-mobile-menu"
 
 alternative: true
 
+invert_banner_color: true
+
 a_z_dropdown: true
 
 a_z_url: ""
