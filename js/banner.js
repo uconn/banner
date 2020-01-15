@@ -42,11 +42,17 @@
 
   function toggleButtons(evt, buttons) {
     buttons.forEach(function (button) {
+
+      var isExpanded = button.getAttribute('aria-expanded') === 'true' ? true : false
+
       if (button === evt.target && button.nextElementSibling === null) {
         toggleMenu(button)
       } else if (button !== evt.target && button.nextElementSibling === null) {
         closeMenu(button)
-      } else if (button === evt.target && button.nextElementSibling) {
+      } else if (button === evt.target && button.nextElementSibling && isExpanded) {
+        collapse(button)
+        removeClass(button.nextElementSibling)
+      } else if (button === evt.target && button.nextElementSibling && !isExpanded) {
         expand(button)
         addClass(button.nextElementSibling)
       } else if (button !== evt.target && button.nextElementSibling) {
