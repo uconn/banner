@@ -3,7 +3,11 @@
     --- begin the standard banner ---
     {% endcomment %}
     <div id="uconn-banner">
+        {% if site.invert_banner_color == true %}
+        <div id="uconn-header-container" class="white">
+        {% else if site.invert_banner_color == false %}
         <div id="uconn-header-container">
+        {% endif %}
             <div class="row-container">
                 <div class="row-fluid">
                     <div id="home-link-container">
