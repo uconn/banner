@@ -53,7 +53,6 @@
       } else if (button !== evt.target && button.nextElementSibling === null) {
         closeMenu(button)
       } else if (button === evt.target && button.nextElementSibling && isExpanded) {
-        console.log('test')
         collapse(button)
         removeClass(button.nextElementSibling)
       } else if (button === evt.target && button.nextElementSibling) {
