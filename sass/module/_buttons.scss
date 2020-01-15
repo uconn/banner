@@ -147,9 +147,6 @@
 }
 
 #{$namespace}.alternative {
-  button {
-    background-color: $bg-color;
-  }
   #button-container {
     @extend %button-container;
     .icon-container {
@@ -164,9 +161,6 @@
     .icon-container div {
       opacity: 1;
       visibility: visible;
-    }
-    .icon-container:focus-within div {
-      display: block;
     }
     #uconn-search,
     #uconn-az {
@@ -192,14 +186,35 @@
       display: inline-block;
     }
   }
+  &.no-js {
+    .icon-container:focus-within div {
+      display: block;
+    }
+  }
   @media screen and (min-width: 50em) {
     #icon-container-mobile-menu {
       display: none;
     }
   }
+}
+
+#{$namespace},
+#{$namespace}.alternative {
   .white {
-    button {
-      background-color: #ffffff;
+    #button-container {
+      #banner-mobile-button {
+        background-color: #ffffff;
+      }
+      #uconn-search,
+      #uconn-az {
+        background-color: #ffffff;
+        &:hover,
+        &:focus {
+          &:before {
+            box-shadow: inset 0 2px 0 0 #000e2f;
+          }
+        }
+      }
     }
   }
 }

@@ -1,4 +1,5 @@
 (function() {
+  var banner = document.querySelector('#uconn-banner')
   var buttonContainer = document.querySelector('#button-container')
   var bannerButtons = document.querySelectorAll('#button-container button[aria-controls]')
   var buttons = Array.prototype.slice.call(bannerButtons, 0)
@@ -10,6 +11,8 @@
     detail: { isOpen: false },
     bubbles: true
   })
+
+  banner.classList.remove('no-js')
 
   buttonContainer.addEventListener('click', clickHandler)
 
@@ -50,9 +53,10 @@
       } else if (button !== evt.target && button.nextElementSibling === null) {
         closeMenu(button)
       } else if (button === evt.target && button.nextElementSibling && isExpanded) {
+        console.log('test')
         collapse(button)
         removeClass(button.nextElementSibling)
-      } else if (button === evt.target && button.nextElementSibling && !isExpanded) {
+      } else if (button === evt.target && button.nextElementSibling) {
         expand(button)
         addClass(button.nextElementSibling)
       } else if (button !== evt.target && button.nextElementSibling) {
