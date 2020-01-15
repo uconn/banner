@@ -148,6 +148,9 @@
 
 #{$namespace}.alternative {
   #button-container {
+    button {
+      background-color: $bg-color;
+    }
     @extend %button-container;
     .icon-container {
       position: relative;
