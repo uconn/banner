@@ -8,14 +8,16 @@ A (UConn brand) standards-compliant implementation of the University's web banne
 ## History
 As with most of our [web branding](http://brand.uconn.edu/standards/web/) efforts, University Communications has teamed with the UITS Web Dev Lab to create a new look for the University's web presence. While the majority of university departments and organizations can be brought into brand compliance through the use of the [Aurora](http://aurora.uconn.edu/) (WordPress) platform courtesy of UITS, there is still a need for static templates. This project attempts to bridge that gap.
 
-As of May 31, 2017, the `master` branch of this repository represents 2.x of the banner. The key differences are outlined below:
+As of January 16, 2020, the `master` branch of this repository represents 3.x of the banner. The key differences are outlined below:
 
 
-| 1.x | 2.x |
-|---|---|
-| - Designed for use with Bootstrap| - Bootstrap classes removed|
-| - Embedded media queries intended to mirror Bootstrap | - No media queries. User _must_ define them.|
-| - [npm compatible](https://www.npmjs.com/package/uconn-banner) | - [composer compatible](https://packagist.org/packages/uconn/banner) |
+| 1.x | 2.x | 3.x |
+|---|---|---|
+| - Designed for use with Bootstrap| - Bootstrap classes removed| - Added support for a School/College type banner. This includes support for optional mobile menu and popups.
+| - Embedded media queries intended to mirror Bootstrap | - No media queries. User _must_ define them.| - Added support for white banner with blue text
+| - [npm compatible](https://www.npmjs.com/package/uconn-banner) | - [composer compatible](https://packagist.org/packages/uconn/banner) | - Added support for popups with search box
+| | | - Added a php generator to quickly create static banners
+| | | - Updated dependencies and build process
 
 
 ## Who should use this?
