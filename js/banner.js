@@ -28,12 +28,13 @@
   function closeHandler(evt) {
     var buttonContainerEvent = buttonContainer.contains(evt.target)
     var mobileMenuEvent = mobileMenu.contains(evt.target) && mobileMenu !== null
+    var isIgnorableEvent = evt.type === 'click' || evt.type === 'keydown' ? true : false
 
     if (evt.which === 27) {
       escapeKeyPressedToClose(evt, buttons)
     }
 
-    if (evt.type === 'click' && (buttonContainerEvent || mobileMenuEvent)) {
+    if (isIgnorableEvent && (buttonContainerEvent || mobileMenuEvent)) {
       return
     } else {
       clickToClose(buttons)
