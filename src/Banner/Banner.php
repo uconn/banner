@@ -6,8 +6,8 @@ namespace UConn\Banner;
 class Banner {
 
     private $name;
-    private $department;
-    private $department_abbreviation;
+    private $school;
+    private $school_abbreviation;
     private $url;
     private $header;
     private $search;
@@ -24,9 +24,9 @@ class Banner {
         $settings = spyc_load_file(dirname(__FILE__) . '/../../_config.yml');
 
         $this->name =       $settings['name'];
-        $this->department = $settings['department'];
-        $this->department_abbreviation = $settings['department_abbreviation'];
-        $this->url =        $settings['department_url'];
+        $this->school = $settings['school'];
+        $this->school_abbreviation = $settings['school_abbreviation'];
+        $this->url =        $settings['school_url'];
         $this->header =     $settings['show_header'];
         $this->search =     $settings['search'];
         $this->alternative = $settings['alternative'];
@@ -53,9 +53,9 @@ class Banner {
         return array(
             'site' => array(
                 'name'              => $this->name,
-                'department'        => $this->department,
-                'department_abbreviation' => $this->department_abbreviation,
-                'department_url'    => $this->url,
+                'school'        => $this->school,
+                'school_abbreviation' => $this->school_abbreviation,
+                'school_url'    => $this->url,
                 'show_header'       => $this->header,
                 'search'            => $this->search,
                 'alternative'       => $this->alternative,
