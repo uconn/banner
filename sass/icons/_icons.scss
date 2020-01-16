@@ -1,0 +1,12 @@
+#{$namespace} {
+    .banner-icon {
+        fill: white;
+        height: 100%;
+        pointer-events: none;
+    }
+    .white {
+        .banner-icon {
+            fill: $bg-color;
+        }
+    }
+}

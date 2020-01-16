@@ -6,6 +6,10 @@
         box-sizing:border-box;
         padding-left: $edge-padding;
         padding-right: $edge-padding;
+        padding-bottom: 0.4rem;
+        @media screen and (min-width: 50em) {
+            padding-bottom: 0;
+        }
     }
 
     .row-fluid {
@@ -17,8 +21,11 @@
         */
         & > div {
             display: table-cell;
-            vertical-align: middle;
+            vertical-align: inherit;
             float: none;
+            @media screen and (min-width: 50em) {
+                vertical-align: middle;
+            }
         }
     }
 }

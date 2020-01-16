@@ -12,7 +12,9 @@
 /* Import the webfonts */
 @import "fonts/uconn";
 @import "fonts/proxima-nova";
-@import "fonts/icons";
+
+/* Import icon styles */
+@import "icons/icons";
 
 /* Layout */
 @import "layout/layout";
@@ -25,6 +27,7 @@
 @import "module/buttons";
 @import "module/title";
 @import "module/search";
+@import "module/popups";
 
 
 /* State */
