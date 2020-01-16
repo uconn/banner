@@ -65,6 +65,7 @@
       color: white;
       display: inline-block;
       position: relative;
+      text-align: center;
       width: 100%;
       &:hover,
       &:focus {
@@ -75,7 +76,6 @@
   }
 
   .search-link-wrapper {
-    text-align: left;
     a {
       padding: 26px 10px 26px 26px;
     }
@@ -90,7 +90,6 @@
   }
 
   .az-link-wrapper {
-    text-align: center;
     a {
       padding: 26px 46px;
     }
