@@ -15,9 +15,9 @@ class Generator {
     $cli = new Cli();
     $cli->description('Small command line utility to generate UConn banner markup')
       ->opt('path:p', 'File path with name to save banner', true)
-      ->opt('department:d', 'The department to display', false)
-      ->opt('abbreviation:a', 'An abbreviation for long department names. Will be visible on mobile devices', false)
-      ->opt('url:u', 'Department url', false)
+      ->opt('school-college:s', 'The school/college to display', false)
+      ->opt('abbreviation:a', 'An abbreviation for long school/college names. Will be visible on mobile devices', false)
+      ->opt('url:u', 'School/college url', false)
       ->opt('alternative:v', 'Whether to use the school and college banner type', false, 'bool')
       ->opt('a-z-dropdown', 'Whether to add markup for an A-Z dropdown/popup. Default - false', false, 'bool')
       ->opt('a-z-url', 'Url for the site\'s a-z index page', false)
@@ -31,8 +31,8 @@ class Generator {
 
   public function outputBannerToFile() {
     $banner = new Banner();
-    $banner->department = $this->args->getOpt('department');
-    $banner->department_abbreviation = $this->args->getOpt('abbreviation');
+    $banner->school = $this->args->getOpt('school-college');
+    $banner->school_abbreviation = $this->args->getOpt('abbreviation');
     $banner->url = $this->args->getOpt('url');
     $banner->alternative = $this->args->getOpt('alternative', false);
     $banner->a_z_dropdown = $this->args->getOpt('a-z-dropdown', false);
