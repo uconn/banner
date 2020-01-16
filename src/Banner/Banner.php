@@ -7,10 +7,16 @@ class Banner {
 
     private $name;
     private $department;
+    private $department_abbreviation;
     private $url;
     private $header;
     private $search;
     private $alternative;
+    private $a_z_dropdown;
+    private $a_z_url;
+    private $use_mobile_menu;
+    private $mobile_menu_id;
+    private $invert_banner_color;
 
     public function __construct() {
 
@@ -19,10 +25,16 @@ class Banner {
 
         $this->name =       $settings['name'];
         $this->department = $settings['department'];
+        $this->department_abbreviation = $settings['department_abbreviation'];
         $this->url =        $settings['department_url'];
         $this->header =     $settings['show_header'];
         $this->search =     $settings['search'];
         $this->alternative = $settings['alternative'];
+        $this->a_z_dropdown = $settings['a_z_dropdown'];
+        $this->a_z_url = $settings['a_z_url'];
+        $this->use_mobile_menu = $settings['use_mobile_menu'];
+        $this->mobile_menu_id = $settings['mobile_menu_id'];
+        $this->invert_banner_color = $settings['invert_banner_color'];
     }
 
     public function __set($index, $val){
@@ -42,10 +54,16 @@ class Banner {
             'site' => array(
                 'name'              => $this->name,
                 'department'        => $this->department,
+                'department_abbreviation' => $this->department_abbreviation,
                 'department_url'    => $this->url,
                 'show_header'       => $this->header,
                 'search'            => $this->search,
-                'alternative'       => $this->alternative
+                'alternative'       => $this->alternative,
+                'a_z_dropdown'      => $this->a_z_dropdown,
+                'a_z_url'           => $this->a_z_url,
+                'use_mobile_menu'   => $this->use_mobile_menu,
+                'mobile_menu_id'    => $this->mobile_menu_id,
+                'invert_banner_color' => $this->invert_banner_color
             )
         );
     }
@@ -72,5 +90,8 @@ class Banner {
         return file_get_contents(dirname(__FILE__) . '/../../_site/banner.css');
     }
 
+    public function js() {
+        return file_get_contents(dirname(__FILE__) . '/../../_site/js/banner.js');
+    }
 
 }

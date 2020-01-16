@@ -1,3 +1,31 @@
+%button-container {
+  text-align:right;
+  position: relative;
+  & > .icon-container {
+    width: $btn-size;
+    height:$btn-size;
+    display: inline-block;
+    margin:0px 2px;
+    padding:0px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  .btn {
+    display:block;
+    height:100%;
+    width:100%;
+    font-size: $icon-size;
+    text-align: center;
+    padding: inherit;
+    text-shadow: none;
+    line-height: normal;
+
+    [class*="icon-"] {
+      line-height: $btn-size;
+    }
+  }
+}
+
 %tooltip-container {
   background-color: #ededed;
   border-top: 1px solid #ededed;
@@ -16,10 +44,29 @@
     border-color: transparent #ededed transparent transparent;
     border-style: solid;
     border-width: 10px 8px 10px 0px;
-    bottom: 34px;
+    bottom: 39px;
     content: '';
     position: absolute;
     transform: rotate(90deg);
+  }
+}
+
+// base styles for the border that will be above or below the icons
+%icon-border {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    box-shadow: inset 0 2px 0 0 white;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+  }
+  &:hover:before,
+  &:focus:before {
+    opacity: 1;
   }
 }
 
@@ -32,39 +79,23 @@
   }
 }
 
-#{$namespace}.alternative {
+#{$namespace} {
   #button-container {
-    .btn, .btn:hover, .btn:visited, .btn:focus {
-      border-radius: 0;
-      @include transition(none);
-      background-position: 0% 0%;
-      background-color: transparent;
-      border: none;
-      color: #fff;
-      transition: border 0.08s linear;
+    @extend %button-container;
+    .icon-container > div {
+      opacity: 0;
+      visibility: hidden;
     }
   }
   #uconn-search,
   #uconn-az {
-    position: relative;
+    @extend %icon-border;
     &:before {
-      content: '';
-      position: absolute;
       bottom: 30px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      box-shadow: inset 0 2px 0 0 white;
-      transition: opacity 0.3s ease-in-out;
-      opacity: 0;
-    }
-    &:hover:before,
-    &:focus:before {
-      opacity: 1;
     }
     &:hover,
     &:focus {
-      + div {
+      + div:not(.popup-container) {
         @extend %tooltip-container;
         transition: opacity 0.3s ease-in-out;
         opacity: 1;
@@ -97,31 +128,8 @@
     
   #uconn-search,
   #uconn-az {
-    position: relative;
-    &:before {
-      content: '';
-      position: absolute;
-      bottom: 30px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      box-shadow: inset 0 2px 0 0 white;
-      transition: opacity 0.3s ease-in-out;
-      opacity: 0;
-    }
-    &:hover:before,
-    &:focus:before {
-      opacity: 1;
-    }
     &:hover,
     &:focus {
-      // make the divs visible on hover or focus
-      + div {
-        @extend %tooltip-container;
-        transition: opacity 0.3s ease-in-out;
-        opacity: 1;
-        visibility: visible;
-      }
       // set the content only on hover/focus
       // this avoids overflowing the banner when the text isn't visible
       + #uconn-search-tooltip {
@@ -138,51 +146,78 @@
   }
 }
 
-#{$namespace} {
+#{$namespace}.alternative {
   #button-container {
-    text-align:right;
-    position: relative;
-    & > .icon-container {
-      width: $btn-size;
-      height:$btn-size;
-      display: inline-block;
-      margin:0px 2px;
-      padding:0px;
-      vertical-align: middle;
-      white-space: nowrap;
+    button {
+      background-color: $bg-color;
     }
-    .icon-container > div {
-      opacity: 0;
-      visibility: hidden;
+    @extend %button-container;
+    .icon-container {
+      position: relative;
     }
-    .btn {
-      display:block;
-      height:100%;
-      width:100%;
-      font-size: $icon-size;
-      text-align: center;
-      padding: inherit;
-      text-shadow: none;
-      line-height: normal;
-      vertical-align: auto;
-
-      [class*="icon-"] {
-        line-height: $btn-size;
+    .popup-container {
+      position: absolute;
+      right: -6px;
+      top: 46px;
+    }
+    .icon-container > div,
+    .icon-container div {
+      opacity: 1;
+      visibility: visible;
+    }
+    #uconn-search,
+    #uconn-az {
+      @extend %icon-border;
+      &:before {
+        top: 30px;
       }
-
     }
-    .btn, .btn:hover, .btn:visited, .btn:focus {
-      @include border-radius(3px);
-      background-color: #1c3173;
-      border: 1px solid #1e2b51;
-      @include transition(none);
-      background-position: 0% 0%;
+  }
+  #banner-mobile-button[aria-expanded="false"] {
+    .menu-toggle-open {
+      display: inline-block;
     }
-    .btn:focus,
-    .btn:hover {
-      color: #fff;
+    .menu-toggle-close {
+      display: none;
     }
+  }
+  #banner-mobile-button[aria-expanded="true"] {
+    .menu-toggle-open {
+      display: none;
+    }
+    .menu-toggle-close {
+      display: inline-block;
+    }
+  }
+  &.no-js {
+    .icon-container:focus-within div {
+      display: block;
+    }
+  }
+  @media screen and (min-width: 50em) {
+    #icon-container-mobile-menu {
+      display: none;
+    }
+  }
+}
 
-
+#{$namespace},
+#{$namespace}.alternative {
+  .white {
+    #button-container {
+      #banner-mobile-button {
+        background-color: #ffffff;
+      }
+      #uconn-search,
+      #uconn-az {
+        background-color: #ffffff;
+        &:hover,
+        &:focus {
+          &:before {
+            box-shadow: inset 0 2px 0 0 #000e2f;
+          }
+        }
+      }
+    }
   }
 }
