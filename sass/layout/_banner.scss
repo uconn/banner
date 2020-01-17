@@ -10,11 +10,6 @@
     color: #c1e8f8;
   }
 
-  .row-fluid {
-      & > div {
-        height: $banner-height;
-      }
-  }
   &.white {
     background-color: #fff;
   }
