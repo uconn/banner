@@ -4,12 +4,10 @@
         margin: 0px auto;
 
         box-sizing:border-box;
-        padding-left: $edge-padding;
+        padding-top: 0.7rem;
         padding-right: $edge-padding;
-        padding-bottom: 0.4rem;
-        @media screen and (min-width: 50em) {
-            padding-bottom: 0;
-        }
+        padding-bottom: 0.7rem;
+        padding-left: $edge-padding;
     }
 
     .row-fluid {
