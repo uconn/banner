@@ -31,7 +31,7 @@ use_mobile_menu: true
 # see default.html as an example
 mobile_menu_id: "banner-controlled-mobile-menu"
 
-alternative: true
+alternative: false
 
 invert_banner_color: false
 
