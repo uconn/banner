@@ -1,4 +1,4 @@
-const forms = Array.from(document.querySelectorAll('form'))
+const forms = Array.from(document.querySelectorAll('main form'))
 const toggles = Array.from(document.querySelectorAll('select'))
 const widthForm = document.querySelector('#container-width-form')
 
