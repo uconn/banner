@@ -89,7 +89,8 @@
   <main>
     <section class="row intro">
       <div class="container">
-        <h1>Hi, there!</h1>
+        <h1>Standard Banner</h1>
+        <p><strong>Hi there!</strong></p>
         <p>This version of the UConn Banner has several different options. You can see different variations by visiting the links below and/or adjusting the forms on each page.</p>
       </div>
     </section>
@@ -100,28 +101,27 @@
           <div class="flex-content two-column">
             <h2>Alternative Banners</h2>
             <ul>
-              <li><a href="/">Basic Banner</a></li>
+              <li><a href="/">Standard Banner</a></li>
               <li><a href="/school-basic">Basic School Banner</a></li>
               <li><a href="/school-advanced">Advanced School Banner</a></li>
             </ul>
           </div>
           <div class="flex-content two-column">
             <h2>Theme Switcher</h2>
-            <select name="theme-switcher" id="theme-switcher">
-              <option value="standard" selected>Standard</option>
-              <option value="inverted">Inverted</option>
-            </select>
+            <form id="banner-theme-form">      
+              <label for="standard-theme">
+                <input type="radio" name="banner-theme" id="standard-theme" value="standard-theme" checked /> Standard Theme
+              </label>   
+              <label for="inverted-theme">
+                <input type="radio" name="banner-theme" id="inverted-theme" value="inverted-theme" /> Inverted Theme
+              </label>              
+            </form>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="row">
-      <div class="container">
-        <h2>Site Title Tester</h2>
-      </div>
-    </section>
-
+    
       <!-- Example row of columns -->
       <section class="row">
         <div class="container">
@@ -177,8 +177,8 @@
       </div>
     </div>
   </footer>
+  <script src="js/site.js"></script>
   <script src="js/banner.js"></script>
   <script src="js/menu-demo.js"></script>
-  <script src="js/site.js"></script>
 </body>
 </html>

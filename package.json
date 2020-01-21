@@ -16,7 +16,7 @@
     },
     "scripts": {
         "banner:sc-basic": "php ./src/Banner/Generator.php -p ./_includes/sc-basic.html -v true -s \"University Communications\" -a \"UComm\" -u https://communications.uconn.edu",
-        "banner:sc-advanced": "php ./src/Banner/Generator.php -p ./_includes/sc-advanced.html -v true -s \"University Communications\" -a \"UComm\" -u https://communications.uconn.edu -m true --a-z-dropdown true",
+        "banner:sc-advanced": "php ./src/Banner/Generator.php -p ./_includes/sc-advanced.html -v true -s \"University Communications\" -a \"UComm\" -u https://communications.uconn.edu -m=true --a-z-dropdown=true",
         "js:uglify": "uglifyjs js/banner.js --source-map --output _site/js/banner.js -c -m",
         "js:watch": "chokidar \"js/banner.js\" -c \"npm run js:uglify\"",
         "sass:build": "compass clean && compass compile",

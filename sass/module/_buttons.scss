@@ -11,6 +11,7 @@
     white-space: nowrap;
   }
   .btn {
+    border: 0;
     display:block;
     height:100%;
     width:100%;
@@ -152,11 +153,6 @@
     @extend %button-container;
     .icon-container {
       position: relative;
-    }
-    .popup-container {
-      position: absolute;
-      right: -6px;
-      top: 46px;
     }
     .icon-container > div,
     .icon-container div {
