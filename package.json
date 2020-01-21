@@ -15,14 +15,17 @@
         "url": "https://github.com/uconn/banner/issues"
     },
     "scripts": {
+        "banner:sc-basic": "php ./src/Banner/Generator.php -p ./_includes/sc-basic.html -v true -s \"University Communications\" -a \"UComm\" -u https://communications.uconn.edu",
+        "banner:sc-advanced": "php ./src/Banner/Generator.php -p ./_includes/sc-advanced.html -v true -s \"University Communications\" -a \"UComm\" -u https://communications.uconn.edu -m true --a-z-dropdown true",
         "js:uglify": "uglifyjs js/banner.js --source-map --output _site/js/banner.js -c -m",
         "js:watch": "chokidar \"js/banner.js\" -c \"npm run js:uglify\"",
         "sass:build": "compass clean && compass compile",
         "sass:watch": "compass watch &",
         "jekyll:build": "bundle exec jekyll build",
         "jekyll:watch": "bundle exec jekyll serve --watch",
+        "banners": "npm run banner:sc-basic npm run banner:sc-advanced",
         "build": "npm run jekyll:build && npm run sass:build && npm run js:uglify",
-        "develop": "npm-run-all --parallel sass:watch js:watch jekyll:watch",
+        "develop": "npm run banners && npm-run-all --parallel sass:watch js:watch jekyll:watch",
         "watch": "npm run develop",
         "start": "npm run build"
     },
