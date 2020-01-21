@@ -67,10 +67,10 @@
   .link-wrapper {
     a {
       color: white;
-      display: inline-block;
+      display: block;
       position: relative;
       text-align: center;
-      width: 100%;
+      // width: 100%;
       &:hover,
       &:focus {
         background-color: #2e3d5b;
