@@ -24,7 +24,7 @@
         "jekyll:build": "bundle exec jekyll build",
         "jekyll:watch": "bundle exec jekyll serve --watch",
         "banners": "npm run banner:sc-basic npm run banner:sc-advanced",
-        "build": "npm run jekyll:build && npm run sass:build && npm run js:uglify",
+        "build": "npm run banners && npm run jekyll:build && npm run sass:build && npm run js:uglify",
         "develop": "npm run banners && npm-run-all --parallel sass:watch js:watch jekyll:watch",
         "watch": "npm run develop",
         "start": "npm run build"
