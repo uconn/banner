@@ -27,4 +27,4 @@ node_modules
 !/_site/index.html
 !/_site/banner.css
 !/_site/js
-/_site/js/menu-demo.js
+!/_site/js/menu-demo.js
