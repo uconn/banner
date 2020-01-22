@@ -1,0 +1,17 @@
+main form {
+  label {
+    display: block;
+  }
+  input[type=number],
+  input[type=text],
+  input[type=submit] {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  * + * {
+    margin-top: 0.5rem;
+  }
+  #site-title-input {
+    width: 90%;
+  }
+}

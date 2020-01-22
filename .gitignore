@@ -1,3 +1,6 @@
+*.map
+*.log
+
 # SublimeText project files
 *.sublime-workspace
 *.sublime-project
@@ -11,5 +14,17 @@
 # Vagrant
 .vagrant
 
+Gemfile.lock
+
 # Node Modules
 node_modules
+
+# Composer Files
+/vendor
+
+# Build Files
+/_site/*
+!/_site/index.html
+!/_site/banner.css
+!/_site/js
+/_site/js/menu-demo.js

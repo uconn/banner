@@ -1,28 +1,40 @@
+# Server settings for `jekyll serve`
+port:        4000
+baseurl:     /
+
 # The name of your site
 name: UConn Banner
-
-# The secondary title for your site. Typically your department, school or college.
-department: University Communications
-
-# The URL for your department
-department_url: http://communications.uconn.edu/
 
 # Show the site header below the blue banner?
 # This should almost always be set to true.
 show_header: true
 
-# Files/folders to exclude from the Jekyll build
-exclude: [README.md, config.rb, .gitignore, sass, Gemfile, Gemfile.lock]
+# The secondary title for your site. Typically your department, school or college.
+school: "University Communications"
+school_abbreviation: "UComm"
+
+# The URL for your department
+school_url: https://communications.uconn.edu/
 
 # Edit <form> markup to match your site search code.
-# Or, set to 'search: false' to disable the search form altogether. 
+# Or, set to 'search: false' to disable the search form altogether.
 search: |
         <form class="form-search">
             <input type="text" class="input-medium" placeholder="Search this site...">
             <button type="submit" class="btn">Search</button>
         </form>
 
+# set this to true to show enable the mobile menu icons
+use_mobile_menu: true
 
-# Server settings for `jekyll serve`
-port:        4000
-baseurl:     /
+# set this to the id of the wrapper element for the menu.
+# see default.html as an example
+mobile_menu_id: "banner-controlled-mobile-menu"
+
+alternative: false
+
+invert_banner_color: false
+
+a_z_dropdown: true
+
+a_z_url: ""

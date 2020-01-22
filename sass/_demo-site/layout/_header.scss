@@ -1,0 +1,10 @@
+#site-header{
+  padding:30px 0 15px 0;
+
+
+    .row-fluid {
+      & > div {
+        width:50%;
+      }
+    }
+}

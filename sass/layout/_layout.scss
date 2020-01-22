@@ -1,48 +1,29 @@
 #{$namespace} {
-
-    .container {
-        
-        width: $extra-large;
+    .row-container {
+        width:100%;
         margin: 0px auto;
 
-        @media (max-width:$extra-large) {
-          width: $large;
-        }
-
-        @media (max-width:$large) {
-          width: 100%;
-        }
+        box-sizing:border-box;
+        padding-top: 0.7rem;
+        padding-right: $edge-padding;
+        padding-bottom: 0.7rem;
+        padding-left: $edge-padding;
     }
 
     .row-fluid {
-      width: 100%;
-      display: table;
-
-
-      /**
-       * Child divs are displayed as table cells and aligned middle.
-       */
-      & > div {
-        display: table-cell;
-        vertical-align: middle;
-        float:none;
+        width: 100%;
+        display: table;
 
         /**
-         * At smaller screen widths we need to pad the "table" cells so that they're
-         * not up against the edge of the page.
-         */
-        @media (max-width: $large){
-          &:first-child {
-            padding-left: $edge-padding;
-          }
-          &:last-child {
-            padding-right: $edge-padding;
-          }
-        }    
-      }
-
+        * Child divs are displayed as table cells and aligned middle.
+        */
+        & > div {
+            display: table-cell;
+            vertical-align: inherit;
+            float: none;
+            @media screen and (min-width: 50em) {
+                vertical-align: middle;
+            }
+        }
     }
-
-
-
 }

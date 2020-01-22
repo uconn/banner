@@ -1,37 +1,146 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Banner, from UConn</title>
+  <title>UConn Banner</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
- 
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Mono&display=swap" rel="stylesheet">
   <link href="banner.css" rel="stylesheet">
-
-  <style>
-  /**
-   * The banner assumes a margin of 0px, but is not included
-   * in banner.css to avoid collisions with other themes and 
-   * admin bars.
-   */
-  body {
-    margin:0px;
-  }
-  </style>
-
-  <!-- REPLACE THIS WITH YOUR CUSTOM BUILD OF MODERNIZR -->
-  <script src="//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js"></script>
-
-  <!-- Use if you need responsive layouts for IE -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
-
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="css/menu-demo.css">
 </head>
 
 <body>
-{% include banner.html %}
+  <header>
+    {% include {{ page.banner }} %}
+    <nav id="{{ site.mobile_menu_id }}">
+      <ul>
+        <li>This menu is for demo purposes only</li>
+        <li>
+          <a href="{{ site.department_url }}">{{ site.department }}</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="row intro">
+      <div class="container">
+        <h1>{{ page.title }}</h1>
+        <p><strong>Hi there!</strong></p>
+        <p>This version of the UConn Banner has several different options. You can see different variations by visiting the links below and/or adjusting the forms on each page.</p>
+      </div>
+    </section>
+    
+    <section class="row">
+      <div class="container">
+        <div class="flex">
+          <div class="flex-content two-column">
+            <h2>Alternative Banners</h2>
+            <ul>
+              <li><a href="/">Standard Banner</a></li>
+              <li><a href="/school-basic">Basic School Banner</a></li>
+              <li><a href="/school-advanced">Advanced School Banner</a></li>
+            </ul>
+          </div>
+          <div class="flex-content two-column">
+            <h2>Theme Switcher</h2>
+            <form id="banner-theme-form">      
+              <label for="standard-theme">
+                <input type="radio" name="banner-theme" id="standard-theme" value="blue" /> Standard Theme
+              </label>   
+              <label for="inverted-theme">
+                <input type="radio" name="banner-theme" id="inverted-theme" value="white" /> Inverted Theme
+              </label>              
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% if page.banner != "banner.html" %}
+    <section class="row">
+      <div class="container">
+        <h2>Site Title Tester</h2>
+        <form action="" id="site-title-form">
+          <div>
+            <label for="site-title-input">Adjust the site title</label>
+            <input type="text" name="site-title-input" id="site-title-input" placeholder="Banner Title">
+          </div>
+          <div>
+            <label for="site-abbrev-input">Adjust the site abbreviation</label>
+            <input type="text" name="site-abbrev-input" id="site-abbrev-input" placeholder="Abbreviation">
+          </div>
+          <input type="submit" value="Change Title">
+        </form>
+      </div>
+    </section>
+    {% endif %}
+      <!-- Example row of columns -->
+      <section class="row">
+        <div class="container">
+          <div class="flex">
+            <div class="flex-content two-column">
+              <h2>Media Query Tester</h2>
+              <p>This form will help you to build custom breakpoints for your banner.</p>
+              <form id="container-width-form" class="form-inline">
+                <div class="form-group">
+                  <div>
+                    <label for="container-width" style="display:block">Enter a breakpoint in pixels</label>
+                    <input type="number" class="form-control" id="container-width" placeholder="1200">
+                  </div>
+                  <input type="submit" name="Test" value="Test it!" class="btn btn-primary">
+                </div>
+              </form>
+            </div>
+            <div class="flex-content two-column">
+              <h2>Code</h2>
+<figure class="highlight">
+  <pre><code class="language-html">
+    @media(min-width: <span class="data-width"></span>){
+      #uconn-banner .row-container {
+          max-width: <span class="data-width"></span>
+      }
+    }</code></pre>
+</figure>
+            </div>
+          </div>
+        </div>    
+        
+      </section>
+      <section class="row">
+        <div class="container">
+          <h2>More Information</h2>
+          <ul>
+              <li><a href="https://github.com/uconn/banner">Project Source</a></li>
+              <li><a href="https://packagist.org/packages/uconn/banner">Using Composer</a></li>
+              <li><a href="https://github.com/uconn/banner/wiki/Banner-rendering-with-PHP">Banner rendering with PHP</a></li>
+              <li><a href="https://github.com/uconn/uconn-banner-wp">WordPress Plugin</a></li>
+          </ul>
+        </div>
+      </section>
+  </main>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+
+  <div class="container">
+    <hr>
+  </div>
+
+  <footer>
+    <div class="row">
+      <div class="container">
+        <p>&copy; 2017 <a href="http://communications.uconn.edu/">University Communications</a></p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/site.js"></script>
+  <script src="js/banner.js"></script>
+  <script src="js/menu-demo.js"></script>
 </body>
 </html>

@@ -1,0 +1,31 @@
+{
+    "name": "uconn/banner",
+    "description": "The UConn Banner - Branding for the top of your web pages.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brian Daley",
+            "email": "brian.daley@uconn.edu"
+        }
+    ],
+    "require": {
+        "mustangostang/spyc": "^0.6.2",
+        "liquid/liquid": "1.2"
+    },
+    "require-dev": {
+        "vanilla/garden-cli": "^2.2",
+        "phpunit/phpunit": "^8.5",
+        "stevegrunwell/phpunit-markup-assertions": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "UConn\\": ["src/"]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "UConn\\Tests\\": ["tests/"]
+        }
+    }
+}
