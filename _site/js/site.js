@@ -4,7 +4,10 @@
   const radioButtons = Array.from(document.querySelectorAll('input[type=radio]'))
   const toggles = [...selects, ...radioButtons]
 
+  setInitialSiteStorage()
   setInitialSiteTitleInput()
+  setInitialSiteTheme()
+  setInitialWidth()
 
   forms.map(form => {
     form.addEventListener('submit', (evt) => {
@@ -18,8 +21,16 @@
         case 'site-title-form':
           const title = evt.target.querySelector('#site-title-input').value
           const abbrev = evt.target.querySelector('#site-abbrev-input').value
-          setText(title, '#university-of-connecticut')
-          setText(abbrev, '#site-abbreviation')
+          setText({ 
+            key: 'title',
+            selector: '#university-of-connecticut', 
+            text: title, 
+          })
+          setText({ 
+            key: 'abbrev',
+            selector: '#site-abbreviation', 
+            text: abbrev, 
+          })
           break;
         default:
           break;
@@ -41,37 +52,83 @@
     })
   })
 
+  function setInitialSiteStorage() {
+    return [
+      {
+        key: 'theme',
+        value: 'blue'
+      },
+      {
+        key: 'width',
+        value: 768
+      },
+      {
+        key: 'title',
+        value: 'University Communications'
+      },
+      {
+        key: 'abbrev',
+        value: 'UComm'
+      }
+    ].map(({ key, value }) => {
+      if (!localStorage.getItem(key)) {
+        localStorage.setItem(key, value)
+        return true
+      }
+      return false
+    })
+  }
+
   function setInitialSiteTitleInput() {
     if (!document.querySelector('#uconn-banner').classList.contains('alternative')) return
-    const title = document.querySelector('#university-of-connecticut').innerText
-    const abbrev = document.querySelector('#site-abbreviation').innerText
+    const title = localStorage.getItem('title')
+    const abbrev = localStorage.getItem('abbrev')
+    document.querySelector('#university-of-connecticut').innerText = title
     document.querySelector('#site-title-input').value = title
+    document.querySelector('#site-abbreviation').innerText = abbrev
     document.querySelector('#site-abbrev-input').value = abbrev
   }
 
-  const setWidth = width => {
-    document.documentElement.style.setProperty('--container-width', `${width}px`)
+  function setInitialSiteTheme() {
+    const theme = localStorage.getItem('theme')
+    const themeToggle = document.querySelector(`#banner-theme-form input[value=${theme}]`)
+    document.querySelector('#uconn-header-container').classList.add(theme)
+    themeToggle.setAttribute('checked', 'checked')
   }
 
-  const displayWidth = width => {
+  function setInitialWidth() {
+    width = localStorage.getItem('width')
+    document.querySelector('#container-width').value = width
+    setWidth(width)
+    displayWidth(width)
+  }
+
+  function setWidth(width) {
+    document.documentElement.style.setProperty('--container-width', `${width}px`)
+    localStorage.setItem('width', width)
+  }
+
+  function displayWidth (width) {
     const dataWidths = Array.from(document.querySelectorAll('.data-width'))
     dataWidths.map(span => {
       span.innerHTML = `${width}px`
     })
   }
 
-  const setText = (text, selector) => {
+  const setText = ({ text, selector, key }) => {
     const bannerText = document.querySelector(`${selector}`)
     bannerText.innerHTML = text
+    localStorage.setItem(key, text)
   }
 
   const setTheme = (theme) => {
     const headerContainer = document.querySelector('#uconn-header-container')
-    if (theme.includes('inverted')) {
+    if (theme === 'white') {
       headerContainer.classList.add('white')
     } else {
       headerContainer.classList.remove('white')
     }
+    localStorage.setItem('theme', theme)
   }
 
 })()
