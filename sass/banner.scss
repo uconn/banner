@@ -12,12 +12,13 @@
 /* Import the webfonts */
 @import "fonts/uconn";
 @import "fonts/proxima-nova";
-@import "fonts/icons";
+
+/* Import icon styles */
+@import "icons/icons";
 
 /* Layout */
 @import "layout/layout";
 @import "layout/banner";
-@import "layout/header";
 
 
 /* Module */
@@ -25,12 +26,4 @@
 @import "module/buttons";
 @import "module/title";
 @import "module/search";
-
-
-/* State */
-@import "state/ie7";
-@import "state/ie8";
-
-/* Theme? */
-/* ... */
-
+@import "module/popups";
