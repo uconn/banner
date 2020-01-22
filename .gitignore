@@ -25,6 +25,9 @@ node_modules
 # Build Files
 /_site/*
 !/_site/index.html
+!/_site/school-advanced.html
+!/_site/school-basic.html
 !/_site/banner.css
+!/_site/site.css
+!/_site/css
 !/_site/js
-/_site/js/menu-demo.js
