@@ -8,6 +8,9 @@
 # SASS
 .sass-cache
 
+# jekyll
+.jekyll-cache
+
 # Stupid effin mac
 .DS_Store
 

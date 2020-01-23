@@ -1,7 +1,7 @@
 # Server settings for `jekyll serve`
 port:        4000
 baseurl:     /
-
+title: UConn Banner
 # The name of your site
 name: UConn Banner
 
