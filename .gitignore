@@ -8,6 +8,9 @@
 # SASS
 .sass-cache
 
+# jekyll
+.jekyll-cache
+
 # Stupid effin mac
 .DS_Store
 
@@ -31,3 +34,4 @@ node_modules
 !/_site/site.css
 !/_site/css
 !/_site/js
+!/_site/js/menu-demo.js

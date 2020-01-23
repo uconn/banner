@@ -13,7 +13,13 @@
 
 <body>
   <header>
-    {% include {{ page.banner }} %}
+    {% if page.banner == "sc_advanced.html" %}
+      {% include sc_advanced.html %}
+    {% elsif page.banner == "sc_basic.html" %}
+      {% include sc_basic.html %}
+    {% else %}
+      {% include basic.html %}
+    {% endif %}
     <nav id="{{ site.mobile_menu_id }}">
       <ul>
         <li>This menu is for demo purposes only</li>
