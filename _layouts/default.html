@@ -51,8 +51,8 @@
             <h2>Alternative Banners</h2>
             <ul>
               <li><a href="/">Standard Banner</a></li>
-              <li><a href="/school-basic">Basic School Banner</a></li>
-              <li><a href="/school-advanced">Advanced School Banner</a></li>
+              <li><a href={{ "/school-basic" | relative_url }}>Basic School Banner</a></li>
+              <li><a href={{ "/school-advanced" | relative_url }}>Advanced School Banner</a></li>
             </ul>
           </div>
           <div class="flex-content two-column">
@@ -70,7 +70,7 @@
       </div>
     </section>
 
-    {% if page.banner != "banner.html" %}
+    {% if page.banner != "basic.html" %}
     <section class="row">
       <div class="container">
         <h2>Site Title Tester</h2>
