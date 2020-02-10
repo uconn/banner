@@ -1,12 +1,15 @@
 #{$namespace} {
+    * {
+        line-height: 1.4;
+    }
     .row-container {
         width:100%;
         margin: 0px auto;
 
         box-sizing:border-box;
-        padding-top: 0.7rem;
+        padding-top: 0.5rem;
         padding-right: $edge-padding;
-        padding-bottom: 0.7rem;
+        padding-bottom: 0.5rem;
         padding-left: $edge-padding;
     }
 
