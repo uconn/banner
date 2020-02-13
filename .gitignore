@@ -23,7 +23,7 @@ Gemfile.lock
 node_modules
 
 # Composer Files
-/vendor
+vendor/
 
 # Build Files
 /_site/*
