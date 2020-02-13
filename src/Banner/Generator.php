@@ -15,7 +15,7 @@ class Generator {
     $cli = new Cli();
     $cli->description('Small command line utility to generate UConn banner markup')
       ->opt('path:p', 'File path with name to save banner', true)
-      ->opt('school-college:s', 'The school/college to display', false)
+      ->opt('school-college:s', 'The school/college to display', false, 'string')
       ->opt('abbreviation:a', 'An abbreviation for long school/college names. Will be visible on mobile devices', false)
       ->opt('url:u', 'School/college url', false)
       ->opt('alternative:v', 'Whether to use the school and college banner type', false, 'bool')

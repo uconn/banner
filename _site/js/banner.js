@@ -3,9 +3,14 @@
   var buttonContainer = document.querySelector('#button-container')
   var bannerButtons = document.querySelectorAll('#button-container button[aria-controls]')
   var buttons = Array.prototype.slice.call(bannerButtons, 0)
-  var mobileToggle = document.getElementById('banner-mobile-button')
-  var mobileMenuId = mobileToggle.getAttribute('aria-controls')
-  var mobileMenu = document.getElementById(mobileMenuId)
+
+  var mobileToggle
+  var mobileMenuId
+  if (document.querySelector('#banner-mobile-button') !== null) {
+    mobileToggle = document.querySelector('#banner-mobile-button')
+    mobileMenuId = mobileToggle.getAttribute('aria-controls')
+    mobileMenu = document.getElementById(mobileMenuId)
+  }
 
   var ucBannerMenuStateEvent = new CustomEvent('ucBannerMenuState', {
     detail: { isOpen: false },

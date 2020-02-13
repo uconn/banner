@@ -14,7 +14,11 @@
 .popup-container {
   background-color: #546688;
   display: none;
+  font-family: $secondary-font;
   line-height: 0;
+  position: absolute;
+  right: -6px;
+  top: 46px;
   hr {
     border-top: 1px solid #6f84a9;
     margin: 0;
@@ -63,10 +67,10 @@
   .link-wrapper {
     a {
       color: white;
-      display: inline-block;
+      display: block;
       position: relative;
       text-align: center;
-      width: 100%;
+      // width: 100%;
       &:hover,
       &:focus {
         background-color: #2e3d5b;
@@ -77,7 +81,7 @@
 
   .search-link-wrapper {
     a {
-      padding: 26px 10px 26px 26px;
+      padding: 16px 0;
     }
     .banner-search-text {
       display: inline-block;
@@ -91,7 +95,7 @@
 
   .az-link-wrapper {
     a {
-      padding: 26px 46px;
+      padding: 16px 46px;
     }
   }
 }

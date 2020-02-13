@@ -1,13 +1,14 @@
 #{$namespace} {
+    font-size: 16px;
+    * {
+        line-height: normal;
+    }
     .row-container {
-        width:100%;
-        margin: 0px auto;
-
         box-sizing:border-box;
-        padding-top: 0.7rem;
-        padding-right: $edge-padding;
-        padding-bottom: 0.7rem;
-        padding-left: $edge-padding;
+        height: 60px;
+        margin: 0px auto;
+        padding: 14px 16px;
+        width:100%;
     }
 
     .row-fluid {
@@ -24,6 +25,11 @@
             @media screen and (min-width: 50em) {
                 vertical-align: middle;
             }
+        }
+    }
+    &.alternative {
+        .row-container {
+            height: auto;
         }
     }
 }

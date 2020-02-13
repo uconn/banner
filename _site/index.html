@@ -1,54 +1,20 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <title>UConn Banner</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
-
-  <!-- Bootrap is not required. It's only here for testing and alignment purposes. -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Mono&display=swap" rel="stylesheet">
   <link href="banner.css" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
   <link rel="stylesheet" href="css/menu-demo.css">
-  <style>
-  /**
-   * The banner assumes a margin of 0px, but is not included
-   * in banner.css to avoid collisions with other themes and
-   * admin bars.
-   */
-  body {
-    margin:0px;
-  }
-
-  /**
-   * The following rules are for demo purposes only.
-   */
-  :root {
-      --container-width: 100%;
-  }
-  #uconn-banner .row-container {
-      max-width: var(--container-width);
-  }
-  </style>
-
-  <!-- REPLACE THIS WITH YOUR CUSTOM BUILD OF MODERNIZR -->
-  <script src="//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js"></script>
-
-  <!-- Use if you need responsive layouts for IE -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
-
-
-
 </head>
 
 <body>
-
+  <header>
+    
+      
     
     <div id="uconn-banner">
         
@@ -107,106 +73,116 @@
 
 
     
-    <div class="row-container" id="site-header">
-        <div class="row-fluid">
-            <div>
-                <p id="super-title"><a href="https://communications.uconn.edu/">University Communications</a>
-                </p>
-                <h1 id="site-title"><a href="/">UConn Banner</a></h1>
-            </div>
-            <div id="search-container">
-                 <form class="form-search">
-    <input type="text" class="input-medium" placeholder="Search this site...">
-    <button type="submit" class="btn">Search</button>
-</form>
- 
-            </div>
-        </div>
-    </div>
-    
-
-<nav id="banner-controlled-mobile-menu">
-  <ul>
-    <li>This menu is for demo purposes only</li>
-    <li>
-      <a href=""></a>
-    </li>
-    <li>
-      <a href="#">About</a>
-    </li>
-    <li>
-      <a href="#">Contact</a>
-    </li>
-  </ul>
-</nav>
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-  <div class="container">
-    <h1>Hi, there!</h1>
-    <p>This version of the UConn Banner is completely fluid so you can add your own custom breakpoints. Use the utility below to try it out.</p>
-    <p>This layout is currently displaying the <strong>ALTERNATIVE</strong> banner.  This banner is still in pre-approval and will not be offered as the default yet.</p>
-  </div>
-</div>
-
-<div class="container">
-  <!-- Example row of columns -->
-  <div class="row">
-    <div class="col-md-4">
-      <h2>Media Query Tester</h2>
-      <p>This form will help you to build custom breakpoints for your banner.</p>
-      <form id="container-width-form" class="form-inline">
-        <div class="form-group">
-          <label for="container-width" style="display:block">Enter a breakpoint in pixels</label>
-          <input type="number" class="form-control" id="container-width" placeholder="1200">
-          <input type="submit" name="Test" value="Test it!" class="btn btn-primary">
-        </div>
-      </form>
-   </div>
-    <div class="col-md-4">
-      <h2>Code</h2>
-      <figure class="highlight"><pre><code class="language-html">
-@media(min-width: <span class="data-width"></span>){
-  #uconn-banner .row-container {
-      max-width: <span class="data-width"></span>
-  }
-}</code></pre></figure>
-
-
-    </div>
-
-    <div class="col-md-4">
-      <h2>More Information</h2>
+    <nav id="banner-controlled-mobile-menu">
       <ul>
-          <li><a href="https://github.com/uconn/banner">Project Source</a></li>
-          <li><a href="https://packagist.org/packages/uconn/banner">Using Composer</a></li>
-          <li><a href="https://github.com/uconn/banner/wiki/Banner-rendering-with-PHP">Banner rendering with PHP</a></li>
-          <li><a href="https://github.com/uconn/uconn-banner-wp">WordPress Plugin</a></li>
+        <li>This menu is for demo purposes only</li>
+        <li>
+          <a href=""></a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
       </ul>
-    </div>
+    </nav>
+  </header>
+  <main>
+    <section class="row intro">
+      <div class="container">
+        <h1>Standard Banner</h1>
+        <p><strong>Hi there!</strong></p>
+        <p>This version of the UConn Banner has several different options. You can see different variations by visiting the links below and/or adjusting the forms on each page.</p>
+      </div>
+    </section>
+    
+    <section class="row">
+      <div class="container">
+        <div class="flex">
+          <div class="flex-content two-column">
+            <h2>Alternative Banners</h2>
+            <ul>
+              <li><a href=/>Standard Banner</a></li>
+              <li><a href=/school-basic>Basic School Banner</a></li>
+              <li><a href=/school-advanced>Advanced School Banner</a></li>
+            </ul>
+          </div>
+          <div class="flex-content two-column">
+            <h2>Theme Switcher</h2>
+            <form id="banner-theme-form">      
+              <label for="standard-theme">
+                <input type="radio" name="banner-theme" id="standard-theme" value="blue" /> Standard Theme
+              </label>   
+              <label for="inverted-theme">
+                <input type="radio" name="banner-theme" id="inverted-theme" value="white" /> Inverted Theme
+              </label>              
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    
+      <!-- Example row of columns -->
+      <section class="row">
+        <div class="container">
+          <div class="flex">
+            <div class="flex-content two-column">
+              <h2>Media Query Tester</h2>
+              <p>This form will help you to build custom breakpoints for your banner.</p>
+              <form id="container-width-form" class="form-inline">
+                <div class="form-group">
+                  <div>
+                    <label for="container-width" style="display:block">Enter a breakpoint in pixels</label>
+                    <input type="number" class="form-control" id="container-width" placeholder="1200">
+                  </div>
+                  <input type="submit" name="Test" value="Test it!" class="btn btn-primary">
+                </div>
+              </form>
+            </div>
+            <div class="flex-content two-column">
+              <h2>Code</h2>
+<figure class="highlight">
+  <pre><code class="language-html">
+    @media(min-width: <span class="data-width"></span>){
+      #uconn-banner .row-container {
+          max-width: <span class="data-width"></span>
+      }
+    }</code></pre>
+</figure>
+            </div>
+          </div>
+        </div>    
+        
+      </section>
+      <section class="row">
+        <div class="container">
+          <h2>More Information</h2>
+          <ul>
+              <li><a href="https://github.com/uconn/banner">Project Source</a></li>
+              <li><a href="https://packagist.org/packages/uconn/banner">Using Composer</a></li>
+              <li><a href="https://github.com/uconn/banner/wiki/Banner-rendering-with-PHP">Banner rendering with PHP</a></li>
+              <li><a href="https://github.com/uconn/uconn-banner-wp">WordPress Plugin</a></li>
+          </ul>
+        </div>
+      </section>
+  </main>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+
+  <div class="container">
+    <hr>
   </div>
-
-  <hr>
 
   <footer>
-    <p>&copy; 2017 <a href="http://communications.uconn.edu/">University Communications</a></p>
+    <div class="row">
+      <div class="container">
+        <p>&copy; 2017 <a href="http://communications.uconn.edu/">University Communications</a></p>
+      </div>
+    </div>
   </footer>
-</div> <!-- /container -->
-
-    <!-- Bootstrap and jQuery are not required. Again, they're here for testing purposes. -->
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-        $(function(){
-            $('#container-width-form').bind('submit', function(event){
-                var width = $('#container-width').val();
-                document.documentElement.style.setProperty('--container-width', width + 'px');
-                $('.data-width').html(width + 'px')
-                event.preventDefault();
-            });
-        });
-    </script>
-    <script src="js/banner.js"></script>
-    <script src="js/menu-demo.js"></script>
+  <script src="js/site.js"></script>
+  <script src="js/banner.js"></script>
+  <script src="js/menu-demo.js"></script>
 </body>
 </html>

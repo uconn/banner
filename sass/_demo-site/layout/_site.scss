@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+/**
+  * The banner assumes a margin of 0px, but is not included
+  * in banner.css to avoid collisions with other themes and
+  * admin bars.
+  */
+body {
+  margin:0px;
+}
+
+/**
+  * The following rules are for demo purposes only.
+  */
+:root {
+    --container-width: 100%;
+}
+#uconn-banner .row-container {
+    max-width: var(--container-width);
+}
+
+section + section {
+  margin-top: 2rem;
+}
+
+hr {
+  margin: 2rem 0;
+}
+
+footer {
+  padding-bottom: 1rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 48rem;
+  padding: 0 1rem;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.two-column {
+  flex: 1 1 15rem;
+  padding: 0.2rem;
+}
