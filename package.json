@@ -1,6 +1,6 @@
 {
     "name": "uconn-banner",
-    "version": "2.0.2",
+    "version": "3.0.3",
     "description": "uconn-banner is the official UConn Banner module packaged for quick implementation.",
     "license": "UNLICENSED",
     "repository": {
@@ -18,17 +18,16 @@
         "banner:basic": "php ./src/Banner/Generator.php -p ./_includes/basic.html",
         "banner:sc-basic": "php ./src/Banner/Generator.php -p ./_includes/sc_basic.html -v true -s \"University Communications\" -a \"UComm\" -u https://communications.uconn.edu",
         "banner:sc-advanced": "php ./src/Banner/Generator.php -p ./_includes/sc_advanced.html -v true -s \"University Communications\" -a \"UComm\" -u https://communications.uconn.edu -m=true --a-z-dropdown=true",
-        "js:uglify": "uglifyjs js/banner.js --source-map --output _site/js/banner.js -c -m",
-        "js:watch": "chokidar \"js/banner.js\" -c \"npm run js:uglify\"",
-        "sass:build": "compass clean && compass compile",
-        "sass:watch": "compass watch &",
-        "jekyll:build": "bundle install && bundle exec jekyll build",
-        "jekyll:watch": "bundle install && bundle exec jekyll serve --watch",
         "banners": "npm run banner:basic && npm run banner:sc-basic && npm run banner:sc-advanced",
-        "build": "npm run banners && npm run jekyll:build && npm run sass:build && npm run js:uglify",
-        "develop": "npm run banners && npm-run-all --parallel sass:watch js:watch jekyll:watch",
+        "build": "npm run banners && npm run 11ty && npm run webpack",
+        "develop": "npm run dev",
         "watch": "npm run develop",
-        "start": "npm run build"
+        "start": "npm run build",
+        "11ty:dev": "npx @11ty/eleventy --serve",
+        "11ty": "npx @11ty/eleventy",
+        "webpack:dev": "webpack --watch",
+        "webpack": "webpack",
+        "dev": "npm run banners && npm-run-all --parallel npm run 11ty:dev && npm run webpack:dev"
     },
     "contributors": [
         {
@@ -36,13 +35,25 @@
         },
         {
             "name": "Brian Kelleher"
+        },
+        {
+            "name": "Adam Berkowitz"
         }
     ],
     "directories": {},
     "devDependencies": {
-        "chokidar-cli": "^2.1.0",
+        "@11ty/eleventy": "^1.0.2",
+        "@babel/core": "^7.20.2",
+        "@babel/preset-env": "^7.20.2",
+        "babel-loader": "^9.1.0",
+        "cross-env": "^7.0.3",
+        "css-loader": "^6.7.2",
+        "css-minimizer-webpack-plugin": "^4.2.2",
+        "mini-css-extract-plugin": "^2.6.1",
         "npm-run-all": "^4.1.5",
-        "uglify-js": "^3.7.2"
-    },
-    "dependencies": {}
+        "sass": "^1.56.1",
+        "sass-loader": "^13.2.0",
+        "webpack": "^5.75.0",
+        "webpack-cli": "^4.10.0"
+    }
 }

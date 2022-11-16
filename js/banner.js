@@ -1,3 +1,5 @@
+import '../sass/banner.scss'
+
 (function() {
   var banner = document.querySelector('#uconn-banner')
   var buttonContainer = document.querySelector('#button-container')

@@ -1,0 +1,15 @@
+{
+  "title": "UConn Banner",
+  "name": "UConn Banner",
+  "show_header": true,
+  "school": "University Communications",
+  "school_abbreviation": "UComm",
+  "school_url": "https://communications.uconn.edu",
+  "search": "<form class='form-search'><input type='text' class='input-medium' placeholder='Search this site...'><button type='submit' class='btn'>Search</button></form>",
+  "use_mobile_menu": true,
+  "mobile_menu_id": "banner-controlled-mobile-menu",
+  "alternative": false,
+  "invert_banner_color": false,
+  "a_z_dropdown": true,
+  "a_z_url": ""
+}
