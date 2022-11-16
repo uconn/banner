@@ -18,6 +18,8 @@ As of January 16, 2020, the `master` branch of this repository represents 3.x of
 | - [npm compatible](https://www.npmjs.com/package/uconn-banner) | - [composer compatible](https://packagist.org/packages/uconn/banner) | - Added support for popups with search box
 | | | - Added a php generator to quickly create static banners
 | | | - Updated dependencies and build process
+| | | - Deprecated jekyll in favor of [11ty](https://11ty.dev)
+| | | - Removed support for Compass
 
 
 ## Who should use this?
@@ -40,7 +42,7 @@ This repo uses phpunit to test the attributes of the banner. Tests can be run wi
 
 ## Contributing / Development
 
-Clone/download this repo and use [Jekyll](http://jekyllrb.com/) and [Compass](http://compass-style.org/).
+Clone/download this repo and use [11ty](http://11ty.dev/).
 
 ```bash
 	
@@ -48,16 +50,20 @@ Clone/download this repo and use [Jekyll](http://jekyllrb.com/) and [Compass](ht
 git clone https://github.com/uconn/banner.git
 cd banner
 
+# use [nvm](https://github.com/nvm-sh/nvm)
+nvm use
+
 # Install npm dependencies
 npm install
 
-# Install ruby gems
-bundle
+# Install composer dependencies
+composer install
+
 
 # Run the develop task
 npm run develop
 ```
-Open up [http://localhost:4000/](http://localhost:4000/) in your web browser to view your changes.
+Open up [http://localhost:8080/](http://localhost:8080/) in your web browser to view your changes.
 
 ### Javascript
 If you plan to use this banner with the mobile menu enabled, please make sure to read the following carefully. You _must_ implement your own mobile menu. While the banner provides a menu toggle, it is (almost) completely un-opinioated when it comes to the markup or style for the menu. The only thing you must do is make sure that the `id` of the component that wraps the menu matches the `aria-controls` attribute of the menu toggle button.
