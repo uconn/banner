@@ -5,7 +5,7 @@ namespace UConn\Banner;
 require dirname(__DIR__, 2) . '/vendor/autoload.php';
 require 'Banner.php';
 
-use Garden\Cli\Cli;
+use League\CLImate\CLImate as Cli;
 
 class Generator {
   protected $args;
@@ -13,6 +13,20 @@ class Generator {
   public function createArguments() {
     global $argv;
     $cli = new Cli();
+    $cli->description('Small command line utility to generate UConn banner markup');
+    $cli->arguments->add([
+      'path' => [
+        'prefix' => 'p',
+        'longPrefix' => 'path',
+        'description' => 'File path with name to save banner',
+        'required' => true,
+        'defaultValue' => './'
+      ]
+    ]);
+
+
+
+
     $cli->description('Small command line utility to generate UConn banner markup')
       ->opt('path:p', 'File path with name to save banner', true)
       ->opt('school-college:s', 'The school/college to display', false, 'string')
