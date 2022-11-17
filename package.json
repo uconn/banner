@@ -27,7 +27,7 @@
         "11ty": "npx @11ty/eleventy",
         "webpack:dev": "webpack --watch",
         "webpack": "webpack",
-        "dev": "npm run banners && npm-run-all --parallel npm run 11ty:dev && npm run webpack:dev"
+        "dev": "npm run banners && npm-run-all --parallel 11ty:dev && webpack:dev"
     },
     "contributors": [
         {
