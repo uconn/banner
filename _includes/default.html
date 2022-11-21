@@ -20,11 +20,11 @@
     {% else %}
       {% include basic.html %}
     {% endif %}
-    <nav id="{{ site.mobile_menu_id }}">
+    <nav id="{{ config.mobile_menu_id }}">
       <ul>
         <li>This menu is for demo purposes only</li>
         <li>
-          <a href="{{ site.department_url }}">{{ site.department }}</a>
+          <a href="{{ department_url }}">{{ department }}</a>
         </li>
         <li>
           <a href="#">About</a>
@@ -138,13 +138,7 @@
     <hr>
   </div>
 
-  <footer>
-    <div class="row">
-      <div class="container">
-        <p>&copy; 2017 <a href="http://communications.uconn.edu/">University Communications</a></p>
-      </div>
-    </div>
-  </footer>
+  {% include footer.html %}
   <script src="/js/site.js"></script>
   <script src="/js/banner.js"></script>
   <script src="/js/menu-demo.js"></script>

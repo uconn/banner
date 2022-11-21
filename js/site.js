@@ -1,3 +1,5 @@
+import '../sass/site.scss'
+
 (() => {
   const forms = Array.from(document.querySelectorAll('main form'))
   const selects = Array.from(document.querySelectorAll('select'))

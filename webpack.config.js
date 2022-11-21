@@ -4,7 +4,8 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 module.exports = {
   entry: {
-    test: path.resolve(__dirname, 'js', 'banner.js')
+    banner: path.resolve(__dirname, 'js', 'banner.js'),
+    site: path.resolve(__dirname, 'js', 'site.js'),
   },
   output: {
     path: path.resolve(__dirname, '_site'),

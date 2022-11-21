@@ -86,11 +86,11 @@ class Banner {
      * publicly accessible.
      * @return string CSS rules for the banner
      */
-    public function css(){
+    public static function css(){
         return file_get_contents(dirname(__FILE__) . '/../../_site/banner.css');
     }
 
-    public function js() {
+    public static function js() {
         return file_get_contents(dirname(__FILE__) . '/../../_site/js/banner.js');
     }
 
