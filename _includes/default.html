@@ -38,6 +38,7 @@
   <main>
     <section class="row intro">
       <div class="container">
+        <hr>
         <h1>{{ title }}</h1>
         <p><strong>Hi there!</strong></p>
         <p>This version of the UConn Banner has several different options. You can see different variations by visiting the links below and/or adjusting the forms on each page.</p>
@@ -70,24 +71,33 @@
       </div>
     </section>
 
-    {% if hasTitleForm %}
     <section class="row">
       <div class="container">
         <h2>Site Title Tester</h2>
+        <p><a href="https://brand.uconn.edu/guidelines-usage/web/#appearance">Check the Brand Guidelines</a> for additional information about site titles.</p>
         <form action="" id="site-title-form">
+          {% if hasTitleForm %}
           <div>
-            <label for="site-title-input">Adjust the site title</label>
+            <label for="site-title-input">Adjust the site title in the banner</label>
             <input type="text" name="site-title-input" id="site-title-input" placeholder="Banner Title">
           </div>
           <div>
             <label for="site-abbrev-input">Adjust the site abbreviation</label>
             <input type="text" name="site-abbrev-input" id="site-abbrev-input" placeholder="Abbreviation">
           </div>
-          <input type="submit" value="Change Title">
+          {% endif %}
+          <div>
+            <label for="level-one-input">Adjust the "level 1" title</label>
+            <input type="text" name="level-one-input" id="level-one-input" placeholder="UConn Banner">
+          </div>
+          <div>
+            <label for="level-one-input">Adjust the "level 2" title</label>
+            <input type="text" name="level-two-input" id="level-two-input" placeholder="University Communications">
+          </div>
+          <input type="submit" value="Change Titles">
         </form>
       </div>
     </section>
-    {% endif %}
     <section class="row">
       <div class="container">
         <div class="flex">

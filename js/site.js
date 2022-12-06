@@ -11,6 +11,7 @@ import '../sass/site.scss'
   setInitialSiteTheme()
   setInitialWidth()
   setInitialSiteTitlesDisplay()
+  setInitialTitles()
 
   forms.map(form => {
     form.addEventListener('submit', (evt) => {
@@ -24,6 +25,8 @@ import '../sass/site.scss'
         case 'site-title-form':
           const title = evt.target.querySelector('#site-title-input').value
           const abbrev = evt.target.querySelector('#site-abbrev-input').value
+          const levelOne = evt.target.querySelector('#level-one-input').value
+          const levelTwo = evt.target.querySelector('#level-two-input').value
           setText({ 
             key: 'title',
             selector: '#university-of-connecticut', 
@@ -33,6 +36,16 @@ import '../sass/site.scss'
             key: 'abbrev',
             selector: '#site-abbreviation', 
             text: abbrev, 
+          })
+          setText({
+            key: 'level-one-title',
+            selector: '#uc-site-title a',
+            text: levelOne
+          })
+          setText({
+            key: 'level-two-title',
+            selector: '#uc-site-parent a',
+            text: levelTwo
           })
           break;
         default:
@@ -79,6 +92,14 @@ import '../sass/site.scss'
       {
         key: 'site-title-display',
         value: 'block'
+      },
+      {
+        key: 'level-one-title',
+        value: 'UConn Banner'
+      },
+      {
+        key: 'level-two-title',
+        value: 'University Communications'
       }
     ].map(({ key, value }) => {
       if (!localStorage.getItem(key)) {
@@ -97,6 +118,15 @@ import '../sass/site.scss'
     document.querySelector('#site-title-input').value = title
     document.querySelector('#site-abbreviation').innerText = abbrev
     document.querySelector('#site-abbrev-input').value = abbrev
+  }
+
+  function setInitialTitles() {
+    const levelOne = localStorage.getItem('level-one-title')
+    const levelTwo = localStorage.getItem('level-two-title')
+    document.querySelector('#level-one-input').value = levelOne
+    document.querySelector('#level-two-input').value = levelTwo
+    document.querySelector('#uc-site-title a').innerText = levelOne
+    document.querySelector('#uc-site-parent a').innerText = levelTwo
   }
 
   function setInitialSiteTheme() {
