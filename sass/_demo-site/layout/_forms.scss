@@ -16,3 +16,13 @@ main form {
     width: 90%;
   }
 }
+
+main {
+  div:has(button) + div:has(button) {
+    margin-top: 0.5rem;
+  }
+  button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}

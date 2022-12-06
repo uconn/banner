@@ -11,15 +11,16 @@ As with most of our [web branding](http://brand.uconn.edu/standards/web/) effort
 As of January 16, 2020, the `master` branch of this repository represents 3.x of the banner. The key differences are outlined below:
 
 
-| 1.x | 2.x | 3.x |
-|---|---|---|
+| 1.x (deprecated) | 2.x (deprecated) | 3.x | 4.x |
+|---|---|---|---|
 | - Designed for use with Bootstrap| - Bootstrap classes removed| - Added support for a School/College type banner. This includes support for optional mobile menu and popups.
 | - Embedded media queries intended to mirror Bootstrap | - No media queries. User _must_ define them.| - Added support for white banner with blue text
 | - [npm compatible](https://www.npmjs.com/package/uconn-banner) | - [composer compatible](https://packagist.org/packages/uconn/banner) | - Added support for popups with search box
 | | | - Added a php generator to quickly create static banners
-| | | - Updated dependencies and build process
-| | | - Deprecated jekyll in favor of [11ty](https://11ty.dev)
-| | | - Removed support for Compass
+| | | | - Updated dependencies and build process
+| | | | - Deprecated jekyll in favor of [11ty](https://11ty.dev)
+| | | | - Removed support for Compass
+| | | | - Improved support for level 1 and 2 site titles
 
 
 ## Who should use this?

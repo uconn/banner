@@ -5,6 +5,7 @@ import '../sass/site.scss'
   const selects = Array.from(document.querySelectorAll('select'))
   const radioButtons = Array.from(document.querySelectorAll('input[type=radio]'))
   const toggles = [...selects, ...radioButtons]
+  const downloadButtons = Array.from(document.querySelectorAll('.download-button'))
 
   setInitialSiteStorage()
   setInitialSiteTitleInput()
@@ -67,6 +68,22 @@ import '../sass/site.scss'
           break;
         default:
           break;
+      }
+    })
+  })
+
+  downloadButtons.map(button => {
+    button.addEventListener('click', (evt) => {
+      switch (evt.target.id) {
+        case 'download-banner-html':
+        case 'download-levels-html':
+          const element = evt.target.getAttribute('data-element')
+          downloadHTML(element)
+          break
+
+        case 'download-banner-styles':
+          downloadStyles()
+          break
       }
     })
   })
@@ -183,6 +200,25 @@ import '../sass/site.scss'
     const siteTitles = document.querySelector('#site-titles')
     siteTitles.style.display = style
     localStorage.setItem('site-title-display', style)
+  }
+
+  const downloadHTML = (id) => {
+    const el = document.querySelector(`#${id}`)
+    const markup = el.innerHTML
+    const blob = new Blob([markup], { type: 'text/plain' })
+    const blobURL = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = blobURL
+    link.download = `${el.id}.html`
+    link.click()
+  }
+
+  const downloadStyles = () => {
+    const link = document.createElement('a')
+    const fileName = 'banner.css'
+    link.href = `${window.location.origin}/${fileName}`
+    link.download = fileName
+    link.click()
   }
 
 })()
