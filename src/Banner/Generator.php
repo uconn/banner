@@ -24,7 +24,7 @@ class Generator {
       'path' => [
         'prefix' => 'p',
         'longPrefix' => 'path',
-        'description' => 'File path with name to save banner (ex ./my-banner.html)',
+        'description' => 'File path with name and extension to save banner (ex ./my-banner.html)',
         'required' => true,
         'defaultValue' => './'
       ],
@@ -47,13 +47,13 @@ class Generator {
         'prefix' => 'v',
         'longPrefix' => 'alternative',
         'description' => 'Whether to use the school and college banner type',
-        'defaultValue' => false,
+        'defaultValue' => 'false',
         'castTo' => 'bool'
       ],
       'a-z-dropdown' => [
         'longPrefix' => 'a-z-dropdown',
         'description' => 'Whether to add markup for an A-Z dropdown/popup. Default - false',
-        'defaultValue' => false,
+        'defaultValue' => 'false',
         'castTo' => 'bool'
       ],
       'a-z-url' => [
@@ -64,7 +64,7 @@ class Generator {
         'shortPrefix' => 'm',
         'longPrefix' => 'use-mobile',
         'description' => 'Whether to use a mobile menu icon in the banner. Default - false',
-        'defaultValue' => false,
+        'defaultValue' => 'false',
         'castTo' => 'bool'
       ],
       'mobile-id' => [
@@ -74,13 +74,15 @@ class Generator {
       'header' => [
         'prefix' => 'r',
         'longPrefix' => 'header',
-        'description' => 'Alternative site header'
+        'description' => 'Alternative site header',
+        'defaultValue' => 'false'
       ],
       'invert-banner-color' => [
         'prefix' => 'i',
         'longPrefix' => 'invert-banner-color',
         'description' => 'Whether to use a white banner with blue text',
-        'castTo' => 'bool'
+        'castTo' => 'bool',
+        'defaultValue' => 'false'
       ]
     ]);
     $this->cli->arguments->parse();

@@ -15,9 +15,9 @@
         "url": "https://github.com/uconn/banner/issues"
     },
     "scripts": {
-        "banner:basic": "php ./src/Banner/Generator.php -p ./_includes/basic.html",
-        "banner:sc-basic": "php ./src/Banner/Generator.php -p ./_includes/sc_basic.html -v true -s \"University Communications\" -a \"UComm\" -u https://communications.uconn.edu",
-        "banner:sc-advanced": "php ./src/Banner/Generator.php -p ./_includes/sc_advanced.html -v true -s \"University Communications\" -a \"UComm\" -u https://communications.uconn.edu -m=true --a-z-dropdown=true",
+        "banner:basic": "php ./src/Banner/Generator.php -p ./_includes/basic.html --header false",
+        "banner:sc-basic": "php ./src/Banner/Generator.php -p ./_includes/sc_basic.html -v true -s \"University Communications\" -a \"UComm\" -u https://communications.uconn.edu --header false",
+        "banner:sc-advanced": "php ./src/Banner/Generator.php -p ./_includes/sc_advanced.html -v true -s \"University Communications\" -a \"UComm\" -u https://communications.uconn.edu -m=true --a-z-dropdown=true --header false",
         "banners": "npm run banner:basic && npm run banner:sc-basic && npm run banner:sc-advanced",
         "build": "npm run banners && npm run 11ty && npm run webpack",
         "develop": "npm run dev",
