@@ -88,6 +88,23 @@
       </div>
     </section>
     {% endif %}
+    <section class="row">
+      <div class="container">
+        <div class="flex">
+          <div class="flex-content two-column">
+            <h2>Toggle Site Title Area</h2>
+            <form id="site-title-toggle">
+              <label for="site-titles-display">
+                <input type="radio" name="banner-theme" id="site-titles-display" value="block" /> Show Site Titles
+              </label>
+              <label for="site-titles-hide">
+                <input type="radio" name="banner-theme" id="site-titles-hide" value="none" /> Hide Site Titles
+              </label>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
       <!-- Example row of columns -->
       <section class="row">
         <div class="container">
@@ -139,7 +156,7 @@
   </div>
 
   {% include footer.html %}
-  <script src="/js/site.js"></script>
+  <script src="/site.js"></script>
   <script src="/js/banner.js"></script>
   <script src="/js/menu-demo.js"></script>
 </body>

@@ -10,6 +10,7 @@ import '../sass/site.scss'
   setInitialSiteTitleInput()
   setInitialSiteTheme()
   setInitialWidth()
+  setInitialSiteTitlesDisplay()
 
   forms.map(form => {
     form.addEventListener('submit', (evt) => {
@@ -47,7 +48,10 @@ import '../sass/site.scss'
         case 'inverted-theme':
           setTheme(evt.target.value)
           break;
-
+        case 'site-titles-display':
+        case 'site-titles-hide':
+          setSiteTitleDisplay(evt.target.value)
+          break;
         default:
           break;
       }
@@ -71,6 +75,10 @@ import '../sass/site.scss'
       {
         key: 'abbrev',
         value: 'UComm'
+      },
+      {
+        key: 'site-title-display',
+        value: 'block'
       }
     ].map(({ key, value }) => {
       if (!localStorage.getItem(key)) {
@@ -99,10 +107,18 @@ import '../sass/site.scss'
   }
 
   function setInitialWidth() {
-    width = localStorage.getItem('width')
+    const width = localStorage.getItem('width')
     document.querySelector('#container-width').value = width
     setWidth(width)
     displayWidth(width)
+  }
+
+  function setInitialSiteTitlesDisplay() {
+    const siteTitles = document.querySelector('#site-titles')
+    const style = localStorage.getItem('site-title-display')
+    const siteTitleToggle = document.querySelector(`#site-title-toggle input[value=${style}]`)
+    siteTitles.style.display = style
+    siteTitleToggle.setAttribute('checked', 'checked')
   }
 
   function setWidth(width) {
@@ -131,6 +147,12 @@ import '../sass/site.scss'
       headerContainer.classList.remove('white')
     }
     localStorage.setItem('theme', theme)
+  }
+
+  const setSiteTitleDisplay = (style) => {
+    const siteTitles = document.querySelector('#site-titles')
+    siteTitles.style.display = style
+    localStorage.setItem('site-title-display', style)
   }
 
 })()
