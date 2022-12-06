@@ -47,7 +47,6 @@ class Generator {
         'prefix' => 'v',
         'longPrefix' => 'alternative',
         'description' => 'Whether to use the school and college banner type',
-        'defaultValue' => 'false',
         'castTo' => 'bool'
       ],
       'a-z-dropdown' => [
@@ -74,15 +73,13 @@ class Generator {
       'header' => [
         'prefix' => 'r',
         'longPrefix' => 'header',
-        'description' => 'Alternative site header',
-        'defaultValue' => 'false'
+        'description' => 'Alternative site header'
       ],
       'invert-banner-color' => [
         'prefix' => 'i',
         'longPrefix' => 'invert-banner-color',
         'description' => 'Whether to use a white banner with blue text',
-        'castTo' => 'bool',
-        'defaultValue' => 'false'
+        'castTo' => 'bool'
       ]
     ]);
     $this->cli->arguments->parse();

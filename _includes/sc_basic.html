@@ -61,7 +61,8 @@
                         
                         <div class="icon-container" id="icon-container-az">
                             
-                            <a class="btn" id="uconn-az" href="https://uconn.edu/az">
+                            <button class="btn btn-popup-control" id="uconn-az" href="https://uconn.edu/az" aria-haspopup="true"
+                                aria-controls="a-z-popup" aria-expanded="false">
                                 <span class="no-css">A to Z Index</span>
                                 
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 32 32" aria-hidden="true"
@@ -71,10 +72,41 @@
                                         d="M5.345 8.989h3.304l4.944 13.974h-3.167l-0.923-2.873h-5.147l-0.946 2.873h-3.055l4.989-13.974zM5.152 17.682h3.579l-1.764-5.499-1.815 5.499zM13.966 14.696h5.288v2.56h-5.288v-2.56zM20.848 20.496l7.147-9.032h-6.967v-2.474h10.597v2.341l-7.244 9.165h7.262v2.466h-10.798v-2.466h0.004z">
                                     </path>
                                 </svg>
-                            </a>
+                            </button>
+                            
+                            <div id="a-z-popup" class="popup-container">
+                                <div class="link-wrapper az-link-wrapper">
+                                    <a href="/az"><span class="banner-search-text"></span>Site
+                                        A-Z</span></a>
+                                </div>
+                                <hr />
+                                <div class="link-wrapper az-link-wrapper">
+                                    <a href="https://uconn.edu/az"><span class="banner-search-text"></span>UConn A-Z</span></a>
+                                </div>
+                            </div>
                             
                         </div>
                         
+                        <div class="icon-container" id="icon-container-mobile-menu">
+                            <button class="btn mobile-menu-btn" id="banner-mobile-button" aria-haspopup="true"
+                                aria-controls="" aria-expanded="false">
+                                
+                                <?xml version="1.0" encoding="utf-8"?>
+                                <svg width="20" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" class="banner-icon menu-toggle-open"
+                                    aria-hidden="true">
+                                    <path
+                                        d="M1664 1344v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45z" />
+                                </svg>
+                                
+                                <?xml version="1.0" encoding="utf-8"?>
+                                <svg width="20" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" class="banner-icon menu-toggle-close"
+                                    aria-hidden="true">
+                                    <path
+                                        d="M1490 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z" />
+                                </svg>
+                                <span class="no-css">Click to <span id="menu-toggle-text">open</span> menu</span>
+                            </button>
+                            
                         </div>
                     </div>
                     
@@ -85,3 +117,18 @@
     
 
 
+
+    
+    <div class="row-container" id="site-header">
+        <div class="row-fluid">
+            <div>
+                <p id="super-title"><a href="https://communications.uconn.edu">University Communications</a>
+                </p>
+                <h1 id="site-title"><a href="/">UConn Banner</a></h1>
+            </div>
+            <div id="search-container">
+                 <form class='form-search'><input type='text' class='input-medium' placeholder='Search this site...'><button type='submit' class='btn'>Search</button></form> 
+            </div>
+        </div>
+    </div>
+    
