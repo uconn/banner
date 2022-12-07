@@ -172,6 +172,29 @@
           </div>
         </div>
       </section>
+      <section id="generator-wrapper" class="row">
+        <div class="container">
+          <h2>Banner Generator Snippets</h2>
+          <p>Prefer to generate the banner yourself? You can use these examples to get started. Consult the <code>--help</code> command for all options.</p>
+<figure class="highlight">
+  <pre><code class="language-shell">
+    # basic banner
+    php ./src/Banner/Generator.php --path ./my-uconn-banner.html
+    
+    # school/college style banner
+    php ./src/Banner/Generator.php --path ./my-uconn-banner.html \
+      -v true -s "University Communications" \
+      -a "UComm" -u https://communications.uconn.edu
+
+    # advanced school/college style banner
+    php ./src/Banner/Generator.php --path ./my-uconn-banner.html \
+      -v true -s "University Communications" \
+      -a "UComm" -u https://communications.uconn.edu \
+      -m=true --a-z-dropdown=true
+  </code></pre>
+</figure>
+        </div>
+      </section>
   </main>
 <!-- Main jumbotron for a primary marketing message or call to action -->
 
