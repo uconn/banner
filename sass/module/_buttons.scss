@@ -11,6 +11,7 @@
     white-space: nowrap;
   }
   .btn {
+    background-color: $bg-color;
     border: 0;
     display:block;
     height:100%;
@@ -20,10 +21,6 @@
     padding: inherit;
     text-shadow: none;
     line-height: normal;
-
-    // [class*="icon-"] {
-    //   line-height: $btn-size;
-    // }
   }
 }
 
@@ -85,6 +82,12 @@
       opacity: 0;
       visibility: hidden;
     }
+    #icon-container-mobile-menu{
+      display: inline-block;
+      @media screen and (min-width: 50em) {
+        display: none;
+      }
+    }
   }
   #uconn-search,
   #uconn-az {
@@ -97,8 +100,12 @@
       + div:not(.popup-container) {
         @extend %tooltip-container;
         transition: opacity 0.3s ease-in-out;
-        opacity: 1;
-        visibility: visible;
+        opacity: 0;
+        visibility: hidden;
+        @media screen and (min-width: 50em) {
+          opacity: 1;
+          visibility: visible;
+        }
       }
     }
   }
@@ -143,6 +150,31 @@
       }
     }
   }
+  #banner-mobile-button[aria-expanded="false"] {
+    .menu-toggle-open {
+      display: inline-block;
+    }
+
+    .menu-toggle-close {
+      display: none;
+    }
+  }
+
+  #banner-mobile-button[aria-expanded="true"] {
+    .menu-toggle-open {
+      display: none;
+    }
+
+    .menu-toggle-close {
+      display: inline-block;
+    }
+  }
+
+  &.no-js {
+    .icon-container:focus-within div {
+      display: block;
+    }
+  }
 }
 
 #{$namespace}.alternative {
@@ -165,32 +197,6 @@
       &:before {
         top: 30px;
       }
-    }
-  }
-  #banner-mobile-button[aria-expanded="false"] {
-    .menu-toggle-open {
-      display: inline-block;
-    }
-    .menu-toggle-close {
-      display: none;
-    }
-  }
-  #banner-mobile-button[aria-expanded="true"] {
-    .menu-toggle-open {
-      display: none;
-    }
-    .menu-toggle-close {
-      display: inline-block;
-    }
-  }
-  &.no-js {
-    .icon-container:focus-within div {
-      display: block;
-    }
-  }
-  @media screen and (min-width: 50em) {
-    #icon-container-mobile-menu {
-      display: none;
     }
   }
 }
