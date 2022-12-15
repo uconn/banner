@@ -170,6 +170,10 @@
           <div>
             <button id="download-banner-styles" class="download-button">Download Banner Styles</button>
           </div>
+          <div>
+            <button id="download-banner-script" class="download-button">Download Banner Script</button>
+            <p>The <code>banner.js</code> file is only required if you intend to implement a mobile menu. It creates a custom JS event. <a href="https://github.com/uconn/banner#javascript">See the README for details.</a> </p>
+          </div>
         </div>
       </section>
       <section id="generator-wrapper" class="row">
@@ -179,7 +183,7 @@
 <figure class="highlight">
   <pre><code class="language-shell">
     # basic banner
-    php ./src/Banner/Generator.php --path ./my-uconn-banner.html
+    php ./src/Banner/Generator.php --path ./my-uconn-banner.html -m=true
     
     # school/college style banner
     php ./src/Banner/Generator.php --path ./my-uconn-banner.html \

@@ -82,7 +82,9 @@ import '../sass/site.scss'
           break
 
         case 'download-banner-styles':
-          downloadStyles()
+        case 'download-banner-script':
+          const type = evt.target.id === 'download-banner-styles' ? 'css' : 'js'
+          downloadAssets(type)
           break
       }
     })
@@ -213,13 +215,12 @@ import '../sass/site.scss'
     link.click()
   }
 
-  const downloadStyles = () => {
+  const downloadAssets = (type) => {
     const link = document.createElement('a')
-    const fileName = 'banner.css'
+    const fileName = `banner.${type}`
     link.href = `${window.location.origin}/${fileName}`
     link.download = fileName
     link.click()
   }
-
 })()
 
