@@ -21,7 +21,7 @@ As of January 16, 2020, the `master` branch of this repository represents 3.x of
 | | | | - Deprecated jekyll in favor of [11ty](https://11ty.dev)
 | | | | - Removed support for Compass
 | | | | - Improved support for level 1 and 2 site titles
-| | | | - Download buttons for banner markup and styles
+| | | | - Download buttons for banner markup and assets
 
 
 ## Who should use this?
