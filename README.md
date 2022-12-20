@@ -22,6 +22,7 @@ As of January 16, 2020, the `master` branch of this repository represents 3.x of
 | | | | - Removed support for Compass
 | | | | - Improved support for level 1 and 2 site titles
 | | | | - Download buttons for banner markup and assets
+| | | | - Added typescript support to project
 
 
 ## Who should use this?
