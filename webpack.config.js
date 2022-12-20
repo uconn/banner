@@ -6,6 +6,7 @@ module.exports = {
   entry: {
     banner: path.resolve(__dirname, 'js', 'banner.ts'),
     site: path.resolve(__dirname, 'js', 'site.ts'),
+    menuDemo: path.resolve(__dirname, 'js', 'menu-demo.ts'),
   },
   output: {
     path: path.resolve(__dirname, '_site'),
