@@ -47,12 +47,13 @@ class Generator {
         'prefix' => 'v',
         'longPrefix' => 'alternative',
         'description' => 'Whether to use the school and college banner type',
-        'castTo' => 'bool'
+        'castTo' => 'bool',
+        'defaultValue' => false
       ],
       'a-z-dropdown' => [
         'longPrefix' => 'a-z-dropdown',
         'description' => 'Whether to add markup for an A-Z dropdown/popup. Default - false',
-        'defaultValue' => 'false',
+        'defaultValue' => false,
         'castTo' => 'bool'
       ],
       'a-z-url' => [
@@ -60,26 +61,30 @@ class Generator {
         'description' => 'Url for the site\'s a-z index page'
       ],
       'use-mobile' => [
-        'shortPrefix' => 'm',
+        'prefix' => 'm',
         'longPrefix' => 'use-mobile',
         'description' => 'Whether to use a mobile menu icon in the banner. Default - false',
-        'defaultValue' => 'false',
+        'defaultValue' => false,
         'castTo' => 'bool'
       ],
       'mobile-id' => [
         'longPrefix' => 'mobile-id',
         'description' => 'Set an ID attribute for the mobile menu',
+        'defaultValue' => 'banner-controlled-mobile-menu'
       ],
       'header' => [
         'prefix' => 'r',
         'longPrefix' => 'header',
-        'description' => 'Alternative site header'
+        'description' => 'Alternative site header',
+        'castTo' => 'bool',
+        'defaultValue' => false
       ],
       'invert-banner-color' => [
         'prefix' => 'i',
         'longPrefix' => 'invert-banner-color',
         'description' => 'Whether to use a white banner with blue text',
-        'castTo' => 'bool'
+        'castTo' => 'bool',
+        'defaultValue' => false
       ]
     ]);
     $this->cli->arguments->parse();

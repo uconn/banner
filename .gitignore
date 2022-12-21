@@ -28,8 +28,9 @@ vendor/
 # Build Files
 /_site/*
 !/_site/index.html
-!/_site/school-advanced.html
-!/_site/school-basic.html
+!/_site/school-advanced/
+!/_site/school-basic/
+!/_site/README/
 !/_site/banner.css
 !/_site/banner.js
 !/_site/site.css

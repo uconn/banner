@@ -91,7 +91,7 @@ class Banner {
     }
 
     public static function js() {
-        return file_get_contents(dirname(__FILE__) . '/../../_site/js/banner.js');
+        return file_get_contents(dirname(__FILE__) . '/../../_site/banner.js');
     }
 
 }

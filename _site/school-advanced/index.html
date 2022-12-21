@@ -6,15 +6,17 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Mono&display=swap" rel="stylesheet">
-  <link href="banner.css" rel="stylesheet">
-  <link rel="stylesheet" href="site.css">
-  <link rel="stylesheet" href="css/menu-demo.css">
+  <link href="/banner.css" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css">
+  <link rel="stylesheet" href="/css/menu-demo.css">
 </head>
 
 <body>
   <header>
     
       
+
+
     
     <div id="uconn-banner" class="alternative no-js">
         
@@ -75,7 +77,8 @@
                         
                         <div class="icon-container" id="icon-container-az">
                             
-                            <a class="btn" id="uconn-az" href="https://uconn.edu/az">
+                            <button class="btn btn-popup-control" id="uconn-az" href="https://uconn.edu/az" aria-haspopup="true"
+                                aria-controls="a-z-popup" aria-expanded="false">
                                 <span class="no-css">A to Z Index</span>
                                 
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 32 32" aria-hidden="true"
@@ -85,11 +88,42 @@
                                         d="M5.345 8.989h3.304l4.944 13.974h-3.167l-0.923-2.873h-5.147l-0.946 2.873h-3.055l4.989-13.974zM5.152 17.682h3.579l-1.764-5.499-1.815 5.499zM13.966 14.696h5.288v2.56h-5.288v-2.56zM20.848 20.496l7.147-9.032h-6.967v-2.474h10.597v2.341l-7.244 9.165h7.262v2.466h-10.798v-2.466h0.004z">
                                     </path>
                                 </svg>
-                            </a>
+                            </button>
+                            
+                            <div id="a-z-popup" class="popup-container">
+                                <div class="link-wrapper az-link-wrapper">
+                                    <a href="/az"><span class="banner-search-text"></span>Site
+                                        A-Z</span></a>
+                                </div>
+                                <hr />
+                                <div class="link-wrapper az-link-wrapper">
+                                    <a href="https://uconn.edu/az"><span class="banner-search-text"></span>UConn A-Z</span></a>
+                                </div>
+                            </div>
                             
                         </div>
                         
+                        <div class="icon-container" id="icon-container-mobile-menu">
+                            <button class="btn mobile-menu-btn" id="banner-mobile-button" aria-haspopup="true"
+                                aria-controls="banner-controlled-mobile-menu" aria-expanded="false">
+                                
+                                <?xml version="1.0" encoding="utf-8"?>
+                                <svg width="20" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" class="banner-icon menu-toggle-open"
+                                    aria-hidden="true">
+                                    <path
+                                        d="M1664 1344v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45z" />
+                                </svg>
+                                
+                                <?xml version="1.0" encoding="utf-8"?>
+                                <svg width="20" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" class="banner-icon menu-toggle-close"
+                                    aria-hidden="true">
+                                    <path
+                                        d="M1490 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z" />
+                                </svg>
+                                <span class="no-css">Click to <span id="menu-toggle-text">open</span> menu</span>
+                            </button>
                         </div>
+                        
                     </div>
                     
                 </div>
@@ -99,6 +133,20 @@
     
 
 
+
+    
+    <div id="site-titles">
+        <div class="row-container">
+            <div class="row-fluid site-branding" id="uc-site-header">
+                <div>
+                    <p id="uc-site-parent"><a href="https://communications.uconn.edu">University Communications</a>
+                    </p>
+                    <h1 id="uc-site-title"><a href="/">UConn Banner</a></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
     
     <nav id="banner-controlled-mobile-menu">
@@ -119,7 +167,8 @@
   <main>
     <section class="row intro">
       <div class="container">
-        <h1>Basic School Banner</h1>
+        <hr>
+        <h1>Advanced School Banner</h1>
         <p><strong>Hi there!</strong></p>
         <p>This version of the UConn Banner has several different options. You can see different variations by visiting the links below and/or adjusting the forms on each page.</p>
       </div>
@@ -131,9 +180,9 @@
           <div class="flex-content two-column">
             <h2>Alternative Banners</h2>
             <ul>
-              <li><a href=/>Standard Banner</a></li>
-              <li><a href=/school-basic>Basic School Banner</a></li>
-              <li><a href=/school-advanced>Advanced School Banner</a></li>
+              <li><a href="/">Standard Banner</a></li>
+              <li><a href="/school-basic">Basic School Banner</a></li>
+              <li><a href="/school-advanced">Advanced School Banner</a></li>
             </ul>
           </div>
           <div class="flex-content two-column">
@@ -151,24 +200,50 @@
       </div>
     </section>
 
-    
     <section class="row">
       <div class="container">
         <h2>Site Title Tester</h2>
+        <p><a href="https://brand.uconn.edu/guidelines-usage/web/#appearance">Check the Brand Guidelines</a> for additional information about site titles.</p>
         <form action="" id="site-title-form">
+          
           <div>
-            <label for="site-title-input">Adjust the site title</label>
+            <label for="site-title-input">Adjust the site title in the banner</label>
             <input type="text" name="site-title-input" id="site-title-input" placeholder="Banner Title">
           </div>
           <div>
             <label for="site-abbrev-input">Adjust the site abbreviation</label>
             <input type="text" name="site-abbrev-input" id="site-abbrev-input" placeholder="Abbreviation">
           </div>
-          <input type="submit" value="Change Title">
+          
+          <div>
+            <label for="level-one-input">Adjust the "level 1" title</label>
+            <input type="text" name="level-one-input" id="level-one-input" placeholder="UConn Banner">
+          </div>
+          <div>
+            <label for="level-one-input">Adjust the "level 2" title</label>
+            <input type="text" name="level-two-input" id="level-two-input" placeholder="University Communications">
+          </div>
+          <input type="submit" value="Change Titles">
         </form>
       </div>
     </section>
-    
+    <section class="row">
+      <div class="container">
+        <div class="flex">
+          <div class="flex-content two-column">
+            <h2>Toggle Site Title Area</h2>
+            <form id="site-title-toggle">
+              <label for="site-titles-display">
+                <input type="radio" name="banner-theme" id="site-titles-display" value="block" /> Show Site Titles
+              </label>
+              <label for="site-titles-hide">
+                <input type="radio" name="banner-theme" id="site-titles-hide" value="none" /> Hide Site Titles
+              </label>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
       <!-- Example row of columns -->
       <section class="row">
         <div class="container">
@@ -212,6 +287,47 @@
           </ul>
         </div>
       </section>
+      <section id="download-wrapper" class="row">
+        <div class="container">
+          <h2>Download Banner Markup</h2>
+          <div>
+            <button id="download-banner-html" class="download-button" data-element="uconn-banner">Download Banner Markup</button>
+          </div>
+          <div>
+            <button id="download-levels-html" class="download-button" data-element="site-titles">Download Level 1/2 Markup</button>
+          </div>
+          <div>
+            <button id="download-banner-styles" class="download-button">Download Banner Styles</button>
+          </div>
+          <div>
+            <button id="download-banner-script" class="download-button">Download Banner Script</button>
+            <p>The <code>banner.js</code> file is only required if you intend to implement a mobile menu. It creates a custom JS event. <a href="https://github.com/uconn/banner#javascript">See the README for details.</a> </p>
+          </div>
+        </div>
+      </section>
+      <section id="generator-wrapper" class="row">
+        <div class="container">
+          <h2>Banner Generator Snippets</h2>
+          <p>Prefer to generate the banner yourself? You can use these examples to get started. Consult the <code>--help</code> command for all options.</p>
+<figure class="highlight">
+  <pre><code class="language-shell">
+    # basic banner
+    php ./src/Banner/Generator.php --path ./my-uconn-banner.html -m=true
+    
+    # school/college style banner
+    php ./src/Banner/Generator.php --path ./my-uconn-banner.html \
+      -v true -s "University Communications" \
+      -a "UComm" -u https://communications.uconn.edu
+
+    # advanced school/college style banner
+    php ./src/Banner/Generator.php --path ./my-uconn-banner.html \
+      -v true -s "University Communications" \
+      -a "UComm" -u https://communications.uconn.edu \
+      -m=true --a-z-dropdown=true
+  </code></pre>
+</figure>
+        </div>
+      </section>
   </main>
 <!-- Main jumbotron for a primary marketing message or call to action -->
 
@@ -220,14 +336,25 @@
   </div>
 
   <footer>
-    <div class="row">
-      <div class="container">
-        <p>&copy; 2017 <a href="http://communications.uconn.edu/">University Communications</a></p>
-      </div>
-    </div>
-  </footer>
-  <script src="js/site.js"></script>
-  <script src="js/banner.js"></script>
-  <script src="js/menu-demo.js"></script>
+  <div>
+    <ul>
+      <li>
+        <a href="https://uconn.edu">© University of Connecticut</a>
+      </li>
+      <li>
+        <a href="https://uconn.edu/disclaimers-privacy-copyright/">Disclaimers, Privacy & Copyright</a>
+      </li>
+      <li>
+        <a href="https://accessibility.uconn.edu/">Accessibility</a>
+      </li>
+      <li>
+        <a href="#">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+  <script src="/site.js"></script>
+  <script src="/banner.js"></script>
+  <script src="/menuDemo.js"></script>
 </body>
 </html>

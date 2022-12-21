@@ -1,0 +1,169 @@
+<p><img src="http://brand.uconn.edu/wp-content/uploads/sites/1060/2015/01/web-page-content-align.jpg" alt="Screenshot"></p>
+<h1>UConn Banner</h1>
+<p>A (UConn brand) standards-compliant implementation of the University's web banner.</p>
+<h2>History</h2>
+<p>As with most of our <a href="http://brand.uconn.edu/standards/web/">web branding</a> efforts, University Communications has teamed with the UITS Web Dev Lab to create a new look for the University's web presence. While the majority of university departments and organizations can be brought into brand compliance through the use of the <a href="http://aurora.uconn.edu/">Aurora</a> (WordPress) platform courtesy of UITS, there is still a need for static templates. This project attempts to bridge that gap.</p>
+<p>As of January 16, 2020, the <code>master</code> branch of this repository represents 3.x of the banner. The key differences are outlined below:</p>
+<table>
+<thead>
+<tr>
+<th>1.x (deprecated)</th>
+<th>2.x (deprecated)</th>
+<th>3.x</th>
+<th>4.x</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>- Designed for use with Bootstrap</td>
+<td>- Bootstrap classes removed</td>
+<td>- Added support for a School/College type banner. This includes support for optional mobile menu and popups.</td>
+<td></td>
+</tr>
+<tr>
+<td>- Embedded media queries intended to mirror Bootstrap</td>
+<td>- No media queries. User <em>must</em> define them.</td>
+<td>- Added support for white banner with blue text</td>
+<td></td>
+</tr>
+<tr>
+<td>- <a href="https://www.npmjs.com/package/uconn-banner">npm compatible</a></td>
+<td>- <a href="https://packagist.org/packages/uconn/banner">composer compatible</a></td>
+<td>- Added support for popups with search box</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- Added a php generator to quickly create static banners</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>- Updated dependencies and build process</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>- Deprecated jekyll in favor of <a href="https://11ty.dev">11ty</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>- Removed support for Compass</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>- Improved support for level 1 and 2 site titles</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>- Download buttons for banner markup and assets</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>- Added typescript support to project</td>
+</tr>
+</tbody>
+</table>
+<h2>Who should use this?</h2>
+<p>Anyone building a new *.uconn.edu website that won't be hosting on the Aurora platform.</p>
+<h2>Site Requirements (Recommended)</h2>
+<ul>
+<li><a href="http://www.paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/">Conditional HTML Classes for Internet Explorer</a></li>
+</ul>
+<h2>Usage:</h2>
+<p>There are a number of ways to use this code. Here are just a few:</p>
+<ol>
+<li><strong>HTML</strong> - You can <a href="https://github.com/uconn/banner/archive/master.zip">download the latest zip file</a> and use the assets in the &quot;_site&quot; directory to start building your website.</li>
+<li><strong>PHP</strong> - <a href="https://github.com/uconn/banner/wiki/Banner-rendering-with-PHP">Use Composer to embed the banner in your page</a>.</li>
+<li><strong>npm</strong> - Include as a <a href="https://www.npmjs.com/package/uconn-banner">node_module</a> with <code>npm install uconn-banner --save-dev</code>, use the HTML/CSS/JS from the &quot;_site&quot; directory.</li>
+</ol>
+<h2>Tests</h2>
+<p>This repo uses phpunit to test the attributes of the banner. Tests can be run with <code>./vendor/bin/phpunit tests/Banner/BannerTest.php --bootstrap vendor/autoload.php</code>.</p>
+<h2>Contributing / Development</h2>
+<p>Clone/download this repo and use <a href="http://11ty.dev/">11ty</a>.</p>
+<pre><code class="language-bash">	
+# Clone and open
+git clone https://github.com/uconn/banner.git
+cd banner
+
+# use [nvm](https://github.com/nvm-sh/nvm)
+nvm use
+
+# Install npm dependencies
+npm install
+
+# Install composer dependencies
+composer install
+
+
+# Run the develop task
+npm run develop
+</code></pre>
+<p>Open up <a href="http://localhost:8080/">http://localhost:8080/</a> in your web browser to view your changes.</p>
+<h3>Javascript</h3>
+<p>If you plan to use this banner with the mobile menu enabled, please make sure to read the following carefully. You <em>must</em> implement your own mobile menu. While the banner provides a menu toggle, it is (almost) completely un-opinioated when it comes to the markup or style for the menu. The only thing you must do is make sure that the <code>id</code> of the component that wraps the menu matches the <code>aria-controls</code> attribute of the menu toggle button.</p>
+<pre><code class="language-html">&lt;!-- banner --&gt;
+&lt;button 
+  class=&quot;btn mobile-menu-btn&quot;
+  id=&quot;banner-mobile-button&quot;
+  aria-haspopup=&quot;true&quot;
+  aria-controls=&quot;mobile-menu-id&quot;
+  aria-expanded=&quot;false&quot;
+&gt;
+&lt;!-- end banner --&gt;
+
+&lt;!-- wherever the mobile menu is... --&gt;
+&lt;nav id=&quot;mobile-menu-id&quot;&gt;
+  &lt;!-- menu markup --&gt;
+&lt;/nav&gt;
+&lt;!-- end mobile menu --&gt;
+</code></pre>
+<p>When the <code>button</code> is clicked, it will dispatch a custom javascript event called <code>ucBannerMenuState</code> that can be listened to. This lets you control the menu from any other script.</p>
+<pre><code class="language-js">// banner.js
+
+// custom event 
+var ucBannerMenuStateEvent = new CustomEvent('ucBannerMenuState', {
+  detail: { isOpen: false },
+  bubbles: true
+})
+
+// this is part of the click event listener on the banner buttons
+function toggleMenu(button) {
+  var isExpanded = button.getAttribute('aria-expanded') === 'true' ? true : false
+  // switch the state of the emitted event
+  ucBannerMenuStateEvent.detail.isOpen = !isExpanded
+  // dispatch the event
+  button.dispatchEvent(ucBannerMenuStateEvent)
+  // handle the rest of the toggle
+  !isExpanded ? expand(button) : collapse(button)
+  return true
+}
+// end banner.js
+
+// ...some other script in a different part of the project
+var menuToggle = document.querySelector('#banner-mobile-button')
+var mobileMenu = document.querySelector('#mobile-menu-id')
+
+// listen for the custom event
+document.addEventListener('ucBannerMenuState', function(evt) {
+  // toggle a class based on the state of the event
+  evt.detail.isOpen ? 
+    mobileMenu.classList.add('active') : 
+    mobileMenu.classList.remove('active');
+})
+</code></pre>
+<p>For a complete example, consult the unminified <a href="js/banner.js">banner.js</a> file and <a href="js/menu-demo.js">menu-demo.js</a> files.</p>
+<h2>Static output</h2>
+<p>To create a static html version of the banner, you can use the included <a href="src/Banner/Generator.php">Generator.php</a> file. It covers the full range of options available to the Banner. You can use the generator with the command <code>php src/Banner/Generator.php &lt;options&gt;</code>. For help or to see a list of options - <code>php src/Banner/Generator.php --help</code>.</p>

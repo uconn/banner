@@ -31,6 +31,7 @@ import '../sass/site.scss'
           const abbrevInput = <HTMLInputElement | null>target.querySelector('#site-abbrev-input')
           const levelOneInput = <HTMLInputElement | null>target.querySelector('#level-one-input')
           const levelTwoInput = <HTMLInputElement | null>target.querySelector('#level-two-input')
+          console.log({abbrevInput});
           
           if (titleInput) {
             setText({ 
@@ -151,27 +152,27 @@ import '../sass/site.scss'
     if (!document.querySelector('#uconn-banner')?.classList.contains('alternative')) return
     const title = localStorage.getItem('title')
     const abbrev = localStorage.getItem('abbrev')
-    const uconn = <HTMLElement>document.querySelector('#university-of-connecticut')
-    const abbreviation = <HTMLElement>document.querySelector('#site-abbreviation')
-    const abbreviationInput = <HTMLInputElement>document.querySelector('#site-abbrev-input')
-    const siteTitleInput = <HTMLInputElement>document.querySelector('#site-title-input')
-    abbreviationInput.value = abbrev ?? ''
-    siteTitleInput.value = title ?? ''
-    abbreviation.innerText = abbrev ?? ''
-    uconn.innerText = title ?? ''
+    const uconn = <HTMLElement | null>document.querySelector('#university-of-connecticut')
+    const abbreviation = <HTMLElement | null>document.querySelector('#site-abbreviation')
+    const abbreviationInput = <HTMLInputElement | null>document.querySelector('#site-abbrev-input')
+    const siteTitleInput = <HTMLInputElement | null>document.querySelector('#site-title-input')
+    if (abbreviationInput) abbreviationInput.value = abbrev ?? ''
+    if (siteTitleInput) siteTitleInput.value = title ?? ''
+    if (abbreviation) abbreviation.innerText = abbrev ?? ''
+    if (uconn) uconn.innerText = title ?? ''
   }
 
   function setInitialTitles() {
     const levelOne = localStorage.getItem('level-one-title')
     const levelTwo = localStorage.getItem('level-two-title')
-    const levelOneInput = <HTMLInputElement>document.querySelector('#level-one-input')
-    const levelTwoInput = <HTMLInputElement>document.querySelector('#level-two-input')
-    const levelOneTitle = <HTMLAnchorElement>document.querySelector('#uc-site-title a')
-    const levelTwoTitle = <HTMLAnchorElement>document.querySelector('#uc-site-parent a')
-    levelOneInput.value = levelOne ?? ''
-    levelTwoInput.value = levelTwo ?? ''
-    levelOneTitle.innerText = levelOne ?? ''
-    levelTwoTitle.innerText = levelTwo ?? ''  
+    const levelOneInput = <HTMLInputElement | null>document.querySelector('#level-one-input')
+    const levelTwoInput = <HTMLInputElement | null>document.querySelector('#level-two-input')
+    const levelOneTitle = <HTMLAnchorElement | null>document.querySelector('#uc-site-title a')
+    const levelTwoTitle = <HTMLAnchorElement | null>document.querySelector('#uc-site-parent a')
+    if (levelOneInput) levelOneInput.value = levelOne ?? ''
+    if (levelTwoInput) levelTwoInput.value = levelTwo ?? ''
+    if (levelOneTitle) levelOneTitle.innerText = levelOne ?? ''
+    if (levelTwoTitle) levelTwoTitle.innerText = levelTwo ?? ''  
   }
 
   function setInitialSiteTheme() {

@@ -8,3 +8,20 @@
       }
     }
 }
+
+#banner-controlled-mobile-menu {
+  display: none;
+  &.active {
+    background-color: lightgray;
+    display: block;
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    bottom: 100px;
+    left: 20px;
+  }
+  ul {
+    list-style-type: none;
+    padding: 20px;
+  }
+}
