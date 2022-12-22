@@ -2,6 +2,8 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
+const outPath = process.env.ENVIRONMENT === 'production' ? '_site' : '_dev-site'
+
 module.exports = {
   entry: {
     banner: path.resolve(__dirname, 'js', 'banner.ts'),
@@ -9,7 +11,7 @@ module.exports = {
     menuDemo: path.resolve(__dirname, 'js', 'menu-demo.ts'),
   },
   output: {
-    path: path.resolve(__dirname, '_site'),
+    path: path.resolve(__dirname, outPath),
     filename: '[name].js'
   },
   mode: 'production',

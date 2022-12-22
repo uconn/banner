@@ -25,6 +25,9 @@ node_modules
 # Composer Files
 vendor/
 
+# Dev build files
+/_dev-site/*
+
 # Build Files
 /_site/*
 !/_site/index.html

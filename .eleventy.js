@@ -1,6 +1,10 @@
 const { Liquid } = require("liquidjs");
 
 module.exports = function (eleventyConfig) {
+
+  const pathPrefix = process.env.ENVIRONMENT === 'production' ? '/banner' : '/'
+  const output = process.env.ENVIRONMENT === 'production' ? '_site' : '_dev-site'
+  
   let options = {
     extname: ".html",
     dynamicPartials: false,
@@ -9,4 +13,11 @@ module.exports = function (eleventyConfig) {
   };
 
   eleventyConfig.setLibrary("liquid", new Liquid(options));
+
+  return {
+    pathPrefix,
+    dir: {
+      output,
+    }
+  }
 };

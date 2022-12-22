@@ -23,10 +23,10 @@
         "develop": "npm run dev",
         "watch": "npm run develop",
         "start": "npm run build",
-        "11ty:dev": "npx @11ty/eleventy --serve",
-        "11ty": "npx @11ty/eleventy",
-        "webpack:dev": "webpack --watch",
-        "webpack": "webpack",
+        "11ty:dev": "ENVIRONMENT=development npx @11ty/eleventy --serve",
+        "11ty": "ENVIRONMENT=production npx @11ty/eleventy",
+        "webpack:dev": "ENVIRONMENT=development webpack --watch",
+        "webpack": "ENVIRONMENT=production webpack",
         "dev": "npm run banners && npm-run-all --parallel *:dev"
     },
     "contributors": [

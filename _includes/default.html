@@ -6,9 +6,9 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Mono&display=swap" rel="stylesheet">
-  <link href="/banner.css" rel="stylesheet">
-  <link rel="stylesheet" href="/site.css">
-  <link rel="stylesheet" href="/css/menu-demo.css">
+  <link href="{{ '/banner.css' | url }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/site.css' | url }}">
+  <link rel="stylesheet" href="{{ '/css/menu-demo.css' | url }}">
 </head>
 
 <body>
@@ -51,9 +51,9 @@
           <div class="flex-content two-column">
             <h2>Alternative Banners</h2>
             <ul>
-              <li><a href="/">Standard Banner</a></li>
-              <li><a href="/school-basic">Basic School Banner</a></li>
-              <li><a href="/school-advanced">Advanced School Banner</a></li>
+              <li><a href="{{ '/' | url }}">Standard Banner</a></li>
+              <li><a href="{{ '/school-basic' | url }}">Basic School Banner</a></li>
+              <li><a href="{{ '/school-advanced' | url }}">Advanced School Banner</a></li>
             </ul>
           </div>
           <div class="flex-content two-column">
@@ -207,8 +207,8 @@
   </div>
 
   {% include footer.html %}
-  <script src="/site.js"></script>
-  <script src="/banner.js"></script>
-  <script src="/menuDemo.js"></script>
+  <script src="{{ '/site.js' | url }}"></script>
+  <script src="{{ '/banner.js' | url }}"></script>
+  <script src="{{ '/menuDemo.js' | url }}"></script>
 </body>
 </html>
