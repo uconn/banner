@@ -6,9 +6,9 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Mono&display=swap" rel="stylesheet">
-  <link href="/banner.css" rel="stylesheet">
-  <link rel="stylesheet" href="/site.css">
-  <link rel="stylesheet" href="/css/menu-demo.css">
+  <link href="/banner/banner.css" rel="stylesheet">
+  <link rel="stylesheet" href="/banner/site.css">
+  <link rel="stylesheet" href="/banner/css/menu-demo.css">
 </head>
 
 <body>
@@ -91,6 +91,27 @@
                             
                         </div>
                         
+                        <div class="icon-container" id="icon-container-mobile-menu">
+                            <button class="btn mobile-menu-btn" id="banner-mobile-button" aria-haspopup="true"
+                                aria-controls="banner-controlled-mobile-menu" aria-expanded="false">
+                                
+                                <?xml version="1.0" encoding="utf-8"?>
+                                <svg width="20" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" class="banner-icon menu-toggle-open"
+                                    aria-hidden="true">
+                                    <path
+                                        d="M1664 1344v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45z" />
+                                </svg>
+                                
+                                <?xml version="1.0" encoding="utf-8"?>
+                                <svg width="20" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" class="banner-icon menu-toggle-close"
+                                    aria-hidden="true">
+                                    <path
+                                        d="M1490 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z" />
+                                </svg>
+                                <span class="no-css">Click to <span id="menu-toggle-text">open</span> menu</span>
+                            </button>
+                        </div>
+                        
                     </div>
                     
                 </div>
@@ -147,9 +168,9 @@
           <div class="flex-content two-column">
             <h2>Alternative Banners</h2>
             <ul>
-              <li><a href="/">Standard Banner</a></li>
-              <li><a href="/school-basic">Basic School Banner</a></li>
-              <li><a href="/school-advanced">Advanced School Banner</a></li>
+              <li><a href="/banner/">Standard Banner</a></li>
+              <li><a href="/banner/school-basic">Basic School Banner</a></li>
+              <li><a href="/banner/school-advanced">Advanced School Banner</a></li>
             </ul>
           </div>
           <div class="flex-content two-column">
@@ -320,8 +341,8 @@
     </ul>
   </div>
 </footer>
-  <script src="/site.js"></script>
-  <script src="/banner.js"></script>
-  <script src="/menuDemo.js"></script>
+  <script src="/banner/site.js"></script>
+  <script src="/banner/banner.js"></script>
+  <script src="/banner/menuDemo.js"></script>
 </body>
 </html>

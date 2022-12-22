@@ -165,5 +165,13 @@ document.addEventListener('ucBannerMenuState', function(evt) {
 })
 </code></pre>
 <p>For a complete example, consult the unminified <a href="js/banner.js">banner.js</a> file and <a href="js/menu-demo.js">menu-demo.js</a> files.</p>
+<h2>Deployment to github pages</h2>
+<pre><code class="language-bash">	
+# Run the build task
+nvm use &amp;&amp; npm run develop
+
+# push just the _site directory to gh-pages
+git subtree push --prefix _site origin gh-pages
+</code></pre>
 <h2>Static output</h2>
 <p>To create a static html version of the banner, you can use the included <a href="src/Banner/Generator.php">Generator.php</a> file. It covers the full range of options available to the Banner. You can use the generator with the command <code>php src/Banner/Generator.php &lt;options&gt;</code>. For help or to see a list of options - <code>php src/Banner/Generator.php --help</code>.</p>
