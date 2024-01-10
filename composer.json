@@ -14,7 +14,8 @@
     },
     "require-dev": {
         "vanilla/garden-cli": "^3.1",
-        "league/climate": "^3.8"
+        "league/climate": "^3.8",
+        "pestphp/pest": "^2.30"
     },
     "autoload": {
         "psr-4": {
@@ -24,6 +25,11 @@
     "autoload-dev": {
         "psr-4": {
             "UConn\\Tests\\": ["tests/"]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
         }
     }
 }

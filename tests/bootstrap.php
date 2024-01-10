@@ -1,4 +1,6 @@
 <?php
 
 $autoloader = require __DIR__ . '/../vendor/autoload.php';
-$autoloader->add('MyApp\\Tests\\', __DIR__);
+require dirname(__FILE__) . '/TestCase.php';
+require __DIR__ . '/../src/Banner/Banner.php';
+require __DIR__ . '/../src/Footer/Footer.php';
