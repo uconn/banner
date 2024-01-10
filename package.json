@@ -1,61 +1,63 @@
 {
-    "name": "uconn-banner",
-    "version": "3.0.3",
-    "description": "uconn-banner is the official UConn Banner module packaged for quick implementation.",
-    "license": "UNLICENSED",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/uconn/banner.git"
+  "name": "uconn-banner",
+  "version": "3.0.3",
+  "description": "uconn-banner is the official UConn Banner module packaged for quick implementation.",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uconn/banner.git"
+  },
+  "keywords": [
+    "uconn",
+    "banner"
+  ],
+  "bugs": {
+    "url": "https://github.com/uconn/banner/issues"
+  },
+  "scripts": {
+    "banner:basic": "php ./src/Banner/Generator.php -p ./_includes/basic.html -m=true -v=false -r=true",
+    "banner:sc-basic": "php ./src/Banner/Generator.php -p ./_includes/sc_basic.html -v true -s \"University Communications\" -a \"UComm\" -u https://communications.uconn.edu -v=false -r=true -m=true",
+    "banner:sc-advanced": "php ./src/Banner/Generator.php -p ./_includes/sc_advanced.html -v true -s \"University Communications\" -a \"UComm\" -u https://communications.uconn.edu -m=true --a-z-dropdown=true -r=true",
+    "banners": "npm run banner:basic && npm run banner:sc-basic && npm run banner:sc-advanced",
+    "build": "npm run banners && npm run 11ty && npm run webpack",
+    "develop": "npm run dev",
+    "watch": "npm run develop",
+    "start": "npm run build",
+    "11ty:dev": "ENVIRONMENT=development npx @11ty/eleventy --serve",
+    "11ty": "ENVIRONMENT=production npx @11ty/eleventy",
+    "webpack:dev": "ENVIRONMENT=development webpack --watch",
+    "webpack": "ENVIRONMENT=production webpack",
+    "dev": "npm run banners && npm-run-all --parallel *:dev"
+  },
+  "contributors": [
+    {
+      "name": "Brian Daley"
     },
-    "keywords": [
-        "uconn",
-        "banner"
-    ],
-    "bugs": {
-        "url": "https://github.com/uconn/banner/issues"
+    {
+      "name": "Brian Kelleher"
     },
-    "scripts": {
-        "banner:basic": "php ./src/Banner/Generator.php -p ./_includes/basic.html -m=true -v=false -r=true",
-        "banner:sc-basic": "php ./src/Banner/Generator.php -p ./_includes/sc_basic.html -v true -s \"University Communications\" -a \"UComm\" -u https://communications.uconn.edu -v=false -r=true -m=true",
-        "banner:sc-advanced": "php ./src/Banner/Generator.php -p ./_includes/sc_advanced.html -v true -s \"University Communications\" -a \"UComm\" -u https://communications.uconn.edu -m=true --a-z-dropdown=true -r=true",
-        "banners": "npm run banner:basic && npm run banner:sc-basic && npm run banner:sc-advanced",
-        "build": "npm run banners && npm run 11ty && npm run webpack",
-        "develop": "npm run dev",
-        "watch": "npm run develop",
-        "start": "npm run build",
-        "11ty:dev": "ENVIRONMENT=development npx @11ty/eleventy --serve",
-        "11ty": "ENVIRONMENT=production npx @11ty/eleventy",
-        "webpack:dev": "ENVIRONMENT=development webpack --watch",
-        "webpack": "ENVIRONMENT=production webpack",
-        "dev": "npm run banners && npm-run-all --parallel *:dev"
-    },
-    "contributors": [
-        {
-            "name": "Brian Daley"
-        },
-        {
-            "name": "Brian Kelleher"
-        },
-        {
-            "name": "Adam Berkowitz"
-        }
-    ],
-    "directories": {},
-    "devDependencies": {
-        "@11ty/eleventy": "^1.0.2",
-        "@babel/core": "^7.20.2",
-        "@babel/preset-env": "^7.20.2",
-        "babel-loader": "^9.1.0",
-        "cross-env": "^7.0.3",
-        "css-loader": "^6.7.2",
-        "css-minimizer-webpack-plugin": "^4.2.2",
-        "mini-css-extract-plugin": "^2.6.1",
-        "npm-run-all": "^4.1.5",
-        "sass": "^1.56.1",
-        "sass-loader": "^13.2.0",
-        "ts-loader": "^9.4.2",
-        "typescript": "^4.9.4",
-        "webpack": "^5.75.0",
-        "webpack-cli": "^4.10.0"
+    {
+      "name": "Adam Berkowitz"
     }
+  ],
+  "directories": {},
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "@playwright/test": "^1.40.1",
+    "@types/node": "^20.10.8",
+    "babel-loader": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.2",
+    "css-minimizer-webpack-plugin": "^4.2.2",
+    "mini-css-extract-plugin": "^2.6.1",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.56.1",
+    "sass-loader": "^13.2.0",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^4.10.0"
+  }
 }

@@ -42,3 +42,7 @@ vendor/
 !/_site/css
 !/_site/js
 !/_site/js/menu-demo.js
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
