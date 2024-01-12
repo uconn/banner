@@ -27,7 +27,10 @@
     "11ty": "ENVIRONMENT=production npx @11ty/eleventy",
     "webpack:dev": "ENVIRONMENT=development webpack --watch",
     "webpack": "ENVIRONMENT=production webpack",
-    "dev": "npm run banners && npm-run-all --parallel *:dev"
+    "dev": "npm run banners && npm-run-all --parallel *:dev",
+    "playwright": "npx playwright test",
+    "playwright:ui": "npx playwright test --ui",
+    "pest": "vendor/bin/pest"
   },
   "contributors": [
     {
