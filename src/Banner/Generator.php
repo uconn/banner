@@ -83,7 +83,7 @@ class Generator {
         'prefix' => 'i',
         'longPrefix' => 'invert-banner-color',
         'description' => 'Whether to use a white banner with blue text',
-        'castTo' => 'bool',
+        'noValue' => 'bool',
         'defaultValue' => false
       ]
     ]);
