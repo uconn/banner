@@ -1,25 +1,25 @@
 /* Base */
-@import "base/config";
-@import "base/utility";
+@use "base/config";
+@use "base/utility";
 // @import "base/reset";
-@import "base/links"; 
+@use "base/links"; 
 
 
 /* Import the webfonts */
-@import "fonts/uconn";
-@import "fonts/proxima-nova";
+@use "fonts/uconn";
+@use "fonts/proxima-nova";
 
 /* Import icon styles */
-@import "icons/icons";
+@use "icons/icons";
 
 /* Layout */
-@import "layout/layout";
-@import "layout/banner";
+@use "layout/layout";
+@use "layout/banner";
 
 
 /* Module */
-@import "module/wordmark";
-@import "module/buttons";
-@import "module/title";
-@import "module/search";
-@import "module/popups";
+@use "module/wordmark";
+@use "module/buttons";
+@use "module/title";
+@use "module/search";
+@use "module/popups";

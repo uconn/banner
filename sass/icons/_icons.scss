@@ -1,4 +1,6 @@
-#{$namespace} {
+@use "../base/config";
+
+#{config.$namespace} {
     .banner-icon {
         fill: white;
         height: 100%;
@@ -6,7 +8,7 @@
     }
     .white {
         .banner-icon {
-            fill: $bg-color;
+            fill: config.$bg-color;
         }
     }
 }

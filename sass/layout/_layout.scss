@@ -1,4 +1,6 @@
-#{$namespace},
+@use "../base/config";
+
+#{config.$namespace},
 #site-titles {
     font-size: 16px;
     * {

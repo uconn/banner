@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "liquid/liquid": "^1.4"
+        "liquid/liquid": "^1.4",
+        "spatie/yaml-front-matter": "^2.1"
     },
     "require-dev": {
         "vanilla/garden-cli": "^3.1",
