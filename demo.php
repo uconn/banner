@@ -4,7 +4,8 @@ require "vendor/autoload.php";
 
 $banner = new UConn\Banner\Banner();
 
-$banner->name = "University Communications";
+$banner->__set('name', "University Communications");
+$banner->__set('use_mobile_menu', false);
 
 ?>
 <!DOCTYPE html>

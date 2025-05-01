@@ -1,9 +1,11 @@
+@use "../base/config";
+
 %button-container {
   text-align:right;
   position: relative;
   & > .icon-container {
-    width: $btn-size;
-    height:$btn-size;
+    width: config.$btn-size;
+    height:config.$btn-size;
     display: inline-block;
     margin:0px 2px;
     padding:0px;
@@ -11,12 +13,12 @@
     white-space: nowrap;
   }
   .btn {
-    background-color: $bg-color;
+    background-color: config.$bg-color;
     border: 0;
     display:block;
     height:100%;
     width:100%;
-    font-size: $icon-size;
+    font-size: config.$icon-size;
     text-align: center;
     padding: inherit;
     text-shadow: none;
@@ -34,7 +36,7 @@
   transition: opacity 0.3s ease-in-out;
   z-index: 1000;
   &:before {
-    font-family: $secondary-font;
+    font-family: config.$secondary-font;
     font-size: 14px;
     font-weight: bold;
   }
@@ -68,14 +70,14 @@
   }
 }
 
-#{$namespace} {
+#{config.$namespace} {
   .no-css {
     left: -99999px;
     position: absolute;
   }
 }
 
-#{$namespace} {
+#{config.$namespace} {
   #button-container {
     @extend %button-container;
     .icon-container > div {
@@ -177,10 +179,10 @@
   }
 }
 
-#{$namespace}.alternative {
+#{config.$namespace}.alternative {
   #button-container {
     button {
-      background-color: $bg-color;
+      background-color: config.$bg-color;
     }
     @extend %button-container;
     .icon-container {
@@ -201,8 +203,8 @@
   }
 }
 
-#{$namespace},
-#{$namespace}.alternative {
+#{config.$namespace},
+#{config.$namespace}.alternative {
   .white {
     #button-container {
       #banner-mobile-button {

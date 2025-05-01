@@ -1,3 +1,5 @@
+@use "../base/config";
+
 #uc-site-title{
     margin:0px !important;
     padding:0px;
@@ -9,13 +11,13 @@
     text-decoration: none;
     word-wrap: break-word;
     &:link, &:visited{
-      color: $bg-color;    
-      font-family: $secondary-font;
+      color: config.$bg-color;    
+      font-family: config.$secondary-font;
       font-size: 24px;
     }
 
   }
-    @extend %smoothing;
+    @extend %smoothing !optional;
 }
 
 
@@ -27,13 +29,13 @@
   a {
     text-decoration: none;
     &:link, &:visited{
-      color: $bg-color;
-      font-family: $secondary-font, $fallback-fonts;
+      color: config.$bg-color;
+      font-family: config.$secondary-font, config.$fallback-fonts;
       font-weight: normal;
       text-transform:uppercase;
       letter-spacing: 1px;
       margin-bottom: 5px;     
     }
   }  
-  @extend %smoothing;
+  @extend %smoothing !optional;
 }

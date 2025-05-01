@@ -1,3 +1,5 @@
+@use "../base/config";
+
 %popup-triangle {
   content: '';
   background-color: transparent;
@@ -14,7 +16,7 @@
 .popup-container {
   background-color: #546688;
   display: none;
-  font-family: $secondary-font;
+  font-family: config.$secondary-font;
   line-height: 0;
   position: absolute;
   right: -6px;
@@ -36,19 +38,19 @@
 #search-popup {
   .form-wrapper {
     form {
-      color: $bg-color;
+      color: config.$bg-color;
       position: relative;
     }
     input {
       border: 0;
       border-radius: 0;
-      color: $bg-color;
+      color: config.$bg-color;
       font-size: 14px;
       margin: 16px 20px;
       padding: 8px 60px 6px 6px;
       -webkit-appearance: none;
       &::placeholder {
-        color: $bg-color;
+        color: config.$bg-color;
         opacity: 1;
       }
     }
@@ -60,7 +62,7 @@
       right: 18px;
     }
     svg {
-      fill: $bg-color;
+      fill: config.$bg-color;
     }
   }
 

@@ -1,5 +1,7 @@
+@use "../base/config";
+
 %university-styles {
-  font-family: $secondary-font,$fallback-fonts;
+  font-family: config.$secondary-font,config.$fallback-fonts;
   color: #9faab2;
   font-size: 18px;
   letter-spacing: .055em;
@@ -13,14 +15,14 @@
 
 #wordmark{
   color: #fff;
-  font-family: $uconn-font,$fallback-fonts;
+  font-family: config.$uconn-font,config.$fallback-fonts;
   font-size: 32px;
   overflow: hidden;
   letter-spacing: 3px;
   text-transform: uppercase;
   padding:0px 5px 0 0;
 
-  @extend %smoothing;
+  @extend %smoothing !optional;
 }
 
 #university-of-connecticut {
@@ -28,7 +30,7 @@
   border-left: 2px solid #3f4760;
   color: #9faab2;
   padding: 1px 0 0 10px;
-  @extend %smoothing;
+  @extend %smoothing !optional;
 
   @media (min-width: 50em){
       display:inline;
@@ -51,6 +53,6 @@
   #wordmark,
   #university-of-connecticut,
   #site-abbreviation {
-    color: $bg-color;
+    color: config.$bg-color;
   }
 }

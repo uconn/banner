@@ -1,4 +1,6 @@
-#{$namespace}{
+@use "config";
+
+#{config.$namespace}{
     a {
         &:link, &:hover, &:visited  {
             text-decoration: none;
