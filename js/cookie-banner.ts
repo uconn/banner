@@ -1,0 +1,1 @@
+import '../sass/cookie-banner.scss'
