@@ -1,24 +1,21 @@
 <div id="cookie-notice">
+  <div style="position: absolute; left: -9999px;" role="alert" aria-live="polite" aria-atomic="true">
+    <p id="aria-cookie-notices"></p>
+  </div>
   <div id="cookie-policy-wrapper">
-    <p>Our websites may use cookies to personalize and enhance your experience. By continuing without changing your
-      cookie settings, you agree to this collection. For more information, please see our <a
-        href="https://privacy.uconn.edu/university-website-notice/" target="_blank">University Websites Privacy
-        Notice</a>.</p>
+    <p id="cookie-description">Our websites may use cookies to personalize and enhance your experience. By continuing without changing your
+      cookie settings, you agree to this collection. For more information, please see our <a href="https://privacy.uconn.edu/university-website-notice/">University Websites Privacy Notice</a>.</p>
     <div class="cookie-policy-actions">
-      <button type="button" aria-label="accept cookies" class="btn btn-accept"
-        onclick="acknowledgeCookies()">OK <svg enable-background="new 0 0 24 24" height="16px" id="Layer_1" version="1.1"
+      <button type="button" aria-describedby="cookie-description" aria-label="accept cookies and close banner" id="uconn-accept-cookies" class="btn btn-accept"><span aria-hidden="true">OK</span> <svg aria-hidden="true" style="pointer-events: none;" height="16px" version="1.1"
           viewBox="0 0 24 24" width="20px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink">
-          <path clip-rule="evenodd"
-            d="M21.652,3.211c-0.293-0.295-0.77-0.295-1.061,0L9.41,14.34  c-0.293,0.297-0.771,0.297-1.062,0L3.449,9.351C3.304,9.203,3.114,9.13,2.923,9.129C2.73,9.128,2.534,9.201,2.387,9.351  l-2.165,1.946C0.078,11.445,0,11.63,0,11.823c0,0.194,0.078,0.397,0.223,0.544l4.94,5.184c0.292,0.296,0.771,0.776,1.062,1.07  l2.124,2.141c0.292,0.293,0.769,0.293,1.062,0l14.366-14.34c0.293-0.294,0.293-0.777,0-1.071L21.652,3.211z"
-            fill-rule="evenodd"></path>
+          <path d="M21.652,3.211c-0.293-0.295-0.77-0.295-1.061,0L9.41,14.34 c-0.293,0.297-0.771,0.297-1.062,0L3.449,9.351C3.304,9.203,3.114,9.13,2.923,9.129C2.73,9.128,2.534,9.201,2.387,9.351 l-2.165,1.946C0.078,11.445,0,11.63,0,11.823c0,0.194,0.078,0.397,0.223,0.544l4.94,5.184c0.292,0.296,0.771,0.776,1.062,1.07 l2.124,2.141c0.292,0.293,0.769,0.293,1.062,0l14.366-14.34c0.293-0.294,0.293-0.777,0-1.071L21.652,3.211z"></path>
         </svg></button>
-      <button type="button" aria-label="More information on cookies" class="btn"
-        onclick="moreCookieInfo()">More Information</button>
+      <button type="button" aria-label="More information on cookies" aria-controls="cookie-details-wrapper" aria-describedby="cookie-description" aria-expanded="false" id="uconn-more-cookie-info" class="btn">More Information</button>
     </div>
   </div>
     
-  <div id="cookie-details-wrapper">
+  <section id="cookie-details-wrapper">
     <details class="cookie-section" name="cookie-details">
         <summary>What are Cookies?</summary>
         <div class="cookie-content">
@@ -183,5 +180,5 @@
         <p>Disabling cookies can make your online experience more difficult. Some websites may not load properly, or you may be logged out frequently. Also, certain features may not work as expected.</p>
       </div>
     </details>
-  </div>
+  </section>
 </div>
