@@ -1,5 +1,5 @@
-/* Cookie policy wrapper */
-#cookie-notice {
+/* uconn-c policy wrapper */
+#uconn-c-notice {
   // make sure the banner is always visible and stuck to the bottom
   position: sticky;
   bottom: 0;
@@ -20,7 +20,7 @@
   }
 }
 
-#cookie-policy-wrapper {
+#uconn-c-policy-wrapper {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -66,7 +66,7 @@
       color: #fff;
     }
   }
-  .cookie-policy-actions {
+  .uconn-c-policy-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -78,7 +78,7 @@
   }
 }
 
-#cookie-details-wrapper {
+#uconn-c-details-wrapper {
   display: none;
   &.show {
     display: flex;

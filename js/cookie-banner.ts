@@ -72,18 +72,18 @@ const setCookie = (name: string, value: string, days: number): void => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const cookieNotice = document.getElementById('cookie-notice')
+  const cookieNotice = document.getElementById('uconn-c-notice')
   if (!cookieNotice) {
     console.error('Cookie banner not found')
     return
   }
-  const ariaNotices = document.getElementById('aria-cookie-notices')
+  const ariaNotices = document.getElementById('aria-uconn-c-notices')
   if (!ariaNotices) {
     console.error('Aria notices not found')
     return
   }
   const withCookies = canUseCookies()
-  const hasUConnCookie = getCookie('uconn-cookie-consent') === 'true'
+  const hasUConnCookie = getCookie('uconn-uconn-c-consent') === 'true'
 
   if (!withCookies || hasUConnCookie) {
     cookieNotice.classList.add('hide')
@@ -91,8 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   let isMoreInfoOpen = false
-  const acceptCookies = document.getElementById('uconn-accept-cookies')
-  const moreCookieInfo = document.getElementById('uconn-more-cookie-info')
+  const acceptCookies = document.getElementById('uconn-accept-uconn-c')
+  const moreCookieInfo = document.getElementById('uconn-more-uconn-c-info')
   if (!acceptCookies || !moreCookieInfo) {
     console.error('Cookie banner elements not found')
     return
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     target.setAttribute('aria-expanded', `${!isExpanded}`)
     isMoreInfoOpen = !isExpanded
 
-    const cookieDetailsWrapper = document.getElementById('cookie-details-wrapper')
+    const cookieDetailsWrapper = document.getElementById('uconn-c-details-wrapper')
     if (!cookieDetailsWrapper) {
       console.error('Cookie details wrapper not found')
       return
@@ -122,8 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
     evt.preventDefault()
 
     try {
-      setCookie('uconn-cookie-consent', 'true', 365)
-      const isSet = getCookie('uconn-cookie-consent') === 'true'
+      setCookie('uconn-uconn-c-consent', 'true', 365)
+      const isSet = getCookie('uconn-uconn-c-consent') === 'true'
       isSet ? cookieNotice.classList.add('hide') : console.error('Failed to set cookie')
       ariaNotices.innerText = 'You have accepted cookies and closed the banner'
     } catch (err) {
