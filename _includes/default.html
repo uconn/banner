@@ -7,6 +7,7 @@
   <meta name="author" content="">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Mono&display=swap" rel="stylesheet">
   <link href="{{ '/banner.css' | url }}" rel="stylesheet">
+  <link href="{{ 'cookie-banner.css' | url }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/site.css' | url }}">
   <link rel="stylesheet" href="{{ '/css/menu-demo.css' | url }}">
 </head>
@@ -207,8 +208,10 @@
   </div>
 
   {% include footer.html %}
+  {% include cookie-banner.html %}
   <script src="{{ '/site.js' | url }}"></script>
   <script src="{{ '/banner.js' | url }}"></script>
+  <script src="{{ '/cookie-banner.js' | url }}"></script>
   <script src="{{ '/menuDemo.js' | url }}"></script>
 </body>
 </html>
