@@ -10,15 +10,16 @@ const canUseCookies = (): boolean => {
   const { hostname } = globalThis.location
   const testCookieName = 'testcookie='
 
+  const domain = hostname === 'localhost' || hostname === '127.0.0.1'
+    ? ''
+    : '; domain=.uconn.edu'
+
   try {
     // Set a test cookie
-    document.cookie = `${testCookieName}1; path=/; SameSite=Lax`
+    document.cookie = `${testCookieName}1; path=/${domain}`
     didSetCookie = document.cookie.includes(testCookieName)
 
-    // Clean up - use the same domain/path as when setting
-    const domain = hostname === 'localhost' || hostname === '127.0.0.1'
-      ? ''
-      : '; domain=.uconn.edu'
+    // Clean up - uses the same domain/path as when setting
     document.cookie = `${testCookieName}; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/${domain}`
   } catch (e) {
     console.error(`Failed to set cookie: ${e}`)
@@ -37,8 +38,9 @@ const getCookie = (name: string): string | null => {
   const cookieStrings = document.cookie.split(';');
 
   for (const cookieString of cookieStrings) {
-    if (cookieString.startsWith(nameEQ)) {
-      return decodeURIComponent(cookieString.substring(nameEQ.length, cookieString.length));
+    const trimmed = cookieString.trim()
+    if (trimmed.startsWith(nameEQ)) {
+      return decodeURIComponent(trimmed.substring(nameEQ.length, trimmed.length));
     }
   }
 
@@ -83,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return
   }
   const withCookies = canUseCookies()
-  const hasUConnCookie = getCookie('uconn-uconn-c-consent') === 'true'
+  const hasUConnCookie = getCookie('uconn-c-consent') === 'true'
 
   if (!withCookies || hasUConnCookie) {
     cookieNotice.classList.add('hide')
@@ -122,8 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
     evt.preventDefault()
 
     try {
-      setCookie('uconn-uconn-c-consent', 'true', 365)
-      const isSet = getCookie('uconn-uconn-c-consent') === 'true'
+      setCookie('uconn-c-consent', 'true', 365)
+      const isSet = getCookie('uconn-c-consent') === 'true'
       isSet ? cookieNotice.classList.add('hide') : console.error('Failed to set cookie')
       ariaNotices.innerText = 'You have accepted cookies and closed the banner'
     } catch (err) {
