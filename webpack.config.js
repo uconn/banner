@@ -7,6 +7,7 @@ const outPath = process.env.ENVIRONMENT === 'production' ? '_site' : '_dev-site'
 module.exports = {
   entry: {
     banner: path.resolve(__dirname, 'js', 'banner.ts'),
+    'cookie-banner': path.resolve(__dirname, 'js', 'cookie-banner.ts'),
     site: path.resolve(__dirname, 'js', 'site.ts'),
     menuDemo: path.resolve(__dirname, 'js', 'menu-demo.ts'),
   },

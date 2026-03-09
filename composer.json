@@ -3,6 +3,7 @@
     "description": "The UConn Banner - Branding for the top of your web pages.",
     "type": "library",
     "license": "MIT",
+    "version": "4.2.1",
     "authors": [
         {
             "name": "Brian Daley",
